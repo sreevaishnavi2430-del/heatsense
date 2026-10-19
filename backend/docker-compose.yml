@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    container_name: heatsense-db
+    environment:
+      POSTGRES_USER: heatsense
+      POSTGRES_PASSWORD: heatsense_password
+      POSTGRES_DB: heatsense
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U heatsense -d heatsense"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: heatsense-api
+    ports:
+      - "8000:8000"
+    environment:
+      MODE: demo
+      DEMO_ANY_LOGIN: "true"
+      DATABASE_URL: postgresql+asyncpg://heatsense:heatsense_password@db:5432/heatsense
+      SECRET_KEY: ${SECRET_KEY:-local-demo-secret-change-me}
+      FERNET_KEY: ${FERNET_KEY:-0w_3Nqk916qK2d8B1H0rX12_aG84kQZ7Wn-UqE6M2tM=}
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    volumes:
+      - ./app:/app/app
+      - ./alembic:/app/alembic
+      - ./alembic.ini:/app/alembic.ini
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

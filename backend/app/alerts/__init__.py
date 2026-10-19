@@ -1,0 +1,1 @@
+"""HeatSense alerts package."""

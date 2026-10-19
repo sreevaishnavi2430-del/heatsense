@@ -1,0 +1,2006 @@
+{
+  "type": "FeatureCollection",
+  "comment": "Approximate geometric tessellation polygons around ward centroids for demonstration. To be replaced with official GHMC ward boundary GeoJSON files in production deployment.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "charminar",
+      "properties": {
+        "id": "charminar",
+        "name": "Charminar",
+        "nameTelugu": "చార్మినార్",
+        "nameHindi": "चारमीनार",
+        "zone": "Central",
+        "population": 142000,
+        "landSurfaceTempC": 45.8,
+        "treeCoverPercent": 3.4,
+        "builtUpPercent": 91.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.482019,
+              17.366545
+            ],
+            [
+              78.473873,
+              17.370122
+            ],
+            [
+              78.466554,
+              17.365177
+            ],
+            [
+              78.467381,
+              17.356655
+            ],
+            [
+              78.475527,
+              17.353078
+            ],
+            [
+              78.482846,
+              17.358023
+            ],
+            [
+              78.482019,
+              17.366545
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yakutpura",
+      "properties": {
+        "id": "yakutpura",
+        "name": "Yakutpura",
+        "nameTelugu": "యాకుత్‌పురా",
+        "nameHindi": "याकूतपुरा",
+        "zone": "South",
+        "population": 138500,
+        "landSurfaceTempC": 46.2,
+        "treeCoverPercent": 2.8,
+        "builtUpPercent": 93
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.505788,
+              17.360761
+            ],
+            [
+              78.497856,
+              17.364752
+            ],
+            [
+              78.490268,
+              17.360192
+            ],
+            [
+              78.490612,
+              17.351639
+            ],
+            [
+              78.498544,
+              17.347648
+            ],
+            [
+              78.506132,
+              17.352208
+            ],
+            [
+              78.505788,
+              17.360761
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chandrayangutta",
+      "properties": {
+        "id": "chandrayangutta",
+        "name": "Chandrayangutta",
+        "nameTelugu": "చాంద్రాయణగుట్ట",
+        "nameHindi": "चांद्रायणगुट्टा",
+        "zone": "South",
+        "population": 126000,
+        "landSurfaceTempC": 45.4,
+        "treeCoverPercent": 4.5,
+        "builtUpPercent": 87.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.489829,
+              17.329824
+            ],
+            [
+              78.483406,
+              17.335795
+            ],
+            [
+              78.474777,
+              17.333471
+            ],
+            [
+              78.472571,
+              17.325176
+            ],
+            [
+              78.478994,
+              17.319205
+            ],
+            [
+              78.487623,
+              17.321529
+            ],
+            [
+              78.489829,
+              17.329824
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "falaknuma",
+      "properties": {
+        "id": "falaknuma",
+        "name": "Falaknuma",
+        "nameTelugu": "ఫలక్‌నుమా",
+        "nameHindi": "फलकनुमा",
+        "zone": "South",
+        "population": 118000,
+        "landSurfaceTempC": 44.9,
+        "treeCoverPercent": 6.2,
+        "builtUpPercent": 84.1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.476724,
+              17.334152
+            ],
+            [
+              78.470057,
+              17.339873
+            ],
+            [
+              78.461532,
+              17.337221
+            ],
+            [
+              78.459676,
+              17.328848
+            ],
+            [
+              78.466343,
+              17.323127
+            ],
+            [
+              78.474868,
+              17.325779
+            ],
+            [
+              78.476724,
+              17.334152
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dilsukhnagar",
+      "properties": {
+        "id": "dilsukhnagar",
+        "name": "Dilsukhnagar",
+        "nameTelugu": "దిల్‌సుఖ్‌నగర్",
+        "nameHindi": "दिलसुखनगर",
+        "zone": "East",
+        "population": 156000,
+        "landSurfaceTempC": 45.5,
+        "treeCoverPercent": 4.8,
+        "builtUpPercent": 89.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.531628,
+              17.374235
+            ],
+            [
+              78.523232,
+              17.377243
+            ],
+            [
+              78.516305,
+              17.371809
+            ],
+            [
+              78.517772,
+              17.363365
+            ],
+            [
+              78.526168,
+              17.360357
+            ],
+            [
+              78.533095,
+              17.365791
+            ],
+            [
+              78.531628,
+              17.374235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lb-nagar",
+      "properties": {
+        "id": "lb-nagar",
+        "name": "LB Nagar",
+        "nameTelugu": "ఎల్.బి. నగర్",
+        "nameHindi": "एल.बी. नगर",
+        "zone": "East",
+        "population": 148000,
+        "landSurfaceTempC": 44.2,
+        "treeCoverPercent": 7.5,
+        "builtUpPercent": 82
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.560246,
+              17.349477
+            ],
+            [
+              78.552797,
+              17.35424
+            ],
+            [
+              78.544751,
+              17.350463
+            ],
+            [
+              78.544154,
+              17.341923
+            ],
+            [
+              78.551603,
+              17.33716
+            ],
+            [
+              78.559649,
+              17.340937
+            ],
+            [
+              78.560246,
+              17.349477
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "uppal",
+      "properties": {
+        "id": "uppal",
+        "name": "Uppal",
+        "nameTelugu": "ఉప్పల్",
+        "nameHindi": "उप्पल",
+        "zone": "East",
+        "population": 134000,
+        "landSurfaceTempC": 44.8,
+        "treeCoverPercent": 6.8,
+        "builtUpPercent": 83.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.569168,
+              17.401954
+            ],
+            [
+              78.564544,
+              17.409288
+            ],
+            [
+              78.555576,
+              17.409134
+            ],
+            [
+              78.551232,
+              17.401646
+            ],
+            [
+              78.555856,
+              17.394312
+            ],
+            [
+              78.564824,
+              17.394466
+            ],
+            [
+              78.569168,
+              17.401954
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nagole",
+      "properties": {
+        "id": "nagole",
+        "name": "Nagole",
+        "nameTelugu": "నాగోల్",
+        "nameHindi": "नागोल",
+        "zone": "East",
+        "population": 112000,
+        "landSurfaceTempC": 43.5,
+        "treeCoverPercent": 10.5,
+        "builtUpPercent": 76.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.574931,
+              17.381365
+            ],
+            [
+              78.566343,
+              17.38383
+            ],
+            [
+              78.559812,
+              17.377965
+            ],
+            [
+              78.561869,
+              17.369635
+            ],
+            [
+              78.570457,
+              17.36717
+            ],
+            [
+              78.576988,
+              17.373035
+            ],
+            [
+              78.574931,
+              17.381365
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "malkajgiri",
+      "properties": {
+        "id": "malkajgiri",
+        "name": "Malkajgiri",
+        "nameTelugu": "మల్కాజ్‌గిరి",
+        "nameHindi": "मलकाजगिरी",
+        "zone": "North",
+        "population": 165000,
+        "landSurfaceTempC": 43.8,
+        "treeCoverPercent": 9.2,
+        "builtUpPercent": 81.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.53995,
+              17.457112
+            ],
+            [
+              78.532161,
+              17.461358
+            ],
+            [
+              78.524411,
+              17.457047
+            ],
+            [
+              78.52445,
+              17.448488
+            ],
+            [
+              78.532239,
+              17.444242
+            ],
+            [
+              78.539989,
+              17.448553
+            ],
+            [
+              78.53995,
+              17.457112
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "secunderabad",
+      "properties": {
+        "id": "secunderabad",
+        "name": "Secunderabad",
+        "nameTelugu": "సికింద్రాబాద్",
+        "nameHindi": "सिकंदराबाद",
+        "zone": "North",
+        "population": 146000,
+        "landSurfaceTempC": 44.6,
+        "treeCoverPercent": 8.4,
+        "builtUpPercent": 86.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.506566,
+              17.443225
+            ],
+            [
+              78.499415,
+              17.448392
+            ],
+            [
+              78.491149,
+              17.445067
+            ],
+            [
+              78.490034,
+              17.436575
+            ],
+            [
+              78.497185,
+              17.431408
+            ],
+            [
+              78.505451,
+              17.434733
+            ],
+            [
+              78.506566,
+              17.443225
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "begumpet",
+      "properties": {
+        "id": "begumpet",
+        "name": "Begumpet",
+        "nameTelugu": "బేగంపేట్",
+        "nameHindi": "बेगमपेट",
+        "zone": "Central",
+        "population": 115000,
+        "landSurfaceTempC": 42.8,
+        "treeCoverPercent": 13.8,
+        "builtUpPercent": 78
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.474486,
+              17.448507
+            ],
+            [
+              78.467078,
+              17.453334
+            ],
+            [
+              78.458992,
+              17.449627
+            ],
+            [
+              78.458314,
+              17.441093
+            ],
+            [
+              78.465722,
+              17.436266
+            ],
+            [
+              78.473808,
+              17.439973
+            ],
+            [
+              78.474486,
+              17.448507
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ameerpet",
+      "properties": {
+        "id": "ameerpet",
+        "name": "Ameerpet",
+        "nameTelugu": "అమీర్‌పేట్",
+        "nameHindi": "अमीरपेट",
+        "zone": "Central",
+        "population": 132000,
+        "landSurfaceTempC": 45.1,
+        "treeCoverPercent": 4.1,
+        "builtUpPercent": 92.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.456647,
+              17.440635
+            ],
+            [
+              78.449628,
+              17.445964
+            ],
+            [
+              78.441281,
+              17.442829
+            ],
+            [
+              78.439953,
+              17.434365
+            ],
+            [
+              78.446972,
+              17.429036
+            ],
+            [
+              78.455319,
+              17.432171
+            ],
+            [
+              78.456647,
+              17.440635
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "khairatabad",
+      "properties": {
+        "id": "khairatabad",
+        "name": "Khairatabad",
+        "nameTelugu": "ఖైరతాబాద్",
+        "nameHindi": "खैरताबाद",
+        "zone": "Central",
+        "population": 128000,
+        "landSurfaceTempC": 44.1,
+        "treeCoverPercent": 8.6,
+        "builtUpPercent": 84
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.467709,
+              17.412591
+            ],
+            [
+              78.462356,
+              17.419457
+            ],
+            [
+              78.453446,
+              17.418467
+            ],
+            [
+              78.449891,
+              17.410609
+            ],
+            [
+              78.455244,
+              17.403743
+            ],
+            [
+              78.464154,
+              17.404733
+            ],
+            [
+              78.467709,
+              17.412591
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "banjara-hills",
+      "properties": {
+        "id": "banjara-hills",
+        "name": "Banjara Hills",
+        "nameTelugu": "బంజారా హిల్స్",
+        "nameHindi": "बंजारा हिल्स",
+        "zone": "Central",
+        "population": 98000,
+        "landSurfaceTempC": 39.4,
+        "treeCoverPercent": 24.5,
+        "builtUpPercent": 66
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.443861,
+              17.41693
+            ],
+            [
+              78.438224,
+              17.423587
+            ],
+            [
+              78.429363,
+              17.422257
+            ],
+            [
+              78.426139,
+              17.41427
+            ],
+            [
+              78.431776,
+              17.407613
+            ],
+            [
+              78.440637,
+              17.408943
+            ],
+            [
+              78.443861,
+              17.41693
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jubilee-hills",
+      "properties": {
+        "id": "jubilee-hills",
+        "name": "Jubilee Hills",
+        "nameTelugu": "జూబ్లీ హిల్స్",
+        "nameHindi": "जुबली हिल्स",
+        "zone": "West",
+        "population": 86000,
+        "landSurfaceTempC": 38.6,
+        "treeCoverPercent": 28.2,
+        "builtUpPercent": 61.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.415818,
+              17.434584
+            ],
+            [
+              78.409123,
+              17.44028
+            ],
+            [
+              78.400605,
+              17.437596
+            ],
+            [
+              78.398782,
+              17.429216
+            ],
+            [
+              78.405477,
+              17.42352
+            ],
+            [
+              78.413995,
+              17.426204
+            ],
+            [
+              78.415818,
+              17.434584
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "madhapur",
+      "properties": {
+        "id": "madhapur",
+        "name": "Madhapur",
+        "nameTelugu": "మాదాపూర్",
+        "nameHindi": "माधापुर",
+        "zone": "West",
+        "population": 110000,
+        "landSurfaceTempC": 42.2,
+        "treeCoverPercent": 12.4,
+        "builtUpPercent": 84.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.399445,
+              17.452275
+            ],
+            [
+              78.391864,
+              17.456852
+            ],
+            [
+              78.383919,
+              17.452877
+            ],
+            [
+              78.383555,
+              17.444325
+            ],
+            [
+              78.391136,
+              17.439748
+            ],
+            [
+              78.399081,
+              17.443723
+            ],
+            [
+              78.399445,
+              17.452275
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gachibowli",
+      "properties": {
+        "id": "gachibowli",
+        "name": "Gachibowli",
+        "nameTelugu": "గచ్చిబౌలి",
+        "nameHindi": "गच्चीबौली",
+        "zone": "West",
+        "population": 94000,
+        "landSurfaceTempC": 40.8,
+        "treeCoverPercent": 16.5,
+        "builtUpPercent": 74
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.357159,
+              17.443441
+            ],
+            [
+              78.349997,
+              17.448594
+            ],
+            [
+              78.341738,
+              17.445254
+            ],
+            [
+              78.340641,
+              17.436759
+            ],
+            [
+              78.347803,
+              17.431606
+            ],
+            [
+              78.356062,
+              17.434946
+            ],
+            [
+              78.357159,
+              17.443441
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kondapur",
+      "properties": {
+        "id": "kondapur",
+        "name": "Kondapur",
+        "nameTelugu": "కొండాపూర్",
+        "nameHindi": "कोंडापुर",
+        "zone": "West",
+        "population": 108000,
+        "landSurfaceTempC": 41.5,
+        "treeCoverPercent": 14,
+        "builtUpPercent": 79.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.364668,
+              17.475407
+            ],
+            [
+              78.356234,
+              17.478327
+            ],
+            [
+              78.349366,
+              17.47282
+            ],
+            [
+              78.350932,
+              17.464393
+            ],
+            [
+              78.359366,
+              17.461473
+            ],
+            [
+              78.366234,
+              17.46698
+            ],
+            [
+              78.364668,
+              17.475407
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "miyapur",
+      "properties": {
+        "id": "miyapur",
+        "name": "Miyapur",
+        "nameTelugu": "మియాపూర్",
+        "nameHindi": "मियापुर",
+        "zone": "West",
+        "population": 122000,
+        "landSurfaceTempC": 42.9,
+        "treeCoverPercent": 11.2,
+        "builtUpPercent": 80.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.359888,
+              17.50385
+            ],
+            [
+              78.350942,
+              17.504527
+            ],
+            [
+              78.345854,
+              17.497477
+            ],
+            [
+              78.349712,
+              17.48975
+            ],
+            [
+              78.358658,
+              17.489073
+            ],
+            [
+              78.363746,
+              17.496123
+            ],
+            [
+              78.359888,
+              17.50385
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kukatpally",
+      "properties": {
+        "id": "kukatpally",
+        "name": "Kukatpally",
+        "nameTelugu": "కూకట్‌పల్లి",
+        "nameHindi": "कुकटपल्ली",
+        "zone": "West",
+        "population": 178000,
+        "landSurfaceTempC": 45.3,
+        "treeCoverPercent": 5.2,
+        "builtUpPercent": 90
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.419729,
+              17.491324
+            ],
+            [
+              78.410931,
+              17.493009
+            ],
+            [
+              78.405003,
+              17.486585
+            ],
+            [
+              78.407871,
+              17.478476
+            ],
+            [
+              78.416669,
+              17.476791
+            ],
+            [
+              78.422597,
+              17.483215
+            ],
+            [
+              78.419729,
+              17.491324
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "balanagar",
+      "properties": {
+        "id": "balanagar",
+        "name": "Balanagar",
+        "nameTelugu": "బాలానగర్",
+        "nameHindi": "बालानगर",
+        "zone": "North",
+        "population": 125000,
+        "landSurfaceTempC": 46,
+        "treeCoverPercent": 4.2,
+        "builtUpPercent": 88.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.448598,
+              17.478495
+            ],
+            [
+              78.440079,
+              17.48118
+            ],
+            [
+              78.433381,
+              17.475486
+            ],
+            [
+              78.435202,
+              17.467105
+            ],
+            [
+              78.443721,
+              17.46442
+            ],
+            [
+              78.450419,
+              17.470114
+            ],
+            [
+              78.448598,
+              17.478495
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jeedimetla",
+      "properties": {
+        "id": "jeedimetla",
+        "name": "Jeedimetla",
+        "nameTelugu": "జీడిమెట్ల",
+        "nameHindi": "जीडीमेट्ला",
+        "zone": "North",
+        "population": 119000,
+        "landSurfaceTempC": 46.8,
+        "treeCoverPercent": 3.8,
+        "builtUpPercent": 86
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.45732,
+              17.520183
+            ],
+            [
+              78.451473,
+              17.526675
+            ],
+            [
+              78.442653,
+              17.525093
+            ],
+            [
+              78.43968,
+              17.517017
+            ],
+            [
+              78.445527,
+              17.510525
+            ],
+            [
+              78.454347,
+              17.512107
+            ],
+            [
+              78.45732,
+              17.520183
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mehdipatnam",
+      "properties": {
+        "id": "mehdipatnam",
+        "name": "Mehdipatnam",
+        "nameTelugu": "మెహదీపట్నం",
+        "nameHindi": "मेहदीपटनम",
+        "zone": "Central",
+        "population": 144000,
+        "landSurfaceTempC": 44.7,
+        "treeCoverPercent": 6.5,
+        "builtUpPercent": 87
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.446062,
+              17.398388
+            ],
+            [
+              78.43717,
+              17.399508
+            ],
+            [
+              78.431709,
+              17.39272
+            ],
+            [
+              78.435138,
+              17.384812
+            ],
+            [
+              78.44403,
+              17.383692
+            ],
+            [
+              78.449491,
+              17.39048
+            ],
+            [
+              78.446062,
+              17.398388
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tolichowki",
+      "properties": {
+        "id": "tolichowki",
+        "name": "Tolichowki",
+        "nameTelugu": "టోలిచౌకి",
+        "nameHindi": "टोलीचौकी",
+        "zone": "Central",
+        "population": 130000,
+        "landSurfaceTempC": 43.9,
+        "treeCoverPercent": 7.8,
+        "builtUpPercent": 84.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.417751,
+              17.405736
+            ],
+            [
+              78.408799,
+              17.40626
+            ],
+            [
+              78.403848,
+              17.399123
+            ],
+            [
+              78.407849,
+              17.391464
+            ],
+            [
+              78.416801,
+              17.39094
+            ],
+            [
+              78.421752,
+              17.398077
+            ],
+            [
+              78.417751,
+              17.405736
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "karwan",
+      "properties": {
+        "id": "karwan",
+        "name": "Karwan",
+        "nameTelugu": "కార్వాన్",
+        "nameHindi": "कारवान",
+        "zone": "Central",
+        "population": 136000,
+        "landSurfaceTempC": 45.2,
+        "treeCoverPercent": 3.9,
+        "builtUpPercent": 90.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.441944,
+              17.384549
+            ],
+            [
+              78.433282,
+              17.386768
+            ],
+            [
+              78.426939,
+              17.380718
+            ],
+            [
+              78.429256,
+              17.372451
+            ],
+            [
+              78.437918,
+              17.370232
+            ],
+            [
+              78.444261,
+              17.376282
+            ],
+            [
+              78.441944,
+              17.384549
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nampally",
+      "properties": {
+        "id": "nampally",
+        "name": "Nampally",
+        "nameTelugu": "నాంపల్లి",
+        "nameHindi": "नामपल्ली",
+        "zone": "Central",
+        "population": 129000,
+        "landSurfaceTempC": 44.9,
+        "treeCoverPercent": 5.8,
+        "builtUpPercent": 89
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.47379,
+              17.397968
+            ],
+            [
+              78.464904,
+              17.399121
+            ],
+            [
+              78.459413,
+              17.392354
+            ],
+            [
+              78.46281,
+              17.384432
+            ],
+            [
+              78.471696,
+              17.383279
+            ],
+            [
+              78.477187,
+              17.390046
+            ],
+            [
+              78.47379,
+              17.397968
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "amberpet",
+      "properties": {
+        "id": "amberpet",
+        "name": "Amberpet",
+        "nameTelugu": "అంబర్‌పేట్",
+        "nameHindi": "अंबरपेट",
+        "zone": "Central",
+        "population": 141000,
+        "landSurfaceTempC": 45.4,
+        "treeCoverPercent": 4.4,
+        "builtUpPercent": 91
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.518775,
+              17.401122
+            ],
+            [
+              78.509856,
+              17.40202
+            ],
+            [
+              78.504581,
+              17.395099
+            ],
+            [
+              78.508225,
+              17.387278
+            ],
+            [
+              78.517144,
+              17.38638
+            ],
+            [
+              78.522419,
+              17.393301
+            ],
+            [
+              78.518775,
+              17.401122
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "musheerabad",
+      "properties": {
+        "id": "musheerabad",
+        "name": "Musheerabad",
+        "nameTelugu": "ముషీరాబాద్",
+        "nameHindi": "मुशीराबाद",
+        "zone": "Central",
+        "population": 135000,
+        "landSurfaceTempC": 44.5,
+        "treeCoverPercent": 6,
+        "builtUpPercent": 87.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.507244,
+              17.418231
+            ],
+            [
+              78.501523,
+              17.424823
+            ],
+            [
+              78.492679,
+              17.423392
+            ],
+            [
+              78.489556,
+              17.415369
+            ],
+            [
+              78.495277,
+              17.408777
+            ],
+            [
+              78.504121,
+              17.410208
+            ],
+            [
+              78.507244,
+              17.418231
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sanathnagar",
+      "properties": {
+        "id": "sanathnagar",
+        "name": "Sanathnagar",
+        "nameTelugu": "సనత్‌నగర్",
+        "nameHindi": "सनतनगर",
+        "zone": "North",
+        "population": 120000,
+        "landSurfaceTempC": 45.7,
+        "treeCoverPercent": 4.6,
+        "builtUpPercent": 88
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.44566,
+              17.463655
+            ],
+            [
+              78.437614,
+              17.46744
+            ],
+            [
+              78.430154,
+              17.462686
+            ],
+            [
+              78.43074,
+              17.454145
+            ],
+            [
+              78.438786,
+              17.45036
+            ],
+            [
+              78.446246,
+              17.455114
+            ],
+            [
+              78.44566,
+              17.463655
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "moosapet",
+      "properties": {
+        "id": "moosapet",
+        "name": "Moosapet",
+        "nameTelugu": "మూసాపేట్",
+        "nameHindi": "मूसापेट",
+        "zone": "West",
+        "population": 116000,
+        "landSurfaceTempC": 44.6,
+        "treeCoverPercent": 6.1,
+        "builtUpPercent": 86.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.430465,
+              17.473595
+            ],
+            [
+              78.422085,
+              17.476651
+            ],
+            [
+              78.415119,
+              17.471257
+            ],
+            [
+              78.416535,
+              17.462805
+            ],
+            [
+              78.424915,
+              17.459749
+            ],
+            [
+              78.431881,
+              17.465143
+            ],
+            [
+              78.430465,
+              17.473595
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "serilingampally",
+      "properties": {
+        "id": "serilingampally",
+        "name": "Serilingampally",
+        "nameTelugu": "శేరిలింగంపల్లి",
+        "nameHindi": "शेरिलिंगमपल्ली",
+        "zone": "West",
+        "population": 139000,
+        "landSurfaceTempC": 41.2,
+        "treeCoverPercent": 15.2,
+        "builtUpPercent": 72
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.330569,
+              17.489104
+            ],
+            [
+              78.321811,
+              17.490965
+            ],
+            [
+              78.315742,
+              17.484661
+            ],
+            [
+              78.318431,
+              17.476496
+            ],
+            [
+              78.327189,
+              17.474635
+            ],
+            [
+              78.333258,
+              17.480939
+            ],
+            [
+              78.330569,
+              17.489104
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "attapur",
+      "properties": {
+        "id": "attapur",
+        "name": "Attapur",
+        "nameTelugu": "అత్తాపూర్",
+        "nameHindi": "अत्तापुर",
+        "zone": "South",
+        "population": 124000,
+        "landSurfaceTempC": 43.6,
+        "treeCoverPercent": 9,
+        "builtUpPercent": 81
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.435617,
+              17.370607
+            ],
+            [
+              78.427334,
+              17.373886
+            ],
+            [
+              78.420217,
+              17.368679
+            ],
+            [
+              78.421383,
+              17.360193
+            ],
+            [
+              78.429666,
+              17.356914
+            ],
+            [
+              78.436783,
+              17.362121
+            ],
+            [
+              78.435617,
+              17.370607
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rajendranagar",
+      "properties": {
+        "id": "rajendranagar",
+        "name": "Rajendranagar",
+        "nameTelugu": "రాజేంద్రనగర్",
+        "nameHindi": "राजेंद्रनगर",
+        "zone": "South",
+        "population": 105000,
+        "landSurfaceTempC": 42,
+        "treeCoverPercent": 18.5,
+        "builtUpPercent": 68
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.415533,
+              17.324734
+            ],
+            [
+              78.409412,
+              17.330987
+            ],
+            [
+              78.400678,
+              17.329053
+            ],
+            [
+              78.398067,
+              17.320866
+            ],
+            [
+              78.404188,
+              17.314613
+            ],
+            [
+              78.412922,
+              17.316547
+            ],
+            [
+              78.415533,
+              17.324734
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "saidabad",
+      "properties": {
+        "id": "saidabad",
+        "name": "Saidabad",
+        "nameTelugu": "సైదాబాద్",
+        "nameHindi": "सैदाबाद",
+        "zone": "South",
+        "population": 131000,
+        "landSurfaceTempC": 44.8,
+        "treeCoverPercent": 5.6,
+        "builtUpPercent": 87
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.521941,
+              17.363976
+            ],
+            [
+              78.513887,
+              17.367739
+            ],
+            [
+              78.506446,
+              17.362963
+            ],
+            [
+              78.507059,
+              17.354424
+            ],
+            [
+              78.515113,
+              17.350661
+            ],
+            [
+              78.522554,
+              17.355437
+            ],
+            [
+              78.521941,
+              17.363976
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "santoshnagar",
+      "properties": {
+        "id": "santoshnagar",
+        "name": "Santoshnagar",
+        "nameTelugu": "సంతోష్‌నగర్",
+        "nameHindi": "संतोषनगर",
+        "zone": "South",
+        "population": 127000,
+        "landSurfaceTempC": 45.1,
+        "treeCoverPercent": 4.9,
+        "builtUpPercent": 88.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.516474,
+              17.351414
+            ],
+            [
+              78.508936,
+              17.356048
+            ],
+            [
+              78.500962,
+              17.352134
+            ],
+            [
+              78.500526,
+              17.343586
+            ],
+            [
+              78.508064,
+              17.338952
+            ],
+            [
+              78.516038,
+              17.342866
+            ],
+            [
+              78.516474,
+              17.351414
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "vanasthalipuram",
+      "properties": {
+        "id": "vanasthalipuram",
+        "name": "Vanasthalipuram",
+        "nameTelugu": "వనస్థలిపురం",
+        "nameHindi": "वनस्थलीपुरम",
+        "zone": "East",
+        "population": 115000,
+        "landSurfaceTempC": 43.1,
+        "treeCoverPercent": 12.8,
+        "builtUpPercent": 77
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.580996,
+              17.335233
+            ],
+            [
+              78.574269,
+              17.34089
+            ],
+            [
+              78.565773,
+              17.338158
+            ],
+            [
+              78.564004,
+              17.329767
+            ],
+            [
+              78.570731,
+              17.32411
+            ],
+            [
+              78.579227,
+              17.326842
+            ],
+            [
+              78.580996,
+              17.335233
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hayathnagar",
+      "properties": {
+        "id": "hayathnagar",
+        "name": "Hayathnagar",
+        "nameTelugu": "హయత్‌నగర్",
+        "nameHindi": "हयातनगर",
+        "zone": "East",
+        "population": 99000,
+        "landSurfaceTempC": 42.5,
+        "treeCoverPercent": 16,
+        "builtUpPercent": 69
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.610191,
+              17.326901
+            ],
+            [
+              78.60394,
+              17.333036
+            ],
+            [
+              78.595249,
+              17.330935
+            ],
+            [
+              78.592809,
+              17.322699
+            ],
+            [
+              78.59906,
+              17.316564
+            ],
+            [
+              78.607751,
+              17.318665
+            ],
+            [
+              78.610191,
+              17.326901
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "alwal",
+      "properties": {
+        "id": "alwal",
+        "name": "Alwal",
+        "nameTelugu": "అల్వాల్",
+        "nameHindi": "अलवाल",
+        "zone": "North",
+        "population": 130000,
+        "landSurfaceTempC": 42.6,
+        "treeCoverPercent": 14.5,
+        "builtUpPercent": 75
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.511762,
+              17.505645
+            ],
+            [
+              78.506877,
+              17.512824
+            ],
+            [
+              78.497915,
+              17.512379
+            ],
+            [
+              78.493838,
+              17.504755
+            ],
+            [
+              78.498723,
+              17.497576
+            ],
+            [
+              78.507685,
+              17.498021
+            ],
+            [
+              78.511762,
+              17.505645
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bowenpally",
+      "properties": {
+        "id": "bowenpally",
+        "name": "Bowenpally",
+        "nameTelugu": "బోయిన్‌పల్లి",
+        "nameHindi": "बोवेनपल्ली",
+        "zone": "North",
+        "population": 122000,
+        "landSurfaceTempC": 44,
+        "treeCoverPercent": 9.5,
+        "builtUpPercent": 83
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.492916,
+              17.478175
+            ],
+            [
+              78.484405,
+              17.480886
+            ],
+            [
+              78.477689,
+              17.47521
+            ],
+            [
+              78.479484,
+              17.466825
+            ],
+            [
+              78.487995,
+              17.464114
+            ],
+            [
+              78.494711,
+              17.46979
+            ],
+            [
+              78.492916,
+              17.478175
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tarnaka",
+      "properties": {
+        "id": "tarnaka",
+        "name": "Tarnaka",
+        "nameTelugu": "తార్నాక",
+        "nameHindi": "तारनाका",
+        "zone": "East",
+        "population": 114000,
+        "landSurfaceTempC": 41.8,
+        "treeCoverPercent": 19,
+        "builtUpPercent": 73
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.539809,
+              17.430906
+            ],
+            [
+              78.53332,
+              17.436816
+            ],
+            [
+              78.524712,
+              17.43441
+            ],
+            [
+              78.522591,
+              17.426094
+            ],
+            [
+              78.52908,
+              17.420184
+            ],
+            [
+              78.537688,
+              17.42259
+            ],
+            [
+              78.539809,
+              17.430906
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+[
+  {
+    "id": "alt-001",
+    "level": "Red",
+    "title": "Extreme Heatwave Emergency Warning",
+    "message": "RED ALERT: Extreme heatwave forecast today exceeding 45°C in Old City & Industrial wards. Avoid direct sun between 11 AM - 4 PM. Free chilled water and shade shelters open at Charminar, Yakutpura and Balanagar junctions. Dial 108 for heat emergencies.",
+    "messageTelugu": "రెడ్ అలర్ట్: పాతబస్తీ మరియు పారిశ్రామిక వార్డులలో నేడు 45°C కంటే ఎక్కువ ఉష్ణోగ్రత నమోదయ్యే అవకాశం ఉంది. ఉదయం 11 నుండి సాయంత్రం 4 గంటల వరకు ఎండలో తిరగవద్దు. అత్యవసర సహాయానికి 108 కి కాల్ చేయండి.",
+    "messageHindi": "रेड अलर्ट: पुराने शहर और औद्योगिक वार्डों में आज 45°C से अधिक तापमान की संभावना। सुबह 11 से शाम 4 बजे तक धूप से बचें। आपातकालीन स्थिति में 108 पर कॉल करें।",
+    "wardIds": [
+      "charminar",
+      "yakutpura",
+      "chandrayangutta",
+      "falaknuma",
+      "balanagar",
+      "jeedimetla"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Yakutpura",
+      "Chandrayangutta",
+      "Falaknuma",
+      "Balanagar",
+      "Jeedimetla"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "outdoor_workers",
+      "elderly_care"
+    ],
+    "recipientsCount": 428000,
+    "deliveredPercent": 98.4,
+    "timestamp": "2026-10-19T06:39:14.837Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-002",
+    "level": "Orange",
+    "title": "Severe Heat Risk for Outdoor & Gig Workers",
+    "message": "ORANGE ALERT: High thermal index expected. Construction, sanitation workers and delivery riders are advised mandatory 15-min shade breaks every hour. Water refilling kiosks active across Dilsukhnagar, LB Nagar and Uppal.",
+    "messageTelugu": "ఆరెంజ్ అలర్ట్: బహిరంగ మరియు గిగ్ కార్మికులు ప్రతి గంటకు 15 నిమిషాల నీడ విరామం తీసుకోవాలని సూచించడమైనది.",
+    "messageHindi": "ऑरेंज अलर्ट: निर्माण और डिलीवरी श्रमिकों को हर घंटे 15 मिनट की छाया में ब्रेक लेने की सलाह दी जाती है।",
+    "wardIds": [
+      "dilsukhnagar",
+      "lb-nagar",
+      "uppal",
+      "ameerpet",
+      "kukatpally"
+    ],
+    "wardNames": [
+      "Dilsukhnagar",
+      "LB Nagar",
+      "Uppal",
+      "Ameerpet",
+      "Kukatpally"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 295000,
+    "deliveredPercent": 96.8,
+    "timestamp": "2026-10-19T02:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-003",
+    "level": "Orange",
+    "title": "Elderly & Child Heat Safety Advisory",
+    "message": "ORANGE ADVISORY: Temperatures rising above 43°C. Ensure senior citizens and young children remain indoors in well-ventilated rooms with ORS / lemon water. Air-conditioned cooling refuge centers operational in Secunderabad and Malkajgiri.",
+    "wardIds": [
+      "secunderabad",
+      "malkajgiri",
+      "amberpet",
+      "musheerabad"
+    ],
+    "wardNames": [
+      "Secunderabad",
+      "Malkajgiri",
+      "Amberpet",
+      "Musheerabad"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "elderly_care",
+      "residents"
+    ],
+    "recipientsCount": 184000,
+    "deliveredPercent": 99.1,
+    "timestamp": "2026-10-18T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-004",
+    "level": "Yellow",
+    "title": "Midday Heat Awareness Advisory",
+    "message": "YELLOW ADVISORY: Moderate heat wave conditions developing across Central Hyderabad. Wear loose light cotton clothes, carry an umbrella and drink ample water even when not feeling thirsty.",
+    "wardIds": [
+      "begumpet",
+      "khairatabad",
+      "mehdipatnam",
+      "tolichowki"
+    ],
+    "wardNames": [
+      "Begumpet",
+      "Khairatabad",
+      "Mehdipatnam",
+      "Tolichowki"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 210000,
+    "deliveredPercent": 97.2,
+    "timestamp": "2026-10-17T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-005",
+    "level": "Red",
+    "title": "Industrial Corridor Surface Temperature Spike",
+    "message": "RED WARNING: Surface temperatures reaching 46.8°C in Jeedimetla & Sanathnagar industrial estates. Factory management requested to suspend outdoor metal roof work during 12 PM - 3 PM.",
+    "wardIds": [
+      "jeedimetla",
+      "sanathnagar",
+      "balanagar"
+    ],
+    "wardNames": [
+      "Jeedimetla",
+      "Sanathnagar",
+      "Balanagar"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 165000,
+    "deliveredPercent": 98,
+    "timestamp": "2026-10-16T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-006",
+    "level": "Yellow",
+    "title": "Peak Evening Power Grid Conservation Appeal",
+    "message": "POWER ADVISORY: High AC cooling loads between 6 PM - 10 PM. Residents of Banjara Hills, Jubilee Hills and Madhapur are requested to set AC thermostats to 24°C to prevent local transformer tripping.",
+    "wardIds": [
+      "banjara-hills",
+      "jubilee-hills",
+      "madhapur",
+      "gachibowli"
+    ],
+    "wardNames": [
+      "Banjara Hills",
+      "Jubilee Hills",
+      "Madhapur",
+      "Gachibowli"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 310000,
+    "deliveredPercent": 99.4,
+    "timestamp": "2026-10-15T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-007",
+    "level": "Green",
+    "title": "Heatwave Receding - Normal Vigilance",
+    "message": "GREEN UPDATE: Evening thunderstorms have cooled ambient temperatures down to 34°C. Hydration advisories remain standard for tomorrow morning.",
+    "wardIds": [
+      "charminar",
+      "yakutpura",
+      "saidabad",
+      "santoshnagar"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Yakutpura",
+      "Saidabad",
+      "Santoshnagar"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 390000,
+    "deliveredPercent": 98.7,
+    "timestamp": "2026-10-14T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-008",
+    "level": "Orange",
+    "title": "East Zone Highway Corridor Heat Alert",
+    "message": "ORANGE ADVISORY: High radiant heat on NH65 corridor through Nagole, LB Nagar and Vanasthalipuram. Roadside water kiosks replenished by GHMC.",
+    "wardIds": [
+      "nagole",
+      "lb-nagar",
+      "vanasthalipuram",
+      "hayathnagar"
+    ],
+    "wardNames": [
+      "Nagole",
+      "LB Nagar",
+      "Vanasthalipuram",
+      "Hayathnagar"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers",
+      "residents"
+    ],
+    "recipientsCount": 220000,
+    "deliveredPercent": 95.8,
+    "timestamp": "2026-10-13T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-009",
+    "level": "Yellow",
+    "title": "Weekly School Outdoor Activities Rescheduled",
+    "message": "SCHOOL NOTICE: All physical outdoor sports and assemblies prohibited past 10:30 AM in all educational institutions across Hyderabad.",
+    "wardIds": [
+      "ameerpet",
+      "kukatpally",
+      "miyapur",
+      "kondapur"
+    ],
+    "wardNames": [
+      "Ameerpet",
+      "Kukatpally",
+      "Miyapur",
+      "Kondapur"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 340000,
+    "deliveredPercent": 99,
+    "timestamp": "2026-10-12T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-010",
+    "level": "Red",
+    "title": "Early Season Thermal Surge Warning",
+    "message": "RED ALERT: Sudden 4°C rise above seasonal normal across Old City wards. Night surface temperatures failing to drop below 34°C. Keep wet towels and oral rehydration salts ready.",
+    "wardIds": [
+      "charminar",
+      "karwan",
+      "nampally"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Karwan",
+      "Nampally"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "elderly_care"
+    ],
+    "recipientsCount": 280000,
+    "deliveredPercent": 97.9,
+    "timestamp": "2026-10-11T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-011",
+    "level": "Orange",
+    "title": "Scheduled: High Noon Delivery Worker Shelter Protocol",
+    "message": "SCHEDULED DISPATCH: Food & courier platforms instructed to pause penalties for delays between 12:00 PM and 3:30 PM due to acute wet-bulb heat index.",
+    "wardIds": [
+      "madhapur",
+      "gachibowli",
+      "kondapur",
+      "jubilee-hills"
+    ],
+    "wardNames": [
+      "Madhapur",
+      "Gachibowli",
+      "Kondapur",
+      "Jubilee Hills"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 145000,
+    "deliveredPercent": 0,
+    "timestamp": "2026-10-19T12:39:14.839Z",
+    "status": "scheduled",
+    "scheduledFor": "Today, 11:30 AM"
+  },
+  {
+    "id": "alt-012",
+    "level": "Yellow",
+    "title": "Scheduled: Weekend Market Hydration Reminder",
+    "message": "SCHEDULED DISPATCH: Weekend vegetable market traders and visitors are reminded that mobile municipal water tankers are positioned at Bowenpally and Moosapet.",
+    "wardIds": [
+      "bowenpally",
+      "moosapet"
+    ],
+    "wardNames": [
+      "Bowenpally",
+      "Moosapet"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "outdoor_workers"
+    ],
+    "recipientsCount": 92000,
+    "deliveredPercent": 0,
+    "timestamp": "2026-10-20T12:39:14.839Z",
+    "status": "scheduled",
+    "scheduledFor": "Tomorrow, 07:00 AM"
+  }
+]

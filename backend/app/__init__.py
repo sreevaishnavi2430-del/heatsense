@@ -1,0 +1,1 @@
+"""HeatSense backend application package."""

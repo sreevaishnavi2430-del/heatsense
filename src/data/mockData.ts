@@ -1,0 +1,6921 @@
+import { Ward, HeatAlert, CityOverview, GridDemandData } from '../types';
+
+export const MOCK_WARDS: Ward[] = [
+  {
+    "id": "charminar",
+    "name": "Charminar",
+    "nameTelugu": "చార్మినార్",
+    "nameHindi": "चारमीनार",
+    "zone": "Central",
+    "centroid": [
+      17.3616,
+      78.4747
+    ],
+    "polygon": [
+      [
+        17.366545,
+        78.482019
+      ],
+      [
+        17.370122,
+        78.473873
+      ],
+      [
+        17.365177,
+        78.466554
+      ],
+      [
+        17.356655,
+        78.467381
+      ],
+      [
+        17.353078,
+        78.475527
+      ],
+      [
+        17.358023,
+        78.482846
+      ]
+    ],
+    "population": 142000,
+    "populationDensityPerSqKm": 28400,
+    "landSurfaceTempC": 45.8,
+    "nightTempC": 34.2,
+    "airTempEstimateC": 42.4,
+    "treeCoverPercent": 3.4,
+    "builtUpPercent": 91.2,
+    "vulnerability": {
+      "elderlyPercent": 12.4,
+      "childrenUnder5Percent": 11.2,
+      "lowIncomeHousingPercent": 62.5,
+      "outdoorWorkersPercent": 38.6,
+      "noAirConditioningPercent": 78.4
+    },
+    "heatRiskScore": 84,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Extremely low canopy cover (3.4%)",
+      "Dense uninsulated tin/concrete roofing (91%)",
+      "High outdoor vendor & gig worker concentration (38.6%)"
+    ],
+    "peakPowerDemandMW": 48.2,
+    "peakDemandStressIndex": 72,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      34.2,
+      34.2,
+      34.2,
+      34.2,
+      34.2,
+      34.2,
+      36,
+      37.8,
+      39.5,
+      41,
+      42.4,
+      43.6,
+      44.5,
+      45.2,
+      45.7,
+      45.8,
+      45.6,
+      44.9,
+      43.8,
+      42.4,
+      40.6,
+      38.6,
+      36.5,
+      34.2
+    ],
+    "hourlyDemandMW": [
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      29.6,
+      42.7,
+      40.1,
+      38.9,
+      40.2,
+      42.7,
+      44.2,
+      43.3,
+      40.8,
+      39,
+      45.9,
+      47.1,
+      48.1,
+      48,
+      46.9,
+      45.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 45.2,
+        "minTemp": 34,
+        "riskScore": 83
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.8,
+        "minTemp": 34.3,
+        "riskScore": 84
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46.4,
+        "minTemp": 34.6,
+        "riskScore": 85
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 45.2,
+        "minTemp": 34,
+        "riskScore": 83
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.8,
+        "minTemp": 34.3,
+        "riskScore": 84
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46.4,
+        "minTemp": 34.6,
+        "riskScore": 85
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 45.2,
+        "minTemp": 34,
+        "riskScore": 83
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "yakutpura",
+    "name": "Yakutpura",
+    "nameTelugu": "యాకుత్‌పురా",
+    "nameHindi": "याकूतपुरा",
+    "zone": "South",
+    "centroid": [
+      17.3562,
+      78.4982
+    ],
+    "polygon": [
+      [
+        17.360761,
+        78.505788
+      ],
+      [
+        17.364752,
+        78.497856
+      ],
+      [
+        17.360192,
+        78.490268
+      ],
+      [
+        17.351639,
+        78.490612
+      ],
+      [
+        17.347648,
+        78.498544
+      ],
+      [
+        17.352208,
+        78.506132
+      ]
+    ],
+    "population": 138500,
+    "populationDensityPerSqKm": 27100,
+    "landSurfaceTempC": 46.2,
+    "nightTempC": 34.6,
+    "airTempEstimateC": 42.8,
+    "treeCoverPercent": 2.8,
+    "builtUpPercent": 93,
+    "vulnerability": {
+      "elderlyPercent": 13.1,
+      "childrenUnder5Percent": 12,
+      "lowIncomeHousingPercent": 68,
+      "outdoorWorkersPercent": 39.5,
+      "noAirConditioningPercent": 82.1
+    },
+    "heatRiskScore": 87,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Critical canopy deficit (2.8%)",
+      "Extreme building thermal trapping",
+      "Over 82% households without air cooling"
+    ],
+    "peakPowerDemandMW": 42.1,
+    "peakDemandStressIndex": 68,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      34.6,
+      34.6,
+      34.6,
+      34.6,
+      34.6,
+      34.6,
+      36.4,
+      38.2,
+      39.9,
+      41.4,
+      42.8,
+      44,
+      44.9,
+      45.6,
+      46.1,
+      46.2,
+      46,
+      45.3,
+      44.2,
+      42.8,
+      41,
+      39,
+      36.9,
+      34.6
+    ],
+    "hourlyDemandMW": [
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      25.9,
+      37.3,
+      35.1,
+      34,
+      35.1,
+      37.3,
+      38.6,
+      37.8,
+      35.6,
+      34.1,
+      40.1,
+      41.1,
+      42,
+      41.9,
+      40.9,
+      40
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 45.6,
+        "minTemp": 34.4,
+        "riskScore": 86
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 46.2,
+        "minTemp": 34.7,
+        "riskScore": 87
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46.8,
+        "minTemp": 35,
+        "riskScore": 88
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 45.6,
+        "minTemp": 34.4,
+        "riskScore": 86
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 46.2,
+        "minTemp": 34.7,
+        "riskScore": 87
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46.8,
+        "minTemp": 35,
+        "riskScore": 88
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 45.6,
+        "minTemp": 34.4,
+        "riskScore": 86
+      }
+    ],
+    "amenities": {
+      "waterPoints": 2,
+      "shadeShelters": 1,
+      "coolingCentres": 0,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "chandrayangutta",
+    "name": "Chandrayangutta",
+    "nameTelugu": "చాంద్రాయణగుట్ట",
+    "nameHindi": "चांद्रायणगुट्टा",
+    "zone": "South",
+    "centroid": [
+      17.3275,
+      78.4812
+    ],
+    "polygon": [
+      [
+        17.329824,
+        78.489829
+      ],
+      [
+        17.335795,
+        78.483406
+      ],
+      [
+        17.333471,
+        78.474777
+      ],
+      [
+        17.325176,
+        78.472571
+      ],
+      [
+        17.319205,
+        78.478994
+      ],
+      [
+        17.321529,
+        78.487623
+      ]
+    ],
+    "population": 126000,
+    "populationDensityPerSqKm": 23500,
+    "landSurfaceTempC": 45.4,
+    "nightTempC": 33.8,
+    "airTempEstimateC": 41.9,
+    "treeCoverPercent": 4.5,
+    "builtUpPercent": 87.5,
+    "vulnerability": {
+      "elderlyPercent": 11.5,
+      "childrenUnder5Percent": 11.8,
+      "lowIncomeHousingPercent": 59.2,
+      "outdoorWorkersPercent": 34,
+      "noAirConditioningPercent": 74
+    },
+    "heatRiskScore": 80,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Elevated surface temperature (45.4°C)",
+      "High low-income tin roof settlement share",
+      "Lack of public shade infrastructure"
+    ],
+    "peakPowerDemandMW": 44.5,
+    "peakDemandStressIndex": 65,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      35.6,
+      37.4,
+      39.1,
+      40.6,
+      42,
+      43.2,
+      44.1,
+      44.8,
+      45.3,
+      45.4,
+      45.2,
+      44.5,
+      43.4,
+      42,
+      40.2,
+      38.2,
+      36.1,
+      33.8
+    ],
+    "hourlyDemandMW": [
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      27.4,
+      39.4,
+      37,
+      35.9,
+      37.1,
+      39.4,
+      40.8,
+      40,
+      37.7,
+      36,
+      42.4,
+      43.5,
+      44.4,
+      44.3,
+      43.3,
+      42.2
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.4,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46,
+        "minTemp": 34.2,
+        "riskScore": 81
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.4,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46,
+        "minTemp": 34.2,
+        "riskScore": 81
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "falaknuma",
+    "name": "Falaknuma",
+    "nameTelugu": "ఫలక్‌నుమా",
+    "nameHindi": "फलकनुमा",
+    "zone": "South",
+    "centroid": [
+      17.3315,
+      78.4682
+    ],
+    "polygon": [
+      [
+        17.334152,
+        78.476724
+      ],
+      [
+        17.339873,
+        78.470057
+      ],
+      [
+        17.337221,
+        78.461532
+      ],
+      [
+        17.328848,
+        78.459676
+      ],
+      [
+        17.323127,
+        78.466343
+      ],
+      [
+        17.325779,
+        78.474868
+      ]
+    ],
+    "population": 118000,
+    "populationDensityPerSqKm": 21000,
+    "landSurfaceTempC": 44.9,
+    "nightTempC": 33.2,
+    "airTempEstimateC": 41.5,
+    "treeCoverPercent": 6.2,
+    "builtUpPercent": 84.1,
+    "vulnerability": {
+      "elderlyPercent": 11,
+      "childrenUnder5Percent": 10.8,
+      "lowIncomeHousingPercent": 54,
+      "outdoorWorkersPercent": 31.2,
+      "noAirConditioningPercent": 71.5
+    },
+    "heatRiskScore": 75,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Severe daytime thermal radiation",
+      "Dense informal housing fabric",
+      "31% gig and daily-wage outdoor workforce"
+    ],
+    "peakPowerDemandMW": 39.8,
+    "peakDemandStressIndex": 61,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      35,
+      36.8,
+      38.5,
+      40.1,
+      41.5,
+      42.7,
+      43.6,
+      44.3,
+      44.8,
+      44.9,
+      44.7,
+      44,
+      42.9,
+      41.5,
+      39.7,
+      37.7,
+      35.5,
+      33.2
+    ],
+    "hourlyDemandMW": [
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      24.5,
+      35.2,
+      33.1,
+      32.1,
+      33.2,
+      35.2,
+      36.5,
+      35.8,
+      33.7,
+      32.2,
+      37.9,
+      38.9,
+      39.7,
+      39.6,
+      38.7,
+      37.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 74
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.9,
+        "minTemp": 33.4,
+        "riskScore": 75
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.5,
+        "minTemp": 33.7,
+        "riskScore": 76
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 74
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.9,
+        "minTemp": 33.4,
+        "riskScore": 75
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.5,
+        "minTemp": 33.7,
+        "riskScore": 76
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 74
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 1,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "dilsukhnagar",
+    "name": "Dilsukhnagar",
+    "nameTelugu": "దిల్‌సుఖ్‌నగర్",
+    "nameHindi": "दिलसुखनगर",
+    "zone": "East",
+    "centroid": [
+      17.3688,
+      78.5247
+    ],
+    "polygon": [
+      [
+        17.374235,
+        78.531628
+      ],
+      [
+        17.377243,
+        78.523232
+      ],
+      [
+        17.371809,
+        78.516305
+      ],
+      [
+        17.363365,
+        78.517772
+      ],
+      [
+        17.360357,
+        78.526168
+      ],
+      [
+        17.365791,
+        78.533095
+      ]
+    ],
+    "population": 156000,
+    "populationDensityPerSqKm": 26000,
+    "landSurfaceTempC": 45.5,
+    "nightTempC": 34,
+    "airTempEstimateC": 42.1,
+    "treeCoverPercent": 4.8,
+    "builtUpPercent": 89.4,
+    "vulnerability": {
+      "elderlyPercent": 12,
+      "childrenUnder5Percent": 9.8,
+      "lowIncomeHousingPercent": 48.5,
+      "outdoorWorkersPercent": 35.8,
+      "noAirConditioningPercent": 64.2
+    },
+    "heatRiskScore": 78,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Massive commercial transit hub heat island",
+      "High asphalt road coverage (89%)",
+      "Continuous street-vendor solar exposure"
+    ],
+    "peakPowerDemandMW": 62.4,
+    "peakDemandStressIndex": 84,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      34,
+      34,
+      34,
+      34,
+      34,
+      34,
+      35.8,
+      37.6,
+      39.2,
+      40.8,
+      42.1,
+      43.3,
+      44.2,
+      44.9,
+      45.4,
+      45.5,
+      45.3,
+      44.6,
+      43.6,
+      42.1,
+      40.4,
+      38.4,
+      36.2,
+      34
+    ],
+    "hourlyDemandMW": [
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      38.4,
+      55.2,
+      52,
+      50.4,
+      52,
+      55.3,
+      57.2,
+      56.1,
+      52.8,
+      50.5,
+      59.4,
+      60.9,
+      62.3,
+      62.1,
+      60.7,
+      59.2
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.9,
+        "minTemp": 33.7,
+        "riskScore": 77
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.5,
+        "minTemp": 34,
+        "riskScore": 78
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46.1,
+        "minTemp": 34.3,
+        "riskScore": 79
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.9,
+        "minTemp": 33.7,
+        "riskScore": 77
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.5,
+        "minTemp": 34,
+        "riskScore": 78
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46.1,
+        "minTemp": 34.3,
+        "riskScore": 79
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.9,
+        "minTemp": 33.7,
+        "riskScore": 77
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 0,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "lb-nagar",
+    "name": "LB Nagar",
+    "nameTelugu": "ఎల్.బి. నగర్",
+    "nameHindi": "एल.बी. नगर",
+    "zone": "East",
+    "centroid": [
+      17.3457,
+      78.5522
+    ],
+    "polygon": [
+      [
+        17.349477,
+        78.560246
+      ],
+      [
+        17.35424,
+        78.552797
+      ],
+      [
+        17.350463,
+        78.544751
+      ],
+      [
+        17.341923,
+        78.544154
+      ],
+      [
+        17.33716,
+        78.551603
+      ],
+      [
+        17.340937,
+        78.559649
+      ]
+    ],
+    "population": 148000,
+    "populationDensityPerSqKm": 19500,
+    "landSurfaceTempC": 44.2,
+    "nightTempC": 32.8,
+    "airTempEstimateC": 40.8,
+    "treeCoverPercent": 7.5,
+    "builtUpPercent": 82,
+    "vulnerability": {
+      "elderlyPercent": 10.5,
+      "childrenUnder5Percent": 10.2,
+      "lowIncomeHousingPercent": 42,
+      "outdoorWorkersPercent": 29.5,
+      "noAirConditioningPercent": 58
+    },
+    "heatRiskScore": 70,
+    "riskLevel": "High",
+    "topDrivers": [
+      "High highway asphalt heat emission",
+      "Rapid commercial urbanization",
+      "Suburban transit exposure"
+    ],
+    "peakPowerDemandMW": 58,
+    "peakDemandStressIndex": 76,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      34.6,
+      36.3,
+      38,
+      39.5,
+      40.9,
+      42,
+      43,
+      43.6,
+      44.1,
+      44.2,
+      44,
+      43.3,
+      42.3,
+      40.9,
+      39.1,
+      37.2,
+      35,
+      32.8
+    ],
+    "hourlyDemandMW": [
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      51.3,
+      48.3,
+      46.8,
+      48.3,
+      51.4,
+      53.2,
+      52.1,
+      49.1,
+      47,
+      55.2,
+      56.6,
+      57.9,
+      57.7,
+      56.4,
+      55.1
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.6,
+        "minTemp": 32.4,
+        "riskScore": 69
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.2,
+        "minTemp": 32.7,
+        "riskScore": 70
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.8,
+        "minTemp": 33,
+        "riskScore": 71
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.6,
+        "minTemp": 32.4,
+        "riskScore": 69
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.2,
+        "minTemp": 32.7,
+        "riskScore": 70
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.8,
+        "minTemp": 33,
+        "riskScore": 71
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.6,
+        "minTemp": 32.4,
+        "riskScore": 69
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "uppal",
+    "name": "Uppal",
+    "nameTelugu": "ఉప్పల్",
+    "nameHindi": "उप्पल",
+    "zone": "East",
+    "centroid": [
+      17.4018,
+      78.5602
+    ],
+    "polygon": [
+      [
+        17.401954,
+        78.569168
+      ],
+      [
+        17.409288,
+        78.564544
+      ],
+      [
+        17.409134,
+        78.555576
+      ],
+      [
+        17.401646,
+        78.551232
+      ],
+      [
+        17.394312,
+        78.555856
+      ],
+      [
+        17.394466,
+        78.564824
+      ]
+    ],
+    "population": 134000,
+    "populationDensityPerSqKm": 18200,
+    "landSurfaceTempC": 44.8,
+    "nightTempC": 33.1,
+    "airTempEstimateC": 41.2,
+    "treeCoverPercent": 6.8,
+    "builtUpPercent": 83.5,
+    "vulnerability": {
+      "elderlyPercent": 9.8,
+      "childrenUnder5Percent": 10.5,
+      "lowIncomeHousingPercent": 45,
+      "outdoorWorkersPercent": 32,
+      "noAirConditioningPercent": 61
+    },
+    "heatRiskScore": 73,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Industrial proximity & heat dispersion barrier",
+      "High built surface retention",
+      "Low tree shade along arterial roads"
+    ],
+    "peakPowerDemandMW": 55.2,
+    "peakDemandStressIndex": 73,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.1,
+      33.1,
+      33.1,
+      33.1,
+      33.1,
+      33.1,
+      34.9,
+      36.7,
+      38.4,
+      40,
+      41.4,
+      42.6,
+      43.5,
+      44.2,
+      44.7,
+      44.8,
+      44.6,
+      43.9,
+      42.8,
+      41.4,
+      39.6,
+      37.6,
+      35.4,
+      33.1
+    ],
+    "hourlyDemandMW": [
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      48.9,
+      46,
+      44.6,
+      46,
+      48.9,
+      50.6,
+      49.6,
+      46.7,
+      44.7,
+      52.5,
+      53.9,
+      55.1,
+      55,
+      53.7,
+      52.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 72
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.8,
+        "minTemp": 33.3,
+        "riskScore": 73
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.4,
+        "minTemp": 33.6,
+        "riskScore": 74
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 72
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.8,
+        "minTemp": 33.3,
+        "riskScore": 73
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.4,
+        "minTemp": 33.6,
+        "riskScore": 74
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 72
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "nagole",
+    "name": "Nagole",
+    "nameTelugu": "నాగోల్",
+    "nameHindi": "नागोल",
+    "zone": "East",
+    "centroid": [
+      17.3755,
+      78.5684
+    ],
+    "polygon": [
+      [
+        17.381365,
+        78.574931
+      ],
+      [
+        17.38383,
+        78.566343
+      ],
+      [
+        17.377965,
+        78.559812
+      ],
+      [
+        17.369635,
+        78.561869
+      ],
+      [
+        17.36717,
+        78.570457
+      ],
+      [
+        17.373035,
+        78.576988
+      ]
+    ],
+    "population": 112000,
+    "populationDensityPerSqKm": 16400,
+    "landSurfaceTempC": 43.5,
+    "nightTempC": 31.9,
+    "airTempEstimateC": 39.8,
+    "treeCoverPercent": 10.5,
+    "builtUpPercent": 76.2,
+    "vulnerability": {
+      "elderlyPercent": 9.2,
+      "childrenUnder5Percent": 9.6,
+      "lowIncomeHousingPercent": 36.5,
+      "outdoorWorkersPercent": 24.2,
+      "noAirConditioningPercent": 52.4
+    },
+    "heatRiskScore": 62,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Open barren soil radiant heating",
+      "Emerging residential concrete density",
+      "Moderate tree cover"
+    ],
+    "peakPowerDemandMW": 46.8,
+    "peakDemandStressIndex": 59,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      31.9,
+      31.9,
+      31.9,
+      31.9,
+      31.9,
+      31.9,
+      33.7,
+      35.5,
+      37.2,
+      38.7,
+      40.1,
+      41.3,
+      42.2,
+      42.9,
+      43.4,
+      43.5,
+      43.3,
+      42.6,
+      41.5,
+      40.1,
+      38.3,
+      36.3,
+      34.2,
+      31.9
+    ],
+    "hourlyDemandMW": [
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      28.8,
+      41.4,
+      39,
+      37.8,
+      39,
+      41.4,
+      42.9,
+      42,
+      39.6,
+      37.9,
+      44.5,
+      45.7,
+      46.7,
+      46.6,
+      45.5,
+      44.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 42.9,
+        "minTemp": 31.7,
+        "riskScore": 61
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 43.5,
+        "minTemp": 32,
+        "riskScore": 62
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.1,
+        "minTemp": 32.3,
+        "riskScore": 63
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 42.9,
+        "minTemp": 31.7,
+        "riskScore": 61
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 43.5,
+        "minTemp": 32,
+        "riskScore": 62
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.1,
+        "minTemp": 32.3,
+        "riskScore": 63
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 42.9,
+        "minTemp": 31.7,
+        "riskScore": 61
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "malkajgiri",
+    "name": "Malkajgiri",
+    "nameTelugu": "మల్కాజ్‌గిరి",
+    "nameHindi": "मलकाजगिरी",
+    "zone": "North",
+    "centroid": [
+      17.4528,
+      78.5322
+    ],
+    "polygon": [
+      [
+        17.457112,
+        78.53995
+      ],
+      [
+        17.461358,
+        78.532161
+      ],
+      [
+        17.457047,
+        78.524411
+      ],
+      [
+        17.448488,
+        78.52445
+      ],
+      [
+        17.444242,
+        78.532239
+      ],
+      [
+        17.448553,
+        78.539989
+      ]
+    ],
+    "population": 165000,
+    "populationDensityPerSqKm": 22000,
+    "landSurfaceTempC": 43.8,
+    "nightTempC": 32.4,
+    "airTempEstimateC": 40.4,
+    "treeCoverPercent": 9.2,
+    "builtUpPercent": 81.5,
+    "vulnerability": {
+      "elderlyPercent": 13.5,
+      "childrenUnder5Percent": 8.9,
+      "lowIncomeHousingPercent": 38,
+      "outdoorWorkersPercent": 22.5,
+      "noAirConditioningPercent": 50.5
+    },
+    "heatRiskScore": 66,
+    "riskLevel": "High",
+    "topDrivers": [
+      "High elderly demographic proportion (13.5%)",
+      "Dense older residential lanes",
+      "Transformer heat stress during dusk"
+    ],
+    "peakPowerDemandMW": 64.2,
+    "peakDemandStressIndex": 75,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      32.4,
+      32.4,
+      32.4,
+      32.4,
+      32.4,
+      32.4,
+      34.2,
+      35.9,
+      37.6,
+      39.1,
+      40.5,
+      41.6,
+      42.6,
+      43.2,
+      43.7,
+      43.8,
+      43.6,
+      42.9,
+      41.9,
+      40.5,
+      38.7,
+      36.8,
+      34.6,
+      32.4
+    ],
+    "hourlyDemandMW": [
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      39.5,
+      56.8,
+      53.5,
+      51.8,
+      53.5,
+      56.9,
+      58.9,
+      57.7,
+      54.4,
+      52,
+      61.1,
+      62.7,
+      64,
+      63.9,
+      62.4,
+      60.9
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.2,
+        "minTemp": 32,
+        "riskScore": 65
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 43.8,
+        "minTemp": 32.3,
+        "riskScore": 66
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.4,
+        "minTemp": 32.6,
+        "riskScore": 67
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.2,
+        "minTemp": 32,
+        "riskScore": 65
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 43.8,
+        "minTemp": 32.3,
+        "riskScore": 66
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.4,
+        "minTemp": 32.6,
+        "riskScore": 67
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.2,
+        "minTemp": 32,
+        "riskScore": 65
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "secunderabad",
+    "name": "Secunderabad",
+    "nameTelugu": "సికింద్రాబాద్",
+    "nameHindi": "सिकंदराबाद",
+    "zone": "North",
+    "centroid": [
+      17.4399,
+      78.4983
+    ],
+    "polygon": [
+      [
+        17.443225,
+        78.506566
+      ],
+      [
+        17.448392,
+        78.499415
+      ],
+      [
+        17.445067,
+        78.491149
+      ],
+      [
+        17.436575,
+        78.490034
+      ],
+      [
+        17.431408,
+        78.497185
+      ],
+      [
+        17.434733,
+        78.505451
+      ]
+    ],
+    "population": 146000,
+    "populationDensityPerSqKm": 24500,
+    "landSurfaceTempC": 44.6,
+    "nightTempC": 33.5,
+    "airTempEstimateC": 41.3,
+    "treeCoverPercent": 8.4,
+    "builtUpPercent": 86.8,
+    "vulnerability": {
+      "elderlyPercent": 14.2,
+      "childrenUnder5Percent": 9.1,
+      "lowIncomeHousingPercent": 41.2,
+      "outdoorWorkersPercent": 33.4,
+      "noAirConditioningPercent": 54
+    },
+    "heatRiskScore": 72,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Major railway station pedestrian thermal load",
+      "Aging concrete urban core",
+      "High elderly resident ratio (14.2%)"
+    ],
+    "peakPowerDemandMW": 68.5,
+    "peakDemandStressIndex": 82,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.5,
+      33.5,
+      33.5,
+      33.5,
+      33.5,
+      33.5,
+      35.2,
+      36.9,
+      38.5,
+      40,
+      41.3,
+      42.5,
+      43.4,
+      44.1,
+      44.5,
+      44.6,
+      44.4,
+      43.8,
+      42.7,
+      41.3,
+      39.7,
+      37.7,
+      35.7,
+      33.5
+    ],
+    "hourlyDemandMW": [
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      42.1,
+      60.6,
+      57,
+      55.3,
+      57.1,
+      60.7,
+      62.8,
+      61.5,
+      58,
+      55.5,
+      65.2,
+      66.9,
+      68.3,
+      68.2,
+      66.6,
+      65
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 71
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.6,
+        "minTemp": 33.1,
+        "riskScore": 72
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.2,
+        "minTemp": 33.4,
+        "riskScore": 73
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 71
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.6,
+        "minTemp": 33.1,
+        "riskScore": 72
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.2,
+        "minTemp": 33.4,
+        "riskScore": 73
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 71
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 5
+    }
+  },
+  {
+    "id": "begumpet",
+    "name": "Begumpet",
+    "nameTelugu": "బేగంపేట్",
+    "nameHindi": "बेगमपेट",
+    "zone": "Central",
+    "centroid": [
+      17.4448,
+      78.4664
+    ],
+    "polygon": [
+      [
+        17.448507,
+        78.474486
+      ],
+      [
+        17.453334,
+        78.467078
+      ],
+      [
+        17.449627,
+        78.458992
+      ],
+      [
+        17.441093,
+        78.458314
+      ],
+      [
+        17.436266,
+        78.465722
+      ],
+      [
+        17.439973,
+        78.473808
+      ]
+    ],
+    "population": 115000,
+    "populationDensityPerSqKm": 17500,
+    "landSurfaceTempC": 42.8,
+    "nightTempC": 31.8,
+    "airTempEstimateC": 39.5,
+    "treeCoverPercent": 13.8,
+    "builtUpPercent": 78,
+    "vulnerability": {
+      "elderlyPercent": 12.8,
+      "childrenUnder5Percent": 8.2,
+      "lowIncomeHousingPercent": 28.5,
+      "outdoorWorkersPercent": 21,
+      "noAirConditioningPercent": 42
+    },
+    "heatRiskScore": 58,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Airport runway surface heat trap",
+      "Flyover concrete radiant mass",
+      "Commercial traffic emissions"
+    ],
+    "peakPowerDemandMW": 56.4,
+    "peakDemandStressIndex": 70,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      33.5,
+      35.2,
+      36.8,
+      38.3,
+      39.6,
+      40.7,
+      41.6,
+      42.3,
+      42.7,
+      42.8,
+      42.6,
+      42,
+      40.9,
+      39.6,
+      37.9,
+      36,
+      33.9,
+      31.8
+    ],
+    "hourlyDemandMW": [
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      34.7,
+      49.9,
+      47,
+      45.5,
+      47,
+      49.9,
+      51.7,
+      50.7,
+      47.8,
+      45.7,
+      53.7,
+      55.1,
+      56.3,
+      56.1,
+      54.8,
+      53.5
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 42.2,
+        "minTemp": 31,
+        "riskScore": 57
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42.8,
+        "minTemp": 31.3,
+        "riskScore": 58
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 43.4,
+        "minTemp": 31.6,
+        "riskScore": 59
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 42.2,
+        "minTemp": 31,
+        "riskScore": 57
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42.8,
+        "minTemp": 31.3,
+        "riskScore": 58
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 43.4,
+        "minTemp": 31.6,
+        "riskScore": 59
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 42.2,
+        "minTemp": 31,
+        "riskScore": 57
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "ameerpet",
+    "name": "Ameerpet",
+    "nameTelugu": "అమీర్‌పేట్",
+    "nameHindi": "अमीरपेट",
+    "zone": "Central",
+    "centroid": [
+      17.4375,
+      78.4483
+    ],
+    "polygon": [
+      [
+        17.440635,
+        78.456647
+      ],
+      [
+        17.445964,
+        78.449628
+      ],
+      [
+        17.442829,
+        78.441281
+      ],
+      [
+        17.434365,
+        78.439953
+      ],
+      [
+        17.429036,
+        78.446972
+      ],
+      [
+        17.432171,
+        78.455319
+      ]
+    ],
+    "population": 132000,
+    "populationDensityPerSqKm": 29000,
+    "landSurfaceTempC": 45.1,
+    "nightTempC": 33.9,
+    "airTempEstimateC": 41.8,
+    "treeCoverPercent": 4.1,
+    "builtUpPercent": 92.5,
+    "vulnerability": {
+      "elderlyPercent": 10.2,
+      "childrenUnder5Percent": 7.5,
+      "lowIncomeHousingPercent": 34,
+      "outdoorWorkersPercent": 36.2,
+      "noAirConditioningPercent": 51.5
+    },
+    "heatRiskScore": 75,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Extreme commercial density & coaching center crowds",
+      "Canopy scarcity (4.1%)",
+      "Air conditioner waste heat exhaust"
+    ],
+    "peakPowerDemandMW": 74,
+    "peakDemandStressIndex": 91,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      35.7,
+      37.4,
+      39,
+      40.5,
+      41.8,
+      43,
+      43.9,
+      44.6,
+      45,
+      45.1,
+      44.9,
+      44.2,
+      43.2,
+      41.8,
+      40.1,
+      38.2,
+      36.1,
+      33.9
+    ],
+    "hourlyDemandMW": [
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      45.5,
+      65.5,
+      61.6,
+      59.8,
+      61.6,
+      65.5,
+      67.9,
+      66.5,
+      62.7,
+      59.9,
+      70.4,
+      72.3,
+      73.8,
+      73.7,
+      71.9,
+      70.2
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 74
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.1,
+        "minTemp": 33.6,
+        "riskScore": 75
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.7,
+        "minTemp": 33.9,
+        "riskScore": 76
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 74
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.1,
+        "minTemp": 33.6,
+        "riskScore": 75
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.7,
+        "minTemp": 33.9,
+        "riskScore": 76
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 74
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "khairatabad",
+    "name": "Khairatabad",
+    "nameTelugu": "ఖైరతాబాద్",
+    "nameHindi": "खैरताबाद",
+    "zone": "Central",
+    "centroid": [
+      17.4116,
+      78.4588
+    ],
+    "polygon": [
+      [
+        17.412591,
+        78.467709
+      ],
+      [
+        17.419457,
+        78.462356
+      ],
+      [
+        17.418467,
+        78.453446
+      ],
+      [
+        17.410609,
+        78.449891
+      ],
+      [
+        17.403743,
+        78.455244
+      ],
+      [
+        17.404733,
+        78.464154
+      ]
+    ],
+    "population": 128000,
+    "populationDensityPerSqKm": 23000,
+    "landSurfaceTempC": 44.1,
+    "nightTempC": 32.7,
+    "airTempEstimateC": 40.5,
+    "treeCoverPercent": 8.6,
+    "builtUpPercent": 84,
+    "vulnerability": {
+      "elderlyPercent": 11.4,
+      "childrenUnder5Percent": 8.9,
+      "lowIncomeHousingPercent": 44.5,
+      "outdoorWorkersPercent": 30.1,
+      "noAirConditioningPercent": 56.2
+    },
+    "heatRiskScore": 69,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Major arterial junction heat trap",
+      "Mixed informal-commercial settlement",
+      "Substantial outdoor worker exposure"
+    ],
+    "peakPowerDemandMW": 59.8,
+    "peakDemandStressIndex": 77,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      32.7,
+      32.7,
+      32.7,
+      32.7,
+      32.7,
+      32.7,
+      34.5,
+      36.2,
+      37.9,
+      39.4,
+      40.8,
+      41.9,
+      42.9,
+      43.5,
+      44,
+      44.1,
+      43.9,
+      43.2,
+      42.2,
+      40.8,
+      39,
+      37.1,
+      34.9,
+      32.7
+    ],
+    "hourlyDemandMW": [
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      36.8,
+      52.9,
+      49.8,
+      48.3,
+      49.8,
+      53,
+      54.8,
+      53.7,
+      50.6,
+      48.4,
+      56.9,
+      58.4,
+      59.7,
+      59.5,
+      58.1,
+      56.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.5,
+        "minTemp": 32.3,
+        "riskScore": 68
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.1,
+        "minTemp": 32.6,
+        "riskScore": 69
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.7,
+        "minTemp": 32.9,
+        "riskScore": 70
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.5,
+        "minTemp": 32.3,
+        "riskScore": 68
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.1,
+        "minTemp": 32.6,
+        "riskScore": 69
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.7,
+        "minTemp": 32.9,
+        "riskScore": 70
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.5,
+        "minTemp": 32.3,
+        "riskScore": 68
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "banjara-hills",
+    "name": "Banjara Hills",
+    "nameTelugu": "బంజారా హిల్స్",
+    "nameHindi": "बंजारा हिल्स",
+    "zone": "Central",
+    "centroid": [
+      17.4156,
+      78.435
+    ],
+    "polygon": [
+      [
+        17.41693,
+        78.443861
+      ],
+      [
+        17.423587,
+        78.438224
+      ],
+      [
+        17.422257,
+        78.429363
+      ],
+      [
+        17.41427,
+        78.426139
+      ],
+      [
+        17.407613,
+        78.431776
+      ],
+      [
+        17.408943,
+        78.440637
+      ]
+    ],
+    "population": 98000,
+    "populationDensityPerSqKm": 12200,
+    "landSurfaceTempC": 39.4,
+    "nightTempC": 29.8,
+    "airTempEstimateC": 37.2,
+    "treeCoverPercent": 24.5,
+    "builtUpPercent": 66,
+    "vulnerability": {
+      "elderlyPercent": 13,
+      "childrenUnder5Percent": 7.8,
+      "lowIncomeHousingPercent": 14.5,
+      "outdoorWorkersPercent": 14,
+      "noAirConditioningPercent": 16.5
+    },
+    "heatRiskScore": 36,
+    "riskLevel": "Moderate",
+    "topDrivers": [
+      "High AC waste-heat injection into streets",
+      "Heavy peak electrical grid stress",
+      "Pockets of domestic worker settlement"
+    ],
+    "peakPowerDemandMW": 88.5,
+    "peakDemandStressIndex": 94,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      29.8,
+      29.8,
+      29.8,
+      29.8,
+      29.8,
+      29.8,
+      31.3,
+      32.8,
+      34.2,
+      35.4,
+      36.6,
+      37.6,
+      38.4,
+      38.9,
+      39.3,
+      39.4,
+      39.2,
+      38.7,
+      37.8,
+      36.6,
+      35.1,
+      33.5,
+      31.7,
+      29.8
+    ],
+    "hourlyDemandMW": [
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      54.4,
+      78.3,
+      73.7,
+      71.5,
+      73.7,
+      78.4,
+      81.2,
+      79.5,
+      74.9,
+      71.7,
+      84.2,
+      86.4,
+      88.3,
+      88.1,
+      86,
+      84
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 38.8,
+        "minTemp": 27.6,
+        "riskScore": 35
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 39.4,
+        "minTemp": 27.9,
+        "riskScore": 36
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 40,
+        "minTemp": 28.2,
+        "riskScore": 37
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 38.8,
+        "minTemp": 27.6,
+        "riskScore": 35
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 39.4,
+        "minTemp": 27.9,
+        "riskScore": 36
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 40,
+        "minTemp": 28.2,
+        "riskScore": 37
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 38.8,
+        "minTemp": 27.6,
+        "riskScore": 35
+      }
+    ],
+    "amenities": {
+      "waterPoints": 8,
+      "shadeShelters": 7,
+      "coolingCentres": 3,
+      "hospitalsNearby": 6
+    }
+  },
+  {
+    "id": "jubilee-hills",
+    "name": "Jubilee Hills",
+    "nameTelugu": "జూబ్లీ హిల్స్",
+    "nameHindi": "जुबली हिल्स",
+    "zone": "West",
+    "centroid": [
+      17.4319,
+      78.4073
+    ],
+    "polygon": [
+      [
+        17.434584,
+        78.415818
+      ],
+      [
+        17.44028,
+        78.409123
+      ],
+      [
+        17.437596,
+        78.400605
+      ],
+      [
+        17.429216,
+        78.398782
+      ],
+      [
+        17.42352,
+        78.405477
+      ],
+      [
+        17.426204,
+        78.413995
+      ]
+    ],
+    "population": 86000,
+    "populationDensityPerSqKm": 10500,
+    "landSurfaceTempC": 38.6,
+    "nightTempC": 29.1,
+    "airTempEstimateC": 36.5,
+    "treeCoverPercent": 28.2,
+    "builtUpPercent": 61.5,
+    "vulnerability": {
+      "elderlyPercent": 14.5,
+      "childrenUnder5Percent": 7.2,
+      "lowIncomeHousingPercent": 11,
+      "outdoorWorkersPercent": 12.5,
+      "noAirConditioningPercent": 12
+    },
+    "heatRiskScore": 31,
+    "riskLevel": "Moderate",
+    "topDrivers": [
+      "Extensive AC-induced peak power demand spike",
+      "Good tree canopy buffering surface temp",
+      "Rocky elevation microclimate"
+    ],
+    "peakPowerDemandMW": 92.4,
+    "peakDemandStressIndex": 96,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      29.1,
+      29.1,
+      29.1,
+      29.1,
+      29.1,
+      29.1,
+      30.6,
+      32,
+      33.4,
+      34.7,
+      35.8,
+      36.8,
+      37.6,
+      38.1,
+      38.5,
+      38.6,
+      38.4,
+      37.9,
+      37,
+      35.8,
+      34.4,
+      32.7,
+      31,
+      29.1
+    ],
+    "hourlyDemandMW": [
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      56.8,
+      81.8,
+      76.9,
+      74.6,
+      77,
+      81.8,
+      84.7,
+      83,
+      78.2,
+      74.8,
+      88,
+      90.2,
+      92.2,
+      92,
+      89.8,
+      87.7
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 38,
+        "minTemp": 26.8,
+        "riskScore": 30
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 38.6,
+        "minTemp": 27.1,
+        "riskScore": 31
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 39.2,
+        "minTemp": 27.4,
+        "riskScore": 32
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 38,
+        "minTemp": 26.8,
+        "riskScore": 30
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 38.6,
+        "minTemp": 27.1,
+        "riskScore": 31
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 39.2,
+        "minTemp": 27.4,
+        "riskScore": 32
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 38,
+        "minTemp": 26.8,
+        "riskScore": 30
+      }
+    ],
+    "amenities": {
+      "waterPoints": 9,
+      "shadeShelters": 8,
+      "coolingCentres": 3,
+      "hospitalsNearby": 5
+    }
+  },
+  {
+    "id": "madhapur",
+    "name": "Madhapur",
+    "nameTelugu": "మాదాపూర్",
+    "nameHindi": "माधापुर",
+    "zone": "West",
+    "centroid": [
+      17.4483,
+      78.3915
+    ],
+    "polygon": [
+      [
+        17.452275,
+        78.399445
+      ],
+      [
+        17.456852,
+        78.391864
+      ],
+      [
+        17.452877,
+        78.383919
+      ],
+      [
+        17.444325,
+        78.383555
+      ],
+      [
+        17.439748,
+        78.391136
+      ],
+      [
+        17.443723,
+        78.399081
+      ]
+    ],
+    "population": 110000,
+    "populationDensityPerSqKm": 15500,
+    "landSurfaceTempC": 42.2,
+    "nightTempC": 31.4,
+    "airTempEstimateC": 38.9,
+    "treeCoverPercent": 12.4,
+    "builtUpPercent": 84.8,
+    "vulnerability": {
+      "elderlyPercent": 6.8,
+      "childrenUnder5Percent": 8.5,
+      "lowIncomeHousingPercent": 19.5,
+      "outdoorWorkersPercent": 26.5,
+      "noAirConditioningPercent": 24
+    },
+    "heatRiskScore": 56,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Glass-facade IT building thermal reflection",
+      "Intense gig-economy delivery fleet exposure",
+      "Massive commercial chiller cooling demand"
+    ],
+    "peakPowerDemandMW": 104.2,
+    "peakDemandStressIndex": 98,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      33.1,
+      34.7,
+      36.3,
+      37.7,
+      39,
+      40.1,
+      41,
+      41.7,
+      42.1,
+      42.2,
+      42,
+      41.4,
+      40.4,
+      39,
+      37.4,
+      35.5,
+      33.5,
+      31.4
+    ],
+    "hourlyDemandMW": [
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      64.1,
+      92.2,
+      86.8,
+      84.1,
+      86.8,
+      92.3,
+      95.5,
+      93.6,
+      88.2,
+      84.4,
+      99.2,
+      101.8,
+      104,
+      103.7,
+      101.3,
+      98.9
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 41.6,
+        "minTemp": 30.4,
+        "riskScore": 55
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42.2,
+        "minTemp": 30.7,
+        "riskScore": 56
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 42.8,
+        "minTemp": 31,
+        "riskScore": 57
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 41.6,
+        "minTemp": 30.4,
+        "riskScore": 55
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42.2,
+        "minTemp": 30.7,
+        "riskScore": 56
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 42.8,
+        "minTemp": 31,
+        "riskScore": 57
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 41.6,
+        "minTemp": 30.4,
+        "riskScore": 55
+      }
+    ],
+    "amenities": {
+      "waterPoints": 7,
+      "shadeShelters": 6,
+      "coolingCentres": 2,
+      "hospitalsNearby": 5
+    }
+  },
+  {
+    "id": "gachibowli",
+    "name": "Gachibowli",
+    "nameTelugu": "గచ్చిబౌలి",
+    "nameHindi": "गच्चीबौली",
+    "zone": "West",
+    "centroid": [
+      17.4401,
+      78.3489
+    ],
+    "polygon": [
+      [
+        17.443441,
+        78.357159
+      ],
+      [
+        17.448594,
+        78.349997
+      ],
+      [
+        17.445254,
+        78.341738
+      ],
+      [
+        17.436759,
+        78.340641
+      ],
+      [
+        17.431606,
+        78.347803
+      ],
+      [
+        17.434946,
+        78.356062
+      ]
+    ],
+    "population": 94000,
+    "populationDensityPerSqKm": 11800,
+    "landSurfaceTempC": 40.8,
+    "nightTempC": 30.2,
+    "airTempEstimateC": 37.8,
+    "treeCoverPercent": 16.5,
+    "builtUpPercent": 74,
+    "vulnerability": {
+      "elderlyPercent": 7.1,
+      "childrenUnder5Percent": 8,
+      "lowIncomeHousingPercent": 16,
+      "outdoorWorkersPercent": 22,
+      "noAirConditioningPercent": 20
+    },
+    "heatRiskScore": 46,
+    "riskLevel": "Moderate",
+    "topDrivers": [
+      "Broad multilane concrete expressways",
+      "Surging daytime corporate power demand",
+      "Construction worker temporary camps"
+    ],
+    "peakPowerDemandMW": 96,
+    "peakDemandStressIndex": 92,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      30.2,
+      30.2,
+      30.2,
+      30.2,
+      30.2,
+      30.2,
+      31.9,
+      33.5,
+      35,
+      36.4,
+      37.7,
+      38.8,
+      39.6,
+      40.3,
+      40.7,
+      40.8,
+      40.6,
+      40,
+      39,
+      37.7,
+      36.1,
+      34.3,
+      32.3,
+      30.2
+    ],
+    "hourlyDemandMW": [
+      59,
+      59,
+      59,
+      59,
+      59,
+      59,
+      59,
+      59,
+      59,
+      85,
+      79.9,
+      77.5,
+      80,
+      85,
+      88,
+      86.2,
+      81.3,
+      77.7,
+      91.4,
+      93.8,
+      95.8,
+      95.6,
+      93.3,
+      91.1
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 40.2,
+        "minTemp": 29,
+        "riskScore": 45
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 40.8,
+        "minTemp": 29.3,
+        "riskScore": 46
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 41.4,
+        "minTemp": 29.6,
+        "riskScore": 47
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 40.2,
+        "minTemp": 29,
+        "riskScore": 45
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 40.8,
+        "minTemp": 29.3,
+        "riskScore": 46
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 41.4,
+        "minTemp": 29.6,
+        "riskScore": 47
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 40.2,
+        "minTemp": 29,
+        "riskScore": 45
+      }
+    ],
+    "amenities": {
+      "waterPoints": 8,
+      "shadeShelters": 7,
+      "coolingCentres": 3,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "kondapur",
+    "name": "Kondapur",
+    "nameTelugu": "కొండాపూర్",
+    "nameHindi": "कोंडापुर",
+    "zone": "West",
+    "centroid": [
+      17.4699,
+      78.3578
+    ],
+    "polygon": [
+      [
+        17.475407,
+        78.364668
+      ],
+      [
+        17.478327,
+        78.356234
+      ],
+      [
+        17.47282,
+        78.349366
+      ],
+      [
+        17.464393,
+        78.350932
+      ],
+      [
+        17.461473,
+        78.359366
+      ],
+      [
+        17.46698,
+        78.366234
+      ]
+    ],
+    "population": 108000,
+    "populationDensityPerSqKm": 16000,
+    "landSurfaceTempC": 41.5,
+    "nightTempC": 30.9,
+    "airTempEstimateC": 38.4,
+    "treeCoverPercent": 14,
+    "builtUpPercent": 79.5,
+    "vulnerability": {
+      "elderlyPercent": 7.8,
+      "childrenUnder5Percent": 9.2,
+      "lowIncomeHousingPercent": 22,
+      "outdoorWorkersPercent": 24.5,
+      "noAirConditioningPercent": 31
+    },
+    "heatRiskScore": 53,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Rapid high-rise concrete densification",
+      "High delivery worker daytime presence",
+      "Pockets of unpaved dusty micro-corridors"
+    ],
+    "peakPowerDemandMW": 72.5,
+    "peakDemandStressIndex": 80,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      30.9,
+      30.9,
+      30.9,
+      30.9,
+      30.9,
+      30.9,
+      32.6,
+      34.2,
+      35.7,
+      37.1,
+      38.4,
+      39.5,
+      40.3,
+      41,
+      41.4,
+      41.5,
+      41.3,
+      40.7,
+      39.7,
+      38.4,
+      36.8,
+      35,
+      33,
+      30.9
+    ],
+    "hourlyDemandMW": [
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      44.6,
+      64.2,
+      60.4,
+      58.5,
+      60.4,
+      64.2,
+      66.5,
+      65.1,
+      61.4,
+      58.7,
+      69,
+      70.8,
+      72.3,
+      72.2,
+      70.5,
+      68.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 40.9,
+        "minTemp": 29.7,
+        "riskScore": 52
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 41.5,
+        "minTemp": 30,
+        "riskScore": 53
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 42.1,
+        "minTemp": 30.3,
+        "riskScore": 54
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 40.9,
+        "minTemp": 29.7,
+        "riskScore": 52
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 41.5,
+        "minTemp": 30,
+        "riskScore": 53
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 42.1,
+        "minTemp": 30.3,
+        "riskScore": 54
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 40.9,
+        "minTemp": 29.7,
+        "riskScore": 52
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "miyapur",
+    "name": "Miyapur",
+    "nameTelugu": "మియాపూర్",
+    "nameHindi": "मियापुर",
+    "zone": "West",
+    "centroid": [
+      17.4968,
+      78.3548
+    ],
+    "polygon": [
+      [
+        17.50385,
+        78.359888
+      ],
+      [
+        17.504527,
+        78.350942
+      ],
+      [
+        17.497477,
+        78.345854
+      ],
+      [
+        17.48975,
+        78.349712
+      ],
+      [
+        17.489073,
+        78.358658
+      ],
+      [
+        17.496123,
+        78.363746
+      ]
+    ],
+    "population": 122000,
+    "populationDensityPerSqKm": 17000,
+    "landSurfaceTempC": 42.9,
+    "nightTempC": 31.6,
+    "airTempEstimateC": 39.4,
+    "treeCoverPercent": 11.2,
+    "builtUpPercent": 80.2,
+    "vulnerability": {
+      "elderlyPercent": 8.5,
+      "childrenUnder5Percent": 9.8,
+      "lowIncomeHousingPercent": 32,
+      "outdoorWorkersPercent": 27.5,
+      "noAirConditioningPercent": 46.5
+    },
+    "heatRiskScore": 61,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Metro depot & bus terminal thermal island",
+      "Expanding apartment blocks with low shade",
+      "Active construction laborer exposure"
+    ],
+    "peakPowerDemandMW": 60.5,
+    "peakDemandStressIndex": 72,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      31.6,
+      31.6,
+      31.6,
+      31.6,
+      31.6,
+      31.6,
+      33.4,
+      35.1,
+      36.7,
+      38.2,
+      39.6,
+      40.7,
+      41.7,
+      42.3,
+      42.8,
+      42.9,
+      42.7,
+      42,
+      41,
+      39.6,
+      37.9,
+      35.9,
+      33.8,
+      31.6
+    ],
+    "hourlyDemandMW": [
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      37.2,
+      53.6,
+      50.4,
+      48.9,
+      50.4,
+      53.6,
+      55.5,
+      54.3,
+      51.2,
+      49,
+      57.6,
+      59.1,
+      60.4,
+      60.2,
+      58.8,
+      57.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 42.3,
+        "minTemp": 31.1,
+        "riskScore": 60
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42.9,
+        "minTemp": 31.4,
+        "riskScore": 61
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 43.5,
+        "minTemp": 31.7,
+        "riskScore": 62
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 42.3,
+        "minTemp": 31.1,
+        "riskScore": 60
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42.9,
+        "minTemp": 31.4,
+        "riskScore": 61
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 43.5,
+        "minTemp": 31.7,
+        "riskScore": 62
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 42.3,
+        "minTemp": 31.1,
+        "riskScore": 60
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "kukatpally",
+    "name": "Kukatpally",
+    "nameTelugu": "కూకట్‌పల్లి",
+    "nameHindi": "कुकटपल्ली",
+    "zone": "West",
+    "centroid": [
+      17.4849,
+      78.4138
+    ],
+    "polygon": [
+      [
+        17.491324,
+        78.419729
+      ],
+      [
+        17.493009,
+        78.410931
+      ],
+      [
+        17.486585,
+        78.405003
+      ],
+      [
+        17.478476,
+        78.407871
+      ],
+      [
+        17.476791,
+        78.416669
+      ],
+      [
+        17.483215,
+        78.422597
+      ]
+    ],
+    "population": 178000,
+    "populationDensityPerSqKm": 27500,
+    "landSurfaceTempC": 45.3,
+    "nightTempC": 33.7,
+    "airTempEstimateC": 41.7,
+    "treeCoverPercent": 5.2,
+    "builtUpPercent": 90,
+    "vulnerability": {
+      "elderlyPercent": 10.8,
+      "childrenUnder5Percent": 10.4,
+      "lowIncomeHousingPercent": 46.5,
+      "outdoorWorkersPercent": 34,
+      "noAirConditioningPercent": 57
+    },
+    "heatRiskScore": 77,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Massive population density & continuous concrete coverage",
+      "Canopy deficiency (5.2%)",
+      "Intense market and road vendor exposure"
+    ],
+    "peakPowerDemandMW": 85,
+    "peakDemandStressIndex": 90,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      35.5,
+      37.3,
+      39,
+      40.5,
+      41.9,
+      43.1,
+      44,
+      44.7,
+      45.2,
+      45.3,
+      45.1,
+      44.4,
+      43.3,
+      41.9,
+      40.1,
+      38.1,
+      36,
+      33.7
+    ],
+    "hourlyDemandMW": [
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      52.3,
+      75.2,
+      70.8,
+      68.6,
+      70.8,
+      75.3,
+      77.9,
+      76.4,
+      72,
+      68.8,
+      80.9,
+      83,
+      84.8,
+      84.6,
+      82.6,
+      80.7
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.7,
+        "minTemp": 33.5,
+        "riskScore": 76
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.3,
+        "minTemp": 33.8,
+        "riskScore": 77
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.9,
+        "minTemp": 34.1,
+        "riskScore": 78
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.7,
+        "minTemp": 33.5,
+        "riskScore": 76
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.3,
+        "minTemp": 33.8,
+        "riskScore": 77
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.9,
+        "minTemp": 34.1,
+        "riskScore": 78
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.7,
+        "minTemp": 33.5,
+        "riskScore": 76
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 5
+    }
+  },
+  {
+    "id": "balanagar",
+    "name": "Balanagar",
+    "nameTelugu": "బాలానగర్",
+    "nameHindi": "बालानगर",
+    "zone": "North",
+    "centroid": [
+      17.4728,
+      78.4419
+    ],
+    "polygon": [
+      [
+        17.478495,
+        78.448598
+      ],
+      [
+        17.48118,
+        78.440079
+      ],
+      [
+        17.475486,
+        78.433381
+      ],
+      [
+        17.467105,
+        78.435202
+      ],
+      [
+        17.46442,
+        78.443721
+      ],
+      [
+        17.470114,
+        78.450419
+      ]
+    ],
+    "population": 125000,
+    "populationDensityPerSqKm": 21500,
+    "landSurfaceTempC": 46,
+    "nightTempC": 34.1,
+    "airTempEstimateC": 42.3,
+    "treeCoverPercent": 4.2,
+    "builtUpPercent": 88.5,
+    "vulnerability": {
+      "elderlyPercent": 9.4,
+      "childrenUnder5Percent": 11,
+      "lowIncomeHousingPercent": 58,
+      "outdoorWorkersPercent": 37.5,
+      "noAirConditioningPercent": 72
+    },
+    "heatRiskScore": 81,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Industrial factory shed heat radiation (46°C LST)",
+      "High concentration of manual workshop laborers",
+      "Bare metal roofing without insulation"
+    ],
+    "peakPowerDemandMW": 52,
+    "peakDemandStressIndex": 69,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      34.1,
+      34.1,
+      34.1,
+      34.1,
+      34.1,
+      34.1,
+      36,
+      37.8,
+      39.5,
+      41.1,
+      42.5,
+      43.7,
+      44.7,
+      45.4,
+      45.9,
+      46,
+      45.8,
+      45.1,
+      44,
+      42.5,
+      40.7,
+      38.7,
+      36.4,
+      34.1
+    ],
+    "hourlyDemandMW": [
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      46,
+      43.3,
+      42,
+      43.3,
+      46.1,
+      47.7,
+      46.7,
+      44,
+      42.1,
+      49.5,
+      50.8,
+      51.9,
+      51.8,
+      50.6,
+      49.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 45.4,
+        "minTemp": 34.2,
+        "riskScore": 80
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 46,
+        "minTemp": 34.5,
+        "riskScore": 81
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46.6,
+        "minTemp": 34.8,
+        "riskScore": 82
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 45.4,
+        "minTemp": 34.2,
+        "riskScore": 80
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 46,
+        "minTemp": 34.5,
+        "riskScore": 81
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46.6,
+        "minTemp": 34.8,
+        "riskScore": 82
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 45.4,
+        "minTemp": 34.2,
+        "riskScore": 80
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "jeedimetla",
+    "name": "Jeedimetla",
+    "nameTelugu": "జీడిమెట్ల",
+    "nameHindi": "जीडीमेट्ला",
+    "zone": "North",
+    "centroid": [
+      17.5186,
+      78.4485
+    ],
+    "polygon": [
+      [
+        17.520183,
+        78.45732
+      ],
+      [
+        17.526675,
+        78.451473
+      ],
+      [
+        17.525093,
+        78.442653
+      ],
+      [
+        17.517017,
+        78.43968
+      ],
+      [
+        17.510525,
+        78.445527
+      ],
+      [
+        17.512107,
+        78.454347
+      ]
+    ],
+    "population": 119000,
+    "populationDensityPerSqKm": 18500,
+    "landSurfaceTempC": 46.8,
+    "nightTempC": 34.8,
+    "airTempEstimateC": 43.1,
+    "treeCoverPercent": 3.8,
+    "builtUpPercent": 86,
+    "vulnerability": {
+      "elderlyPercent": 8.8,
+      "childrenUnder5Percent": 11.5,
+      "lowIncomeHousingPercent": 64,
+      "outdoorWorkersPercent": 41,
+      "noAirConditioningPercent": 76.5
+    },
+    "heatRiskScore": 84,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Highest daytime surface temp (46.8°C)",
+      "Chemical & metal fabrication heat emissions",
+      "Over 40% outdoor and shopfloor workers"
+    ],
+    "peakPowerDemandMW": 54,
+    "peakDemandStressIndex": 71,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      34.8,
+      34.8,
+      34.8,
+      34.8,
+      34.8,
+      34.8,
+      36.7,
+      38.5,
+      40.2,
+      41.9,
+      43.3,
+      44.5,
+      45.5,
+      46.2,
+      46.7,
+      46.8,
+      46.6,
+      45.9,
+      44.8,
+      43.3,
+      41.5,
+      39.4,
+      37.1,
+      34.8
+    ],
+    "hourlyDemandMW": [
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      47.8,
+      45,
+      43.6,
+      45,
+      47.8,
+      49.5,
+      48.5,
+      45.7,
+      43.7,
+      51.4,
+      52.7,
+      53.9,
+      53.8,
+      52.5,
+      51.3
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 46.2,
+        "minTemp": 35,
+        "riskScore": 83
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 46.8,
+        "minTemp": 35.3,
+        "riskScore": 84
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 47.4,
+        "minTemp": 35.6,
+        "riskScore": 85
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 46.2,
+        "minTemp": 35,
+        "riskScore": 83
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 46.8,
+        "minTemp": 35.3,
+        "riskScore": 84
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 47.4,
+        "minTemp": 35.6,
+        "riskScore": 85
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 46.2,
+        "minTemp": 35,
+        "riskScore": 83
+      }
+    ],
+    "amenities": {
+      "waterPoints": 2,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "mehdipatnam",
+    "name": "Mehdipatnam",
+    "nameTelugu": "మెహదీపట్నం",
+    "nameHindi": "मेहदीपटनम",
+    "zone": "Central",
+    "centroid": [
+      17.3916,
+      78.4406
+    ],
+    "polygon": [
+      [
+        17.398388,
+        78.446062
+      ],
+      [
+        17.399508,
+        78.43717
+      ],
+      [
+        17.39272,
+        78.431709
+      ],
+      [
+        17.384812,
+        78.435138
+      ],
+      [
+        17.383692,
+        78.44403
+      ],
+      [
+        17.39048,
+        78.449491
+      ]
+    ],
+    "population": 144000,
+    "populationDensityPerSqKm": 25800,
+    "landSurfaceTempC": 44.7,
+    "nightTempC": 33.3,
+    "airTempEstimateC": 41.2,
+    "treeCoverPercent": 6.5,
+    "builtUpPercent": 87,
+    "vulnerability": {
+      "elderlyPercent": 11.8,
+      "childrenUnder5Percent": 10.2,
+      "lowIncomeHousingPercent": 47,
+      "outdoorWorkersPercent": 35,
+      "noAirConditioningPercent": 62
+    },
+    "heatRiskScore": 75,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Rythu Bazaar & junction pedestrian solar load",
+      "Dense multistory apartment alleys",
+      "High auto-driver and vendor population"
+    ],
+    "peakPowerDemandMW": 66,
+    "peakDemandStressIndex": 81,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.3,
+      33.3,
+      33.3,
+      33.3,
+      33.3,
+      33.3,
+      35.1,
+      36.8,
+      38.5,
+      40,
+      41.4,
+      42.5,
+      43.5,
+      44.1,
+      44.6,
+      44.7,
+      44.5,
+      43.8,
+      42.8,
+      41.4,
+      39.6,
+      37.7,
+      35.5,
+      33.3
+    ],
+    "hourlyDemandMW": [
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      40.6,
+      58.4,
+      55,
+      53.3,
+      55,
+      58.5,
+      60.5,
+      59.3,
+      55.9,
+      53.4,
+      62.8,
+      64.5,
+      65.8,
+      65.7,
+      64.2,
+      62.6
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.1,
+        "minTemp": 32.9,
+        "riskScore": 74
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.7,
+        "minTemp": 33.2,
+        "riskScore": 75
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.3,
+        "minTemp": 33.5,
+        "riskScore": 76
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.1,
+        "minTemp": 32.9,
+        "riskScore": 74
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.7,
+        "minTemp": 33.2,
+        "riskScore": 75
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.3,
+        "minTemp": 33.5,
+        "riskScore": 76
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.1,
+        "minTemp": 32.9,
+        "riskScore": 74
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 4
+    }
+  },
+  {
+    "id": "tolichowki",
+    "name": "Tolichowki",
+    "nameTelugu": "టోలిచౌకి",
+    "nameHindi": "टोलीचौकी",
+    "zone": "Central",
+    "centroid": [
+      17.3986,
+      78.4128
+    ],
+    "polygon": [
+      [
+        17.405736,
+        78.417751
+      ],
+      [
+        17.40626,
+        78.408799
+      ],
+      [
+        17.399123,
+        78.403848
+      ],
+      [
+        17.391464,
+        78.407849
+      ],
+      [
+        17.39094,
+        78.416801
+      ],
+      [
+        17.398077,
+        78.421752
+      ]
+    ],
+    "population": 130000,
+    "populationDensityPerSqKm": 22800,
+    "landSurfaceTempC": 43.9,
+    "nightTempC": 32.6,
+    "airTempEstimateC": 40.4,
+    "treeCoverPercent": 7.8,
+    "builtUpPercent": 84.5,
+    "vulnerability": {
+      "elderlyPercent": 11.2,
+      "childrenUnder5Percent": 10.8,
+      "lowIncomeHousingPercent": 43.5,
+      "outdoorWorkersPercent": 31,
+      "noAirConditioningPercent": 59
+    },
+    "heatRiskScore": 70,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Dense commercial food street nocturnal heat trap",
+      "Flyover radiative heat reflection",
+      "Low public shade amenity count"
+    ],
+    "peakPowerDemandMW": 59,
+    "peakDemandStressIndex": 76,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      34.4,
+      36.1,
+      37.7,
+      39.2,
+      40.6,
+      41.7,
+      42.7,
+      43.3,
+      43.8,
+      43.9,
+      43.7,
+      43,
+      42,
+      40.6,
+      38.9,
+      36.9,
+      34.8,
+      32.6
+    ],
+    "hourlyDemandMW": [
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      36.3,
+      52.2,
+      49.1,
+      47.6,
+      49.1,
+      52.3,
+      54.1,
+      53,
+      50,
+      47.8,
+      56.2,
+      57.6,
+      58.9,
+      58.7,
+      57.4,
+      56
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.3,
+        "minTemp": 32.1,
+        "riskScore": 69
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 43.9,
+        "minTemp": 32.4,
+        "riskScore": 70
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.5,
+        "minTemp": 32.7,
+        "riskScore": 71
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.3,
+        "minTemp": 32.1,
+        "riskScore": 69
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 43.9,
+        "minTemp": 32.4,
+        "riskScore": 70
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.5,
+        "minTemp": 32.7,
+        "riskScore": 71
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.3,
+        "minTemp": 32.1,
+        "riskScore": 69
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "karwan",
+    "name": "Karwan",
+    "nameTelugu": "కార్వాన్",
+    "nameHindi": "कारवान",
+    "zone": "Central",
+    "centroid": [
+      17.3785,
+      78.4356
+    ],
+    "polygon": [
+      [
+        17.384549,
+        78.441944
+      ],
+      [
+        17.386768,
+        78.433282
+      ],
+      [
+        17.380718,
+        78.426939
+      ],
+      [
+        17.372451,
+        78.429256
+      ],
+      [
+        17.370232,
+        78.437918
+      ],
+      [
+        17.376282,
+        78.444261
+      ]
+    ],
+    "population": 136000,
+    "populationDensityPerSqKm": 27000,
+    "landSurfaceTempC": 45.2,
+    "nightTempC": 33.8,
+    "airTempEstimateC": 41.8,
+    "treeCoverPercent": 3.9,
+    "builtUpPercent": 90.5,
+    "vulnerability": {
+      "elderlyPercent": 12.2,
+      "childrenUnder5Percent": 11.4,
+      "lowIncomeHousingPercent": 63.5,
+      "outdoorWorkersPercent": 37,
+      "noAirConditioningPercent": 77
+    },
+    "heatRiskScore": 81,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Severe tree canopy drought (3.9%)",
+      "Dense older handloom & artisan settlement",
+      "High proportion of non-AC homes (77%)"
+    ],
+    "peakPowerDemandMW": 43,
+    "peakDemandStressIndex": 67,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      33.8,
+      35.6,
+      37.3,
+      39,
+      40.5,
+      41.9,
+      43,
+      44,
+      44.6,
+      45.1,
+      45.2,
+      45,
+      44.3,
+      43.3,
+      41.9,
+      40.1,
+      38.2,
+      36,
+      33.8
+    ],
+    "hourlyDemandMW": [
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      26.4,
+      38.1,
+      35.8,
+      34.7,
+      35.8,
+      38.1,
+      39.4,
+      38.6,
+      36.4,
+      34.8,
+      40.9,
+      42,
+      42.9,
+      42.8,
+      41.8,
+      40.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.6,
+        "minTemp": 33.4,
+        "riskScore": 80
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.2,
+        "minTemp": 33.7,
+        "riskScore": 81
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.8,
+        "minTemp": 34,
+        "riskScore": 82
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.6,
+        "minTemp": 33.4,
+        "riskScore": 80
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.2,
+        "minTemp": 33.7,
+        "riskScore": 81
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.8,
+        "minTemp": 34,
+        "riskScore": 82
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.6,
+        "minTemp": 33.4,
+        "riskScore": 80
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "nampally",
+    "name": "Nampally",
+    "nameTelugu": "నాంపల్లి",
+    "nameHindi": "नामपल्ली",
+    "zone": "Central",
+    "centroid": [
+      17.3912,
+      78.4683
+    ],
+    "polygon": [
+      [
+        17.397968,
+        78.47379
+      ],
+      [
+        17.399121,
+        78.464904
+      ],
+      [
+        17.392354,
+        78.459413
+      ],
+      [
+        17.384432,
+        78.46281
+      ],
+      [
+        17.383279,
+        78.471696
+      ],
+      [
+        17.390046,
+        78.477187
+      ]
+    ],
+    "population": 129000,
+    "populationDensityPerSqKm": 26500,
+    "landSurfaceTempC": 44.9,
+    "nightTempC": 33.6,
+    "airTempEstimateC": 41.5,
+    "treeCoverPercent": 5.8,
+    "builtUpPercent": 89,
+    "vulnerability": {
+      "elderlyPercent": 12.8,
+      "childrenUnder5Percent": 10.5,
+      "lowIncomeHousingPercent": 52,
+      "outdoorWorkersPercent": 35.5,
+      "noAirConditioningPercent": 66
+    },
+    "heatRiskScore": 77,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Station area congestion and asphalt thermal mass",
+      "Low income commercial labor concentration",
+      "Nocturnal heat retention (33.6°C night)"
+    ],
+    "peakPowerDemandMW": 57.5,
+    "peakDemandStressIndex": 78,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.6,
+      33.6,
+      33.6,
+      33.6,
+      33.6,
+      33.6,
+      35.4,
+      37.1,
+      38.7,
+      40.2,
+      41.6,
+      42.7,
+      43.7,
+      44.3,
+      44.8,
+      44.9,
+      44.7,
+      44,
+      43,
+      41.6,
+      39.9,
+      37.9,
+      35.8,
+      33.6
+    ],
+    "hourlyDemandMW": [
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      35.4,
+      50.9,
+      47.9,
+      46.4,
+      47.9,
+      50.9,
+      52.7,
+      51.7,
+      48.7,
+      46.6,
+      54.7,
+      56.2,
+      57.4,
+      57.2,
+      55.9,
+      54.6
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 76
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.9,
+        "minTemp": 33.4,
+        "riskScore": 77
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.5,
+        "minTemp": 33.7,
+        "riskScore": 78
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 76
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.9,
+        "minTemp": 33.4,
+        "riskScore": 77
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.5,
+        "minTemp": 33.7,
+        "riskScore": 78
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.3,
+        "minTemp": 33.1,
+        "riskScore": 76
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "amberpet",
+    "name": "Amberpet",
+    "nameTelugu": "అంబర్‌పేట్",
+    "nameHindi": "अंबरपेट",
+    "zone": "Central",
+    "centroid": [
+      17.3942,
+      78.5135
+    ],
+    "polygon": [
+      [
+        17.401122,
+        78.518775
+      ],
+      [
+        17.40202,
+        78.509856
+      ],
+      [
+        17.395099,
+        78.504581
+      ],
+      [
+        17.387278,
+        78.508225
+      ],
+      [
+        17.38638,
+        78.517144
+      ],
+      [
+        17.393301,
+        78.522419
+      ]
+    ],
+    "population": 141000,
+    "populationDensityPerSqKm": 26200,
+    "landSurfaceTempC": 45.4,
+    "nightTempC": 33.9,
+    "airTempEstimateC": 42,
+    "treeCoverPercent": 4.4,
+    "builtUpPercent": 91,
+    "vulnerability": {
+      "elderlyPercent": 13,
+      "childrenUnder5Percent": 10,
+      "lowIncomeHousingPercent": 55,
+      "outdoorWorkersPercent": 36,
+      "noAirConditioningPercent": 71
+    },
+    "heatRiskScore": 80,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "High built density with negligible greenery",
+      "Vulnerable demographic profile (elderly + children)",
+      "High daytime outdoor street exposure"
+    ],
+    "peakPowerDemandMW": 51,
+    "peakDemandStressIndex": 73,
+    "transformerOverloadRisk": "High",
+    "hourlyTemp": [
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      33.9,
+      35.7,
+      37.5,
+      39.1,
+      40.7,
+      42,
+      43.2,
+      44.1,
+      44.8,
+      45.3,
+      45.4,
+      45.2,
+      44.5,
+      43.5,
+      42,
+      40.3,
+      38.3,
+      36.1,
+      33.9
+    ],
+    "hourlyDemandMW": [
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      31.4,
+      45.1,
+      42.5,
+      41.2,
+      42.5,
+      45.2,
+      46.8,
+      45.8,
+      43.2,
+      41.3,
+      48.5,
+      49.8,
+      50.9,
+      50.8,
+      49.6,
+      48.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.4,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46,
+        "minTemp": 34.2,
+        "riskScore": 81
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.4,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46,
+        "minTemp": 34.2,
+        "riskScore": 81
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.8,
+        "minTemp": 33.6,
+        "riskScore": 79
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "musheerabad",
+    "name": "Musheerabad",
+    "nameTelugu": "ముషీరాబాద్",
+    "nameHindi": "मुशीराबाद",
+    "zone": "Central",
+    "centroid": [
+      17.4168,
+      78.4984
+    ],
+    "polygon": [
+      [
+        17.418231,
+        78.507244
+      ],
+      [
+        17.424823,
+        78.501523
+      ],
+      [
+        17.423392,
+        78.492679
+      ],
+      [
+        17.415369,
+        78.489556
+      ],
+      [
+        17.408777,
+        78.495277
+      ],
+      [
+        17.410208,
+        78.504121
+      ]
+    ],
+    "population": 135000,
+    "populationDensityPerSqKm": 25000,
+    "landSurfaceTempC": 44.5,
+    "nightTempC": 33.2,
+    "airTempEstimateC": 41.1,
+    "treeCoverPercent": 6,
+    "builtUpPercent": 87.5,
+    "vulnerability": {
+      "elderlyPercent": 12.5,
+      "childrenUnder5Percent": 10.2,
+      "lowIncomeHousingPercent": 51.5,
+      "outdoorWorkersPercent": 33,
+      "noAirConditioningPercent": 67
+    },
+    "heatRiskScore": 75,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Dense old residential quarters",
+      "High night surface heat",
+      "Lack of shaded municipal corridors"
+    ],
+    "peakPowerDemandMW": 49.5,
+    "peakDemandStressIndex": 70,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      33.2,
+      35,
+      36.7,
+      38.3,
+      39.8,
+      41.2,
+      42.3,
+      43.3,
+      43.9,
+      44.4,
+      44.5,
+      44.3,
+      43.6,
+      42.6,
+      41.2,
+      39.5,
+      37.5,
+      35.4,
+      33.2
+    ],
+    "hourlyDemandMW": [
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      30.4,
+      43.8,
+      41.2,
+      40,
+      41.2,
+      43.8,
+      45.4,
+      44.5,
+      41.9,
+      40.1,
+      47.1,
+      48.3,
+      49.4,
+      49.3,
+      48.1,
+      47
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.9,
+        "minTemp": 32.7,
+        "riskScore": 74
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.5,
+        "minTemp": 33,
+        "riskScore": 75
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.1,
+        "minTemp": 33.3,
+        "riskScore": 76
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.9,
+        "minTemp": 32.7,
+        "riskScore": 74
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.5,
+        "minTemp": 33,
+        "riskScore": 75
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.1,
+        "minTemp": 33.3,
+        "riskScore": 76
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.9,
+        "minTemp": 32.7,
+        "riskScore": 74
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "sanathnagar",
+    "name": "Sanathnagar",
+    "nameTelugu": "సనత్‌నగర్",
+    "nameHindi": "सनतनगर",
+    "zone": "North",
+    "centroid": [
+      17.4589,
+      78.4382
+    ],
+    "polygon": [
+      [
+        17.463655,
+        78.44566
+      ],
+      [
+        17.46744,
+        78.437614
+      ],
+      [
+        17.462686,
+        78.430154
+      ],
+      [
+        17.454145,
+        78.43074
+      ],
+      [
+        17.45036,
+        78.438786
+      ],
+      [
+        17.455114,
+        78.446246
+      ]
+    ],
+    "population": 120000,
+    "populationDensityPerSqKm": 21000,
+    "landSurfaceTempC": 45.7,
+    "nightTempC": 34,
+    "airTempEstimateC": 42.2,
+    "treeCoverPercent": 4.6,
+    "builtUpPercent": 88,
+    "vulnerability": {
+      "elderlyPercent": 10.5,
+      "childrenUnder5Percent": 10.8,
+      "lowIncomeHousingPercent": 56,
+      "outdoorWorkersPercent": 38,
+      "noAirConditioningPercent": 70
+    },
+    "heatRiskScore": 80,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Industrial metal sheds emitting massive heat",
+      "38% workforce in physical industrial labor",
+      "Low vegetative cooling buffer"
+    ],
+    "peakPowerDemandMW": 56,
+    "peakDemandStressIndex": 74,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      34,
+      34,
+      34,
+      34,
+      34,
+      34,
+      35.8,
+      37.6,
+      39.3,
+      40.9,
+      42.3,
+      43.5,
+      44.4,
+      45.1,
+      45.6,
+      45.7,
+      45.5,
+      44.8,
+      43.7,
+      42.3,
+      40.5,
+      38.5,
+      36.3,
+      34
+    ],
+    "hourlyDemandMW": [
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      34.4,
+      49.6,
+      46.6,
+      45.2,
+      46.6,
+      49.6,
+      51.4,
+      50.3,
+      47.4,
+      45.3,
+      53.3,
+      54.7,
+      55.9,
+      55.7,
+      54.4,
+      53.2
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 45.1,
+        "minTemp": 33.9,
+        "riskScore": 79
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.7,
+        "minTemp": 34.2,
+        "riskScore": 80
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 46.3,
+        "minTemp": 34.5,
+        "riskScore": 81
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 45.1,
+        "minTemp": 33.9,
+        "riskScore": 79
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.7,
+        "minTemp": 34.2,
+        "riskScore": 80
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 46.3,
+        "minTemp": 34.5,
+        "riskScore": 81
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 45.1,
+        "minTemp": 33.9,
+        "riskScore": 79
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "moosapet",
+    "name": "Moosapet",
+    "nameTelugu": "మూసాపేట్",
+    "nameHindi": "मूसापेट",
+    "zone": "West",
+    "centroid": [
+      17.4682,
+      78.4235
+    ],
+    "polygon": [
+      [
+        17.473595,
+        78.430465
+      ],
+      [
+        17.476651,
+        78.422085
+      ],
+      [
+        17.471257,
+        78.415119
+      ],
+      [
+        17.462805,
+        78.416535
+      ],
+      [
+        17.459749,
+        78.424915
+      ],
+      [
+        17.465143,
+        78.431881
+      ]
+    ],
+    "population": 116000,
+    "populationDensityPerSqKm": 22500,
+    "landSurfaceTempC": 44.6,
+    "nightTempC": 33,
+    "airTempEstimateC": 41.2,
+    "treeCoverPercent": 6.1,
+    "builtUpPercent": 86.5,
+    "vulnerability": {
+      "elderlyPercent": 9.9,
+      "childrenUnder5Percent": 10.6,
+      "lowIncomeHousingPercent": 49,
+      "outdoorWorkersPercent": 32.5,
+      "noAirConditioningPercent": 63
+    },
+    "heatRiskScore": 74,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Major metro junction and bus intersection",
+      "Dense retail market with low roof insulation",
+      "High road surface albedo absorption"
+    ],
+    "peakPowerDemandMW": 53.5,
+    "peakDemandStressIndex": 72,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33,
+      33,
+      33,
+      33,
+      33,
+      33,
+      34.8,
+      36.6,
+      38.3,
+      39.8,
+      41.2,
+      42.4,
+      43.3,
+      44,
+      44.5,
+      44.6,
+      44.4,
+      43.7,
+      42.6,
+      41.2,
+      39.4,
+      37.4,
+      35.3,
+      33
+    ],
+    "hourlyDemandMW": [
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      32.9,
+      47.4,
+      44.5,
+      43.2,
+      44.6,
+      47.4,
+      49.1,
+      48.1,
+      45.3,
+      43.3,
+      50.9,
+      52.2,
+      53.4,
+      53.3,
+      52,
+      50.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 73
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.6,
+        "minTemp": 33.1,
+        "riskScore": 74
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.2,
+        "minTemp": 33.4,
+        "riskScore": 75
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 73
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.6,
+        "minTemp": 33.1,
+        "riskScore": 74
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.2,
+        "minTemp": 33.4,
+        "riskScore": 75
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44,
+        "minTemp": 32.8,
+        "riskScore": 73
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "serilingampally",
+    "name": "Serilingampally",
+    "nameTelugu": "శేరిలింగంపల్లి",
+    "nameHindi": "शेरिलिंगमपल्ली",
+    "zone": "West",
+    "centroid": [
+      17.4828,
+      78.3245
+    ],
+    "polygon": [
+      [
+        17.489104,
+        78.330569
+      ],
+      [
+        17.490965,
+        78.321811
+      ],
+      [
+        17.484661,
+        78.315742
+      ],
+      [
+        17.476496,
+        78.318431
+      ],
+      [
+        17.474635,
+        78.327189
+      ],
+      [
+        17.480939,
+        78.333258
+      ]
+    ],
+    "population": 139000,
+    "populationDensityPerSqKm": 14500,
+    "landSurfaceTempC": 41.2,
+    "nightTempC": 30.5,
+    "airTempEstimateC": 38.1,
+    "treeCoverPercent": 15.2,
+    "builtUpPercent": 72,
+    "vulnerability": {
+      "elderlyPercent": 8,
+      "childrenUnder5Percent": 9,
+      "lowIncomeHousingPercent": 26,
+      "outdoorWorkersPercent": 21.5,
+      "noAirConditioningPercent": 35
+    },
+    "heatRiskScore": 50,
+    "riskLevel": "Moderate",
+    "topDrivers": [
+      "Expansive active construction sites",
+      "Surging domestic AC power demand",
+      "Moderate tree cover"
+    ],
+    "peakPowerDemandMW": 78,
+    "peakDemandStressIndex": 82,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      30.5,
+      30.5,
+      30.5,
+      30.5,
+      30.5,
+      30.5,
+      32.2,
+      33.8,
+      35.4,
+      36.8,
+      38.1,
+      39.2,
+      40,
+      40.7,
+      41.1,
+      41.2,
+      41,
+      40.4,
+      39.4,
+      38.1,
+      36.4,
+      34.6,
+      32.6,
+      30.5
+    ],
+    "hourlyDemandMW": [
+      48,
+      48,
+      48,
+      48,
+      48,
+      48,
+      48,
+      48,
+      48,
+      69,
+      64.9,
+      63,
+      65,
+      69.1,
+      71.5,
+      70.1,
+      66,
+      63.2,
+      74.2,
+      76.2,
+      77.8,
+      77.6,
+      75.8,
+      74
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 40.6,
+        "minTemp": 29.4,
+        "riskScore": 49
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 41.2,
+        "minTemp": 29.7,
+        "riskScore": 50
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 41.8,
+        "minTemp": 30,
+        "riskScore": 51
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 40.6,
+        "minTemp": 29.4,
+        "riskScore": 49
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 41.2,
+        "minTemp": 29.7,
+        "riskScore": 50
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 41.8,
+        "minTemp": 30,
+        "riskScore": 51
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 40.6,
+        "minTemp": 29.4,
+        "riskScore": 49
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "attapur",
+    "name": "Attapur",
+    "nameTelugu": "అత్తాపూర్",
+    "nameHindi": "अत्तापुर",
+    "zone": "South",
+    "centroid": [
+      17.3654,
+      78.4285
+    ],
+    "polygon": [
+      [
+        17.370607,
+        78.435617
+      ],
+      [
+        17.373886,
+        78.427334
+      ],
+      [
+        17.368679,
+        78.420217
+      ],
+      [
+        17.360193,
+        78.421383
+      ],
+      [
+        17.356914,
+        78.429666
+      ],
+      [
+        17.362121,
+        78.436783
+      ]
+    ],
+    "population": 124000,
+    "populationDensityPerSqKm": 20000,
+    "landSurfaceTempC": 43.6,
+    "nightTempC": 32.2,
+    "airTempEstimateC": 40.2,
+    "treeCoverPercent": 9,
+    "builtUpPercent": 81,
+    "vulnerability": {
+      "elderlyPercent": 10,
+      "childrenUnder5Percent": 10.5,
+      "lowIncomeHousingPercent": 45,
+      "outdoorWorkersPercent": 30,
+      "noAirConditioningPercent": 60
+    },
+    "heatRiskScore": 67,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Pillar corridor asphalt radiant trapping",
+      "Fast expanding low-medium income residential",
+      "Moderate public cooling access"
+    ],
+    "peakPowerDemandMW": 51.5,
+    "peakDemandStressIndex": 69,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      32.2,
+      32.2,
+      32.2,
+      32.2,
+      32.2,
+      32.2,
+      34,
+      35.7,
+      37.4,
+      38.9,
+      40.3,
+      41.4,
+      42.4,
+      43,
+      43.5,
+      43.6,
+      43.4,
+      42.7,
+      41.7,
+      40.3,
+      38.5,
+      36.6,
+      34.4,
+      32.2
+    ],
+    "hourlyDemandMW": [
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      31.7,
+      45.6,
+      42.9,
+      41.6,
+      42.9,
+      45.6,
+      47.2,
+      46.3,
+      43.6,
+      41.7,
+      49,
+      50.3,
+      51.4,
+      51.3,
+      50.1,
+      48.9
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43,
+        "minTemp": 31.8,
+        "riskScore": 66
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 43.6,
+        "minTemp": 32.1,
+        "riskScore": 67
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.2,
+        "minTemp": 32.4,
+        "riskScore": 68
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43,
+        "minTemp": 31.8,
+        "riskScore": 66
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 43.6,
+        "minTemp": 32.1,
+        "riskScore": 67
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.2,
+        "minTemp": 32.4,
+        "riskScore": 68
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43,
+        "minTemp": 31.8,
+        "riskScore": 66
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "rajendranagar",
+    "name": "Rajendranagar",
+    "nameTelugu": "రాజేంద్రనగర్",
+    "nameHindi": "राजेंद्रनगर",
+    "zone": "South",
+    "centroid": [
+      17.3228,
+      78.4068
+    ],
+    "polygon": [
+      [
+        17.324734,
+        78.415533
+      ],
+      [
+        17.330987,
+        78.409412
+      ],
+      [
+        17.329053,
+        78.400678
+      ],
+      [
+        17.320866,
+        78.398067
+      ],
+      [
+        17.314613,
+        78.404188
+      ],
+      [
+        17.316547,
+        78.412922
+      ]
+    ],
+    "population": 105000,
+    "populationDensityPerSqKm": 13500,
+    "landSurfaceTempC": 42,
+    "nightTempC": 30.8,
+    "airTempEstimateC": 38.8,
+    "treeCoverPercent": 18.5,
+    "builtUpPercent": 68,
+    "vulnerability": {
+      "elderlyPercent": 9.2,
+      "childrenUnder5Percent": 10.8,
+      "lowIncomeHousingPercent": 38,
+      "outdoorWorkersPercent": 28,
+      "noAirConditioningPercent": 53
+    },
+    "heatRiskScore": 53,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Agricultural institute green buffers present",
+      "Peri-urban outdoor labor exposure",
+      "Lower built density"
+    ],
+    "peakPowerDemandMW": 41,
+    "peakDemandStressIndex": 56,
+    "transformerOverloadRisk": "Low",
+    "hourlyTemp": [
+      30.8,
+      30.8,
+      30.8,
+      30.8,
+      30.8,
+      30.8,
+      32.6,
+      34.3,
+      35.9,
+      37.4,
+      38.7,
+      39.9,
+      40.8,
+      41.5,
+      41.9,
+      42,
+      41.8,
+      41.1,
+      40.1,
+      38.7,
+      37,
+      35.1,
+      33,
+      30.8
+    ],
+    "hourlyDemandMW": [
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      25.2,
+      36.3,
+      34.1,
+      33.1,
+      34.2,
+      36.3,
+      37.6,
+      36.8,
+      34.7,
+      33.2,
+      39,
+      40,
+      40.9,
+      40.8,
+      39.9,
+      38.9
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 41.4,
+        "minTemp": 30.2,
+        "riskScore": 52
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42,
+        "minTemp": 30.5,
+        "riskScore": 53
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 42.6,
+        "minTemp": 30.8,
+        "riskScore": 54
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 41.4,
+        "minTemp": 30.2,
+        "riskScore": 52
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42,
+        "minTemp": 30.5,
+        "riskScore": 53
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 42.6,
+        "minTemp": 30.8,
+        "riskScore": 54
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 41.4,
+        "minTemp": 30.2,
+        "riskScore": 52
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "saidabad",
+    "name": "Saidabad",
+    "nameTelugu": "సైదాబాద్",
+    "nameHindi": "सैदाबाद",
+    "zone": "South",
+    "centroid": [
+      17.3592,
+      78.5145
+    ],
+    "polygon": [
+      [
+        17.363976,
+        78.521941
+      ],
+      [
+        17.367739,
+        78.513887
+      ],
+      [
+        17.362963,
+        78.506446
+      ],
+      [
+        17.354424,
+        78.507059
+      ],
+      [
+        17.350661,
+        78.515113
+      ],
+      [
+        17.355437,
+        78.522554
+      ]
+    ],
+    "population": 131000,
+    "populationDensityPerSqKm": 24200,
+    "landSurfaceTempC": 44.8,
+    "nightTempC": 33.4,
+    "airTempEstimateC": 41.4,
+    "treeCoverPercent": 5.6,
+    "builtUpPercent": 87,
+    "vulnerability": {
+      "elderlyPercent": 12,
+      "childrenUnder5Percent": 10.3,
+      "lowIncomeHousingPercent": 53,
+      "outdoorWorkersPercent": 33.5,
+      "noAirConditioningPercent": 68
+    },
+    "heatRiskScore": 76,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "High building compactness with low canopy",
+      "Vulnerable elderly population percentage",
+      "Limited shaded transit halts"
+    ],
+    "peakPowerDemandMW": 47,
+    "peakDemandStressIndex": 68,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.4,
+      33.4,
+      33.4,
+      33.4,
+      33.4,
+      33.4,
+      35.2,
+      36.9,
+      38.6,
+      40.1,
+      41.5,
+      42.6,
+      43.6,
+      44.2,
+      44.7,
+      44.8,
+      44.6,
+      43.9,
+      42.9,
+      41.5,
+      39.7,
+      37.8,
+      35.6,
+      33.4
+    ],
+    "hourlyDemandMW": [
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      28.9,
+      41.6,
+      39.1,
+      38,
+      39.2,
+      41.6,
+      43.1,
+      42.2,
+      39.8,
+      38.1,
+      44.7,
+      45.9,
+      46.9,
+      46.8,
+      45.7,
+      44.6
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 75
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44.8,
+        "minTemp": 33.3,
+        "riskScore": 76
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.4,
+        "minTemp": 33.6,
+        "riskScore": 77
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 75
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44.8,
+        "minTemp": 33.3,
+        "riskScore": 76
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.4,
+        "minTemp": 33.6,
+        "riskScore": 77
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.2,
+        "minTemp": 33,
+        "riskScore": 75
+      }
+    ],
+    "amenities": {
+      "waterPoints": 4,
+      "shadeShelters": 3,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "santoshnagar",
+    "name": "Santoshnagar",
+    "nameTelugu": "సంతోష్‌నగర్",
+    "nameHindi": "संतोषनगर",
+    "zone": "South",
+    "centroid": [
+      17.3475,
+      78.5085
+    ],
+    "polygon": [
+      [
+        17.351414,
+        78.516474
+      ],
+      [
+        17.356048,
+        78.508936
+      ],
+      [
+        17.352134,
+        78.500962
+      ],
+      [
+        17.343586,
+        78.500526
+      ],
+      [
+        17.338952,
+        78.508064
+      ],
+      [
+        17.342866,
+        78.516038
+      ]
+    ],
+    "population": 127000,
+    "populationDensityPerSqKm": 23800,
+    "landSurfaceTempC": 45.1,
+    "nightTempC": 33.7,
+    "airTempEstimateC": 41.7,
+    "treeCoverPercent": 4.9,
+    "builtUpPercent": 88.5,
+    "vulnerability": {
+      "elderlyPercent": 11.5,
+      "childrenUnder5Percent": 11,
+      "lowIncomeHousingPercent": 57.5,
+      "outdoorWorkersPercent": 35,
+      "noAirConditioningPercent": 73
+    },
+    "heatRiskScore": 79,
+    "riskLevel": "Severe",
+    "topDrivers": [
+      "Dense old-city fringe with high tin roofs",
+      "Elevated night-time minimum temperatures",
+      "73% households without air conditioning"
+    ],
+    "peakPowerDemandMW": 44,
+    "peakDemandStressIndex": 66,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      33.7,
+      35.5,
+      37.2,
+      38.9,
+      40.4,
+      41.8,
+      42.9,
+      43.9,
+      44.5,
+      45,
+      45.1,
+      44.9,
+      44.2,
+      43.2,
+      41.8,
+      40,
+      38.1,
+      35.9,
+      33.7
+    ],
+    "hourlyDemandMW": [
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      27.1,
+      38.9,
+      36.6,
+      35.5,
+      36.7,
+      39,
+      40.3,
+      39.5,
+      37.3,
+      35.6,
+      41.9,
+      43,
+      43.9,
+      43.8,
+      42.8,
+      41.8
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 78
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 45.1,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 45.7,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 78
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 45.1,
+        "minTemp": 33.6,
+        "riskScore": 79
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 45.7,
+        "minTemp": 33.9,
+        "riskScore": 80
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 44.5,
+        "minTemp": 33.3,
+        "riskScore": 78
+      }
+    ],
+    "amenities": {
+      "waterPoints": 3,
+      "shadeShelters": 2,
+      "coolingCentres": 0,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "vanasthalipuram",
+    "name": "Vanasthalipuram",
+    "nameTelugu": "వనస్థలిపురం",
+    "nameHindi": "वनस्थलीपुरम",
+    "zone": "East",
+    "centroid": [
+      17.3325,
+      78.5725
+    ],
+    "polygon": [
+      [
+        17.335233,
+        78.580996
+      ],
+      [
+        17.34089,
+        78.574269
+      ],
+      [
+        17.338158,
+        78.565773
+      ],
+      [
+        17.329767,
+        78.564004
+      ],
+      [
+        17.32411,
+        78.570731
+      ],
+      [
+        17.326842,
+        78.579227
+      ]
+    ],
+    "population": 115000,
+    "populationDensityPerSqKm": 16500,
+    "landSurfaceTempC": 43.1,
+    "nightTempC": 31.8,
+    "airTempEstimateC": 39.5,
+    "treeCoverPercent": 12.8,
+    "builtUpPercent": 77,
+    "vulnerability": {
+      "elderlyPercent": 11,
+      "childrenUnder5Percent": 9.5,
+      "lowIncomeHousingPercent": 34,
+      "outdoorWorkersPercent": 23,
+      "noAirConditioningPercent": 49
+    },
+    "heatRiskScore": 60,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Residential colony layout with open avenues",
+      "Moderate tree cover",
+      "Highway junction traffic thermal plume"
+    ],
+    "peakPowerDemandMW": 48,
+    "peakDemandStressIndex": 64,
+    "transformerOverloadRisk": "Low",
+    "hourlyTemp": [
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      31.8,
+      33.6,
+      35.3,
+      36.9,
+      38.4,
+      39.8,
+      40.9,
+      41.9,
+      42.5,
+      43,
+      43.1,
+      42.9,
+      42.2,
+      41.2,
+      39.8,
+      38.1,
+      36.1,
+      34,
+      31.8
+    ],
+    "hourlyDemandMW": [
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      29.5,
+      42.5,
+      40,
+      38.8,
+      40,
+      42.5,
+      44,
+      43.1,
+      40.6,
+      38.9,
+      45.7,
+      46.9,
+      47.9,
+      47.8,
+      46.7,
+      45.6
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 42.5,
+        "minTemp": 31.3,
+        "riskScore": 59
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 43.1,
+        "minTemp": 31.6,
+        "riskScore": 60
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 43.7,
+        "minTemp": 31.9,
+        "riskScore": 61
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 42.5,
+        "minTemp": 31.3,
+        "riskScore": 59
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 43.1,
+        "minTemp": 31.6,
+        "riskScore": 60
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 43.7,
+        "minTemp": 31.9,
+        "riskScore": 61
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 42.5,
+        "minTemp": 31.3,
+        "riskScore": 59
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 2,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "hayathnagar",
+    "name": "Hayathnagar",
+    "nameTelugu": "హయత్‌నగర్",
+    "nameHindi": "हयातनगर",
+    "zone": "East",
+    "centroid": [
+      17.3248,
+      78.6015
+    ],
+    "polygon": [
+      [
+        17.326901,
+        78.610191
+      ],
+      [
+        17.333036,
+        78.60394
+      ],
+      [
+        17.330935,
+        78.595249
+      ],
+      [
+        17.322699,
+        78.592809
+      ],
+      [
+        17.316564,
+        78.59906
+      ],
+      [
+        17.318665,
+        78.607751
+      ]
+    ],
+    "population": 99000,
+    "populationDensityPerSqKm": 12000,
+    "landSurfaceTempC": 42.5,
+    "nightTempC": 31.2,
+    "airTempEstimateC": 39,
+    "treeCoverPercent": 16,
+    "builtUpPercent": 69,
+    "vulnerability": {
+      "elderlyPercent": 9.5,
+      "childrenUnder5Percent": 10.2,
+      "lowIncomeHousingPercent": 37,
+      "outdoorWorkersPercent": 27,
+      "noAirConditioningPercent": 54
+    },
+    "heatRiskScore": 56,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Expanding peri-urban highway ribbon development",
+      "High daytime sun exposure along transit lines",
+      "Moderate baseline tree cover"
+    ],
+    "peakPowerDemandMW": 38,
+    "peakDemandStressIndex": 54,
+    "transformerOverloadRisk": "Low",
+    "hourlyTemp": [
+      31.2,
+      31.2,
+      31.2,
+      31.2,
+      31.2,
+      31.2,
+      33,
+      34.7,
+      36.3,
+      37.8,
+      39.2,
+      40.3,
+      41.3,
+      41.9,
+      42.4,
+      42.5,
+      42.3,
+      41.6,
+      40.6,
+      39.2,
+      37.5,
+      35.5,
+      33.4,
+      31.2
+    ],
+    "hourlyDemandMW": [
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      23.4,
+      33.6,
+      31.6,
+      30.7,
+      31.7,
+      33.7,
+      34.8,
+      34.1,
+      32.2,
+      30.8,
+      36.2,
+      37.1,
+      37.9,
+      37.8,
+      36.9,
+      36.1
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 41.9,
+        "minTemp": 30.7,
+        "riskScore": 55
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42.5,
+        "minTemp": 31,
+        "riskScore": 56
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 43.1,
+        "minTemp": 31.3,
+        "riskScore": 57
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 41.9,
+        "minTemp": 30.7,
+        "riskScore": 55
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42.5,
+        "minTemp": 31,
+        "riskScore": 56
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 43.1,
+        "minTemp": 31.3,
+        "riskScore": 57
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 41.9,
+        "minTemp": 30.7,
+        "riskScore": 55
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 2
+    }
+  },
+  {
+    "id": "alwal",
+    "name": "Alwal",
+    "nameTelugu": "అల్వాల్",
+    "nameHindi": "अलवाल",
+    "zone": "North",
+    "centroid": [
+      17.5052,
+      78.5028
+    ],
+    "polygon": [
+      [
+        17.505645,
+        78.511762
+      ],
+      [
+        17.512824,
+        78.506877
+      ],
+      [
+        17.512379,
+        78.497915
+      ],
+      [
+        17.504755,
+        78.493838
+      ],
+      [
+        17.497576,
+        78.498723
+      ],
+      [
+        17.498021,
+        78.507685
+      ]
+    ],
+    "population": 130000,
+    "populationDensityPerSqKm": 17800,
+    "landSurfaceTempC": 42.6,
+    "nightTempC": 31.5,
+    "airTempEstimateC": 39.2,
+    "treeCoverPercent": 14.5,
+    "builtUpPercent": 75,
+    "vulnerability": {
+      "elderlyPercent": 13.8,
+      "childrenUnder5Percent": 8.8,
+      "lowIncomeHousingPercent": 31,
+      "outdoorWorkersPercent": 21,
+      "noAirConditioningPercent": 45
+    },
+    "heatRiskScore": 57,
+    "riskLevel": "High",
+    "topDrivers": [
+      "High retired senior citizen density (13.8%)",
+      "Cantonment greenery buffer nearby",
+      "Steady residential power usage"
+    ],
+    "peakPowerDemandMW": 53,
+    "peakDemandStressIndex": 68,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      31.5,
+      31.5,
+      31.5,
+      31.5,
+      31.5,
+      31.5,
+      33.2,
+      34.9,
+      36.5,
+      38,
+      39.3,
+      40.5,
+      41.4,
+      42.1,
+      42.5,
+      42.6,
+      42.4,
+      41.8,
+      40.7,
+      39.3,
+      37.7,
+      35.7,
+      33.7,
+      31.5
+    ],
+    "hourlyDemandMW": [
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      32.6,
+      46.9,
+      44.1,
+      42.8,
+      44.1,
+      46.9,
+      48.6,
+      47.6,
+      44.9,
+      42.9,
+      50.4,
+      51.8,
+      52.9,
+      52.8,
+      51.5,
+      50.3
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 42,
+        "minTemp": 30.8,
+        "riskScore": 56
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 42.6,
+        "minTemp": 31.1,
+        "riskScore": 57
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 43.2,
+        "minTemp": 31.4,
+        "riskScore": 58
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 42,
+        "minTemp": 30.8,
+        "riskScore": 56
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 42.6,
+        "minTemp": 31.1,
+        "riskScore": 57
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 43.2,
+        "minTemp": 31.4,
+        "riskScore": 58
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 42,
+        "minTemp": 30.8,
+        "riskScore": 56
+      }
+    ],
+    "amenities": {
+      "waterPoints": 6,
+      "shadeShelters": 5,
+      "coolingCentres": 2,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "bowenpally",
+    "name": "Bowenpally",
+    "nameTelugu": "బోయిన్‌పల్లి",
+    "nameHindi": "बोवेनपल्ली",
+    "zone": "North",
+    "centroid": [
+      17.4725,
+      78.4862
+    ],
+    "polygon": [
+      [
+        17.478175,
+        78.492916
+      ],
+      [
+        17.480886,
+        78.484405
+      ],
+      [
+        17.47521,
+        78.477689
+      ],
+      [
+        17.466825,
+        78.479484
+      ],
+      [
+        17.464114,
+        78.487995
+      ],
+      [
+        17.46979,
+        78.494711
+      ]
+    ],
+    "population": 122000,
+    "populationDensityPerSqKm": 21000,
+    "landSurfaceTempC": 44,
+    "nightTempC": 32.8,
+    "airTempEstimateC": 40.6,
+    "treeCoverPercent": 9.5,
+    "builtUpPercent": 83,
+    "vulnerability": {
+      "elderlyPercent": 12,
+      "childrenUnder5Percent": 9.4,
+      "lowIncomeHousingPercent": 39,
+      "outdoorWorkersPercent": 29,
+      "noAirConditioningPercent": 53
+    },
+    "heatRiskScore": 68,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Major wholesale vegetable market radiant heat",
+      "Commercial truck transit exhaust",
+      "Moderate urban tree canopy"
+    ],
+    "peakPowerDemandMW": 58,
+    "peakDemandStressIndex": 75,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      32.8,
+      34.6,
+      36.3,
+      37.9,
+      39.4,
+      40.7,
+      41.9,
+      42.8,
+      43.5,
+      43.9,
+      44,
+      43.8,
+      43.1,
+      42.1,
+      40.7,
+      39,
+      37.1,
+      35,
+      32.8
+    ],
+    "hourlyDemandMW": [
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      35.7,
+      51.3,
+      48.3,
+      46.8,
+      48.3,
+      51.4,
+      53.2,
+      52.1,
+      49.1,
+      47,
+      55.2,
+      56.6,
+      57.9,
+      57.7,
+      56.4,
+      55.1
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 43.4,
+        "minTemp": 32.2,
+        "riskScore": 67
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 44,
+        "minTemp": 32.5,
+        "riskScore": 68
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 44.6,
+        "minTemp": 32.8,
+        "riskScore": 69
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 43.4,
+        "minTemp": 32.2,
+        "riskScore": 67
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 44,
+        "minTemp": 32.5,
+        "riskScore": 68
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 44.6,
+        "minTemp": 32.8,
+        "riskScore": 69
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 43.4,
+        "minTemp": 32.2,
+        "riskScore": 67
+      }
+    ],
+    "amenities": {
+      "waterPoints": 5,
+      "shadeShelters": 4,
+      "coolingCentres": 1,
+      "hospitalsNearby": 3
+    }
+  },
+  {
+    "id": "tarnaka",
+    "name": "Tarnaka",
+    "nameTelugu": "తార్నాక",
+    "nameHindi": "तारनाका",
+    "zone": "East",
+    "centroid": [
+      17.4285,
+      78.5312
+    ],
+    "polygon": [
+      [
+        17.430906,
+        78.539809
+      ],
+      [
+        17.436816,
+        78.53332
+      ],
+      [
+        17.43441,
+        78.524712
+      ],
+      [
+        17.426094,
+        78.522591
+      ],
+      [
+        17.420184,
+        78.52908
+      ],
+      [
+        17.42259,
+        78.537688
+      ]
+    ],
+    "population": 114000,
+    "populationDensityPerSqKm": 18500,
+    "landSurfaceTempC": 41.8,
+    "nightTempC": 31,
+    "airTempEstimateC": 38.6,
+    "treeCoverPercent": 19,
+    "builtUpPercent": 73,
+    "vulnerability": {
+      "elderlyPercent": 13.2,
+      "childrenUnder5Percent": 8.5,
+      "lowIncomeHousingPercent": 25,
+      "outdoorWorkersPercent": 19,
+      "noAirConditioningPercent": 38
+    },
+    "heatRiskScore": 51,
+    "riskLevel": "High",
+    "topDrivers": [
+      "Osmania University green belt cooling",
+      "High elderly demographic",
+      "Flyover intersection thermal pocket"
+    ],
+    "peakPowerDemandMW": 52,
+    "peakDemandStressIndex": 67,
+    "transformerOverloadRisk": "Medium",
+    "hourlyTemp": [
+      31,
+      31,
+      31,
+      31,
+      31,
+      31,
+      32.7,
+      34.3,
+      35.9,
+      37.3,
+      38.6,
+      39.7,
+      40.6,
+      41.3,
+      41.7,
+      41.8,
+      41.6,
+      41,
+      40,
+      38.6,
+      37,
+      35.1,
+      33.1,
+      31
+    ],
+    "hourlyDemandMW": [
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      46,
+      43.3,
+      42,
+      43.3,
+      46.1,
+      47.7,
+      46.7,
+      44,
+      42.1,
+      49.5,
+      50.8,
+      51.9,
+      51.8,
+      50.6,
+      49.4
+    ],
+    "trend7Day": [
+      {
+        "date": "Mon",
+        "maxTemp": 41.2,
+        "minTemp": 30,
+        "riskScore": 50
+      },
+      {
+        "date": "Tue",
+        "maxTemp": 41.8,
+        "minTemp": 30.3,
+        "riskScore": 51
+      },
+      {
+        "date": "Wed",
+        "maxTemp": 42.4,
+        "minTemp": 30.6,
+        "riskScore": 52
+      },
+      {
+        "date": "Thu",
+        "maxTemp": 41.2,
+        "minTemp": 30,
+        "riskScore": 50
+      },
+      {
+        "date": "Fri",
+        "maxTemp": 41.8,
+        "minTemp": 30.3,
+        "riskScore": 51
+      },
+      {
+        "date": "Sat",
+        "maxTemp": 42.4,
+        "minTemp": 30.6,
+        "riskScore": 52
+      },
+      {
+        "date": "Sun",
+        "maxTemp": 41.2,
+        "minTemp": 30,
+        "riskScore": 50
+      }
+    ],
+    "amenities": {
+      "waterPoints": 7,
+      "shadeShelters": 6,
+      "coolingCentres": 2,
+      "hospitalsNearby": 4
+    }
+  }
+];
+
+export const MOCK_ALERTS: HeatAlert[] = [
+  {
+    "id": "alt-001",
+    "level": "Red",
+    "title": "Extreme Heatwave Emergency Warning",
+    "message": "RED ALERT: Extreme heatwave forecast today exceeding 45°C in Old City & Industrial wards. Avoid direct sun between 11 AM - 4 PM. Free chilled water and shade shelters open at Charminar, Yakutpura and Balanagar junctions. Dial 108 for heat emergencies.",
+    "messageTelugu": "రెడ్ అలర్ట్: పాతబస్తీ మరియు పారిశ్రామిక వార్డులలో నేడు 45°C కంటే ఎక్కువ ఉష్ణోగ్రత నమోదయ్యే అవకాశం ఉంది. ఉదయం 11 నుండి సాయంత్రం 4 గంటల వరకు ఎండలో తిరగవద్దు. అత్యవసర సహాయానికి 108 కి కాల్ చేయండి.",
+    "messageHindi": "रेड अलर्ट: पुराने शहर और औद्योगिक वार्डों में आज 45°C से अधिक तापमान की संभावना। सुबह 11 से शाम 4 बजे तक धूप से बचें। आपातकालीन स्थिति में 108 पर कॉल करें।",
+    "wardIds": [
+      "charminar",
+      "yakutpura",
+      "chandrayangutta",
+      "falaknuma",
+      "balanagar",
+      "jeedimetla"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Yakutpura",
+      "Chandrayangutta",
+      "Falaknuma",
+      "Balanagar",
+      "Jeedimetla"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "outdoor_workers",
+      "elderly_care"
+    ],
+    "recipientsCount": 428000,
+    "deliveredPercent": 98.4,
+    "timestamp": "2026-10-19T06:39:14.837Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-002",
+    "level": "Orange",
+    "title": "Severe Heat Risk for Outdoor & Gig Workers",
+    "message": "ORANGE ALERT: High thermal index expected. Construction, sanitation workers and delivery riders are advised mandatory 15-min shade breaks every hour. Water refilling kiosks active across Dilsukhnagar, LB Nagar and Uppal.",
+    "messageTelugu": "ఆరెంజ్ అలర్ట్: బహిరంగ మరియు గిగ్ కార్మికులు ప్రతి గంటకు 15 నిమిషాల నీడ విరామం తీసుకోవాలని సూచించడమైనది.",
+    "messageHindi": "ऑरेंज अलर्ट: निर्माण और डिलीवरी श्रमिकों को हर घंटे 15 मिनट की छाया में ब्रेक लेने की सलाह दी जाती है।",
+    "wardIds": [
+      "dilsukhnagar",
+      "lb-nagar",
+      "uppal",
+      "ameerpet",
+      "kukatpally"
+    ],
+    "wardNames": [
+      "Dilsukhnagar",
+      "LB Nagar",
+      "Uppal",
+      "Ameerpet",
+      "Kukatpally"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 295000,
+    "deliveredPercent": 96.8,
+    "timestamp": "2026-10-19T02:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-003",
+    "level": "Orange",
+    "title": "Elderly & Child Heat Safety Advisory",
+    "message": "ORANGE ADVISORY: Temperatures rising above 43°C. Ensure senior citizens and young children remain indoors in well-ventilated rooms with ORS / lemon water. Air-conditioned cooling refuge centers operational in Secunderabad and Malkajgiri.",
+    "wardIds": [
+      "secunderabad",
+      "malkajgiri",
+      "amberpet",
+      "musheerabad"
+    ],
+    "wardNames": [
+      "Secunderabad",
+      "Malkajgiri",
+      "Amberpet",
+      "Musheerabad"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "elderly_care",
+      "residents"
+    ],
+    "recipientsCount": 184000,
+    "deliveredPercent": 99.1,
+    "timestamp": "2026-10-18T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-004",
+    "level": "Yellow",
+    "title": "Midday Heat Awareness Advisory",
+    "message": "YELLOW ADVISORY: Moderate heat wave conditions developing across Central Hyderabad. Wear loose light cotton clothes, carry an umbrella and drink ample water even when not feeling thirsty.",
+    "wardIds": [
+      "begumpet",
+      "khairatabad",
+      "mehdipatnam",
+      "tolichowki"
+    ],
+    "wardNames": [
+      "Begumpet",
+      "Khairatabad",
+      "Mehdipatnam",
+      "Tolichowki"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 210000,
+    "deliveredPercent": 97.2,
+    "timestamp": "2026-10-17T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-005",
+    "level": "Red",
+    "title": "Industrial Corridor Surface Temperature Spike",
+    "message": "RED WARNING: Surface temperatures reaching 46.8°C in Jeedimetla & Sanathnagar industrial estates. Factory management requested to suspend outdoor metal roof work during 12 PM - 3 PM.",
+    "wardIds": [
+      "jeedimetla",
+      "sanathnagar",
+      "balanagar"
+    ],
+    "wardNames": [
+      "Jeedimetla",
+      "Sanathnagar",
+      "Balanagar"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 165000,
+    "deliveredPercent": 98,
+    "timestamp": "2026-10-16T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-006",
+    "level": "Yellow",
+    "title": "Peak Evening Power Grid Conservation Appeal",
+    "message": "POWER ADVISORY: High AC cooling loads between 6 PM - 10 PM. Residents of Banjara Hills, Jubilee Hills and Madhapur are requested to set AC thermostats to 24°C to prevent local transformer tripping.",
+    "wardIds": [
+      "banjara-hills",
+      "jubilee-hills",
+      "madhapur",
+      "gachibowli"
+    ],
+    "wardNames": [
+      "Banjara Hills",
+      "Jubilee Hills",
+      "Madhapur",
+      "Gachibowli"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 310000,
+    "deliveredPercent": 99.4,
+    "timestamp": "2026-10-15T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-007",
+    "level": "Green",
+    "title": "Heatwave Receding - Normal Vigilance",
+    "message": "GREEN UPDATE: Evening thunderstorms have cooled ambient temperatures down to 34°C. Hydration advisories remain standard for tomorrow morning.",
+    "wardIds": [
+      "charminar",
+      "yakutpura",
+      "saidabad",
+      "santoshnagar"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Yakutpura",
+      "Saidabad",
+      "Santoshnagar"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 390000,
+    "deliveredPercent": 98.7,
+    "timestamp": "2026-10-14T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-008",
+    "level": "Orange",
+    "title": "East Zone Highway Corridor Heat Alert",
+    "message": "ORANGE ADVISORY: High radiant heat on NH65 corridor through Nagole, LB Nagar and Vanasthalipuram. Roadside water kiosks replenished by GHMC.",
+    "wardIds": [
+      "nagole",
+      "lb-nagar",
+      "vanasthalipuram",
+      "hayathnagar"
+    ],
+    "wardNames": [
+      "Nagole",
+      "LB Nagar",
+      "Vanasthalipuram",
+      "Hayathnagar"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "outdoor_workers",
+      "residents"
+    ],
+    "recipientsCount": 220000,
+    "deliveredPercent": 95.8,
+    "timestamp": "2026-10-13T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-009",
+    "level": "Yellow",
+    "title": "Weekly School Outdoor Activities Rescheduled",
+    "message": "SCHOOL NOTICE: All physical outdoor sports and assemblies prohibited past 10:30 AM in all educational institutions across Hyderabad.",
+    "wardIds": [
+      "ameerpet",
+      "kukatpally",
+      "miyapur",
+      "kondapur"
+    ],
+    "wardNames": [
+      "Ameerpet",
+      "Kukatpally",
+      "Miyapur",
+      "Kondapur"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "residents"
+    ],
+    "recipientsCount": 340000,
+    "deliveredPercent": 99,
+    "timestamp": "2026-10-12T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-010",
+    "level": "Red",
+    "title": "Early Season Thermal Surge Warning",
+    "message": "RED ALERT: Sudden 4°C rise above seasonal normal across Old City wards. Night surface temperatures failing to drop below 34°C. Keep wet towels and oral rehydration salts ready.",
+    "wardIds": [
+      "charminar",
+      "karwan",
+      "nampally"
+    ],
+    "wardNames": [
+      "Charminar",
+      "Karwan",
+      "Nampally"
+    ],
+    "channels": [
+      "SMS",
+      "WhatsApp"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "elderly_care"
+    ],
+    "recipientsCount": 280000,
+    "deliveredPercent": 97.9,
+    "timestamp": "2026-10-11T08:39:14.839Z",
+    "status": "sent"
+  },
+  {
+    "id": "alt-011",
+    "level": "Orange",
+    "title": "Scheduled: High Noon Delivery Worker Shelter Protocol",
+    "message": "SCHEDULED DISPATCH: Food & courier platforms instructed to pause penalties for delays between 12:00 PM and 3:30 PM due to acute wet-bulb heat index.",
+    "wardIds": [
+      "madhapur",
+      "gachibowli",
+      "kondapur",
+      "jubilee-hills"
+    ],
+    "wardNames": [
+      "Madhapur",
+      "Gachibowli",
+      "Kondapur",
+      "Jubilee Hills"
+    ],
+    "channels": [
+      "WhatsApp"
+    ],
+    "language": "en",
+    "targetAudience": [
+      "outdoor_workers"
+    ],
+    "recipientsCount": 145000,
+    "deliveredPercent": 0,
+    "timestamp": "2026-10-19T12:39:14.839Z",
+    "status": "scheduled",
+    "scheduledFor": "Today, 11:30 AM"
+  },
+  {
+    "id": "alt-012",
+    "level": "Yellow",
+    "title": "Scheduled: Weekend Market Hydration Reminder",
+    "message": "SCHEDULED DISPATCH: Weekend vegetable market traders and visitors are reminded that mobile municipal water tankers are positioned at Bowenpally and Moosapet.",
+    "wardIds": [
+      "bowenpally",
+      "moosapet"
+    ],
+    "wardNames": [
+      "Bowenpally",
+      "Moosapet"
+    ],
+    "channels": [
+      "SMS"
+    ],
+    "language": "all",
+    "targetAudience": [
+      "residents",
+      "outdoor_workers"
+    ],
+    "recipientsCount": 92000,
+    "deliveredPercent": 0,
+    "timestamp": "2026-10-20T12:39:14.839Z",
+    "status": "scheduled",
+    "scheduledFor": "Tomorrow, 07:00 AM"
+  }
+];
+
+export const MOCK_CITY_OVERVIEW: CityOverview = {
+  totalWards: 40,
+  severeRiskWards: 12,
+  highRiskWards: 16,
+  peopleAtSevereRisk: 1540000,
+  peopleAtHighOrSevereRisk: 3480000,
+  avgCitySurfaceTempC: 43.8,
+  hottestWard: { name: 'Jeedimetla', tempC: 46.8, wardId: 'jeedimetla' },
+  coolestWard: { name: 'Jubilee Hills', tempC: 38.6, wardId: 'jubilee-hills' },
+  activeAlertsCount: 2,
+  avgPowerStressIndex: 74,
+  totalPopulation: 5040000,
+  lastUpdated: new Date().toISOString(),
+};
+
+export const MOCK_GRID_DATA: GridDemandData = {
+  hourlyLabels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
+  totalDemandMW: [1840, 1620, 1510, 1720, 2450, 3180, 3740, 4120, 3980, 4350, 4480, 3890],
+  temperatureCurveC: [31.5, 30.2, 29.4, 30.8, 34.2, 38.6, 42.1, 44.2, 43.5, 39.8, 36.4, 33.7],
+  zoneDemand: {
+    Central: [420, 380, 350, 390, 560, 710, 830, 920, 890, 980, 1010, 880],
+    East: [340, 300, 280, 320, 460, 600, 700, 780, 750, 820, 840, 730],
+    West: [540, 480, 450, 510, 780, 1020, 1210, 1340, 1290, 1420, 1470, 1280],
+    North: [310, 270, 250, 290, 410, 540, 630, 700, 680, 740, 760, 660],
+    South: [230, 190, 180, 210, 240, 310, 370, 380, 370, 390, 400, 340],
+  },
+  peakHour: '20:00 - 21:00 (Evening Domestic AC Peak)',
+  peakDemandMW: 4480,
+  stressedSubstationsCount: 14,
+};

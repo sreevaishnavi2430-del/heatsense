@@ -1,2 +1,165 @@
-# heatsense
-We propose "HeatSense", a heat-risk mapping and action-planning platform for city officials.
+# HeatSense
+
+HeatSense is a Hyderabad-focused heat-risk mapping and action-planning prototype for city teams. It brings ward-level risk indicators, weather, intervention planning, public safety guidance, alerts, reports, and sensor workflows into one React application backed by a FastAPI service.
+
+> **Data status:** This is a planning and demonstration prototype, not an operational city heat-warning system. Current weather comes from the Open-Meteo forecast model. Most ward-level environmental and vulnerability layers are bundled sample data or proxies; they are not verified live measurements.
+
+## What it does
+
+- **Ward heat-risk map and rankings:** Explore 40 Hyderabad ward fixtures, filter and compare wards, and inspect the inputs behind the weighted risk score. Stored land-surface temperature, tree cover, built-up density, population, polygons, and vulnerability inputs are sample or proxy values.
+- **Current weather and forecast:** Requests current conditions for Hyderabad and modelled conditions for ward centroids from the Open-Meteo Forecast API. The dashboard and reports show current air temperature when the provider responds. The ward endpoint uses centroid conditions; these are gridded weather-model values, not ward weather-station observations. Results are cached briefly by the backend. If the provider is unavailable, the API reports unavailable data rather than substituting a synthetic weather reading.
+- **Action planning and cooling scenarios:** Build budget-constrained intervention plans and explore illustrative cooling scenarios. Outputs are planning estimates, not measured impacts.
+- **Alerts and public heat guidance:** Manage saved alerts, multilingual templates and rules, subscriptions, and public “check my area” guidance. The demo provider does not send real SMS or WhatsApp messages.
+- **Reports and exports:** Build city, ward, planner, and alert reports and export ward/alert data as CSV.
+- **Sensor workflows:** Register demo ESP32 devices and submit readings. Sensor-validation metrics and model-training features are prototypes; they should not be treated as validated sensor calibration without real observations.
+- **Map providers:** The map uses the configured Google Maps JavaScript API key where Google Maps is enabled. Other map views may use Leaflet and their configured tile provider.
+
+## Technology
+
+- Frontend: React 18, TypeScript, Vite, React Router, TanStack Query, Tailwind CSS, Leaflet/Google Maps.
+- Backend: Python 3.11+, FastAPI, SQLAlchemy async, Pydantic, HTTPX.
+- Storage: SQLite with WAL and foreign-key enforcement by default; PostgreSQL/asyncpg is configurable. Alembic migration files are in `backend/alembic/`.
+- External weather source: Open-Meteo Forecast API, requested for Hyderabad (Asia/Kolkata) and ward-centroid coordinates.
+
+## Requirements
+
+- Node.js 20 or later and npm.
+- Python 3.11 or later.
+- Internet access for Open-Meteo weather requests and map tiles.
+- A Google Maps JavaScript API key if using the Google Maps view. Enable the Maps JavaScript API and configure key restrictions in Google Cloud Console.
+
+## Local setup
+
+### 1. Configure the frontend
+
+Create `.env.development` in the project root (or copy a local template if one is provided):
+
+```dotenv
+VITE_API_BASE_URL=http://localhost:8000/api/v1
+VITE_USE_MOCK=false
+VITE_GOOGLE_MAPS_API_KEY=your_restricted_google_maps_key
+```
+
+Restrict the browser key to your development/referrer domains and only the APIs the app needs. Do not commit `.env.development`, `.env.production`, or any file containing a real key. Restart Vite after changing a `VITE_` variable because Vite reads these values at startup.
+
+### 2. Configure and run the backend
+
+```powershell
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+The default database URL is `sqlite+aiosqlite:///./heatsense.db`. The API initializes its schema during startup. For local development, demo login accepts the configured demo credentials/mode; do not use demo authentication settings in a public deployment.
+
+### 3. Install and run the frontend
+
+In a second PowerShell terminal at the project root:
+
+```powershell
+npm ci
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173). The API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs), and readiness at [http://localhost:8000/health/ready](http://localhost:8000/health/ready).
+
+## Database and seed data
+
+The backend uses async SQLAlchemy models for wards, alerts, subscribers, plans, devices, sensor readings, alert templates/rules, city settings, and ingestion runs. Startup initializes tables. Alembic configuration and migrations are under `backend/alembic/`.
+
+Seed the bundled demo ward, alert, template, and rule records from `backend/`:
+
+```powershell
+python -m app.seed.seed_demo
+```
+
+To reset the seeded demo records, use `python -m app.seed.seed_demo --reset`. Protect and back up the SQLite database file if you need to retain local changes; it is intentionally excluded from source control.
+
+To use PostgreSQL, install and configure PostgreSQL and set `DATABASE_URL` in `backend/.env`, for example:
+
+```dotenv
+DATABASE_URL=postgresql+asyncpg://username:password@localhost:5432/heatsense
+```
+
+`backend/docker-compose.yml` provides a PostGIS-oriented development service configuration. Review and configure credentials and deployment networking before using it outside a local environment.
+
+## Important API routes
+
+All routes are under `/api/v1` unless stated otherwise. Interactive OpenAPI docs at `/docs` are the authoritative route and schema reference.
+
+| Area | Example routes |
+| --- | --- |
+| Health and metadata | `GET /health/ready`, `GET /api/v1/meta` |
+| Wards and map data | `GET /api/v1/wards`, `GET /api/v1/wards/{ward_id}`, `GET /api/v1/wards/geojson`, `GET /api/v1/wards/export.csv` |
+| City summary | `GET /api/v1/city/overview` |
+| Live weather | `GET /api/v1/forecast/live`, `GET /api/v1/forecast/wards/{ward_id}/live` |
+| Planning and simulation | `POST /api/v1/planner/generate`, `POST /api/v1/simulator/run`, `POST /api/v1/plans` |
+| Alerts | `GET/POST /api/v1/alerts`, `GET /api/v1/alerts/templates`, `GET /api/v1/alerts/rules` |
+| Public safety | `GET /api/v1/public/check-area`, `POST /api/v1/public/subscribe` |
+| Sensors | `POST /api/v1/sensors/readings`, `POST /api/v1/sensors/devices`, `GET /api/v1/sensors/validation` |
+| Data operations | `GET /api/v1/pipelines/status`, `POST /api/v1/pipelines/run/{pipeline_name}`, `POST /api/v1/grid/upload` |
+| Reports and settings | `GET /api/v1/reports/city-summary`, `GET/PUT /api/v1/settings` |
+
+Some officer routes require a bearer token. Check the OpenAPI documentation for exact request bodies and access requirements.
+
+## Data quality and limitations
+
+| Data | Current source/status | What it can support |
+| --- | --- | --- |
+| Current air temperature, humidity, wind and forecast | Open-Meteo gridded forecast model | General current conditions and forecast context; not a local station measurement |
+| Ward boundary geometry and centroids | Bundled project fixtures | Demonstration maps and ward lookup; verify against official GHMC boundaries before operational use |
+| Surface temperature, tree cover and built-up indicators | Bundled sample values/fixtures | UI and planning workflow demonstration only; not current satellite retrievals |
+| Population and vulnerability | Bundled values and proxy indicators | Illustrative prioritization only; not a verified census or household assessment |
+| Grid stress and cooling demand | Modelled/demo values unless measured utility data is uploaded | Scenario exploration only; not a live utility feed |
+| Device readings | Real only after a deployed device sends authenticated observations; validation page also contains sample values | Calibration only with documented sensors, siting, timestamps and quality control |
+| SMS/WhatsApp delivery | Mock provider/demo workflow | No message reaches residents until a production provider and required registrations are configured |
+
+Heat-risk rankings combine the project's available indicators and configured weights. A score is a prioritization aid, not a health forecast. Satellite land-surface temperature (LST) is distinct from near-surface air temperature; the current weather feed does not make the sample LST layer live.
+
+To move toward an operational system, connect and document authoritative Hyderabad ward boundaries, recent cloud-masked Landsat 8/9 surface-temperature scenes, Sentinel-2 vegetation/built-up processing, verified population/vulnerability sources, IMD or local station observations, quality-controlled sensor stations, and utility-provided demand data. Record each source's date, spatial resolution, processing, license, uncertainty, and refresh schedule. Revalidate scores and model calibration before using them for public warnings or resource allocation.
+
+## Privacy and safety
+
+Subscriber phone numbers are handled through hashing/encryption in the backend; configure strong unique production secrets and access controls before deployment. Provide consent, opt-out, retention, deletion, and audit procedures appropriate to your jurisdiction. Do not enable real SMS/WhatsApp delivery until the provider integration, consent handling, sender registration, templates, delivery callbacks, rate controls, and incident procedures have been reviewed.
+
+This application is not a substitute for official heat-health advisories or emergency services. Keep public safety advice consistent with current local government guidance.
+
+## Development checks
+
+```powershell
+# Frontend type check and production bundle
+npx tsc --noEmit
+npm run build
+
+# Backend tests
+cd backend
+python -m pytest -q
+```
+
+## Project structure
+
+```text
+backend/
+  app/
+    alerts/       # alert provider interfaces and demo provider
+    db/           # SQLAlchemy models, sessions and repository
+    ml/           # air-temperature model prototype
+    pipelines/    # weather, satellite, vulnerability and grid ingestion logic
+    seed/         # bundled demo fixtures and seeding command
+  alembic/        # database migration configuration and revisions
+  tests/          # API, persistence and pipeline tests
+src/
+  components/     # shared UI, map and layout components
+  data/           # frontend demo fixtures
+  pages/           # dashboard, rankings, reports, planner and public flows
+  services/        # frontend API client
+  lib/             # risk scoring, interventions and formatting helpers
+docs/              # methodology and API contract notes
+```
+
+## License
+
+No license is specified in this repository. Contact the project owner before reusing or redistributing the code.

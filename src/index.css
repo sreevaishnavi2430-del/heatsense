@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 5% 98%;      /* #FAFAF9 */
+    --foreground: 222 47% 11%;     /* #0F172A */
+
+    --card: 0 0% 100%;             /* #FFFFFF */
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 14 77% 54%;         /* #E4572E */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 175 78% 26%;      /* #0F766E */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 14 77% 54%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 197 31% 6%;      /* #0B1215 */
+    --foreground: 210 40% 98%;     /* #F8FAFC */
+
+    --card: 198 28% 10%;           /* #121C20 */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 198 28% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 14 77% 54%;         /* #E4572E */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 175 78% 26%;      /* #0F766E */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 14 77% 54%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+/* Leaflet dark mode overrides & tooltips */
+.leaflet-container {
+  font-family: inherit;
+  background-color: transparent !important;
+}
+
+.leaflet-tooltip {
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .leaflet-tooltip {
+  background: rgba(18, 28, 32, 0.98) !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .leaflet-popup-content-wrapper {
+  background: #121c20 !important;
+  color: #f8fafc !important;
+}
+
+/* Print-Friendly CSS Rules */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  header, aside, nav, button, .print\\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .card, div {
+    box-shadow: none !important;
+  }
+}
