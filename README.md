@@ -12,7 +12,7 @@ HeatSense is a Hyderabad-focused heat-risk mapping and action-planning prototype
 - **Alerts and public heat guidance:** Manage saved alerts, multilingual templates and rules, subscriptions, and public “check my area” guidance. The demo provider does not send real SMS or WhatsApp messages.
 - **Reports and exports:** Build city, ward, planner, and alert reports and export ward/alert data as CSV.
 - **Sensor workflows:** Register demo ESP32 devices and submit readings. Sensor-validation metrics and model-training features are prototypes; they should not be treated as validated sensor calibration without real observations.
-- **Map providers:** The map uses the configured Google Maps JavaScript API key where Google Maps is enabled. Other map views may use Leaflet and their configured tile provider.
+- **Maps:** Ward maps use Google Maps when a valid browser key is configured. If the key is absent, rejected, or Google Maps fails to load, the ward map switches to Leaflet with OpenStreetMap tiles. The OSM fallback needs an internet connection but no API key and includes required attribution.
 
 ## Technology
 
@@ -26,21 +26,27 @@ HeatSense is a Hyderabad-focused heat-risk mapping and action-planning prototype
 - Node.js 20 or later and npm.
 - Python 3.11 or later.
 - Internet access for Open-Meteo weather requests and map tiles.
-- A Google Maps JavaScript API key if using the Google Maps view. Enable the Maps JavaScript API and configure key restrictions in Google Cloud Console.
+- A Google Maps JavaScript API key is optional. Without one, ward maps use the OpenStreetMap fallback. Internet access is needed for either live basemap.
 
 ## Local setup
 
 ### 1. Configure the frontend
 
-Create `.env.development` in the project root (or copy a local template if one is provided):
+Copy the committed example file to create your local Vite configuration:
+
+```powershell
+Copy-Item .env.development.example .env.development
+```
+
+The example points the frontend at the local API and leaves the Google key blank, so the map works with the OpenStreetMap fallback after `npm run dev`. To use Google Maps instead, add your key to `.env.development`:
 
 ```dotenv
-VITE_API_BASE_URL=http://localhost:8000/api/v1
-VITE_USE_MOCK=false
 VITE_GOOGLE_MAPS_API_KEY=your_restricted_google_maps_key
 ```
 
-Restrict the browser key to your development/referrer domains and only the APIs the app needs. Do not commit `.env.development`, `.env.production`, or any file containing a real key. Restart Vite after changing a `VITE_` variable because Vite reads these values at startup.
+In Google Cloud Console, enable **Maps JavaScript API**, configure billing as required by Google, and restrict the browser key to your development/referrer domains. Keep your real key in the ignored `.env.development` file; never commit it. Restart Vite after changing a `VITE_` variable because Vite reads these values at startup.
+
+The public OpenStreetMap tile service is suitable for development and modest interactive use. For production traffic, select a tile provider and comply with its usage policy rather than assuming the community tile servers provide an unlimited production service.
 
 ### 2. Configure and run the backend
 

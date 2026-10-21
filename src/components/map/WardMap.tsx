@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { loadGoogleMaps } from './googleMaps';
 import { Ward, RiskLevel } from '../../types';
-import { HYDERABAD_CENTER, DEFAULT_MAP_ZOOM } from '../../config';
+import { HYDERABAD_CENTER, DEFAULT_MAP_ZOOM, GOOGLE_MAPS_API_KEY } from '../../config';
 import { getRiskColor, getRiskLevel } from '../../lib/risk';
 import { useStore } from '../../store/useStore';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { cn } from '../../lib/utils';
+import { LeafletWardMap } from './LeafletWardMap';
 
 export type MapLayerType =
   | 'heat_risk'
@@ -71,6 +72,7 @@ export const WardMap: React.FC<WardMapProps> = ({
   const [timeHour, setTimeHour] = useState<number>(14); // default 2 PM peak
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [resetTrigger, setResetTrigger] = useState<number>(0);
+  const [locateTrigger, setLocateTrigger] = useState<number>(0);
   const mapElementRef = useRef<HTMLDivElement>(null);
   const googleMapRef = useRef<any>(null);
   const polygonRefs = useRef<any[]>([]);
@@ -136,6 +138,8 @@ export const WardMap: React.FC<WardMapProps> = ({
 
   useEffect(() => {
     let cancelled = false;
+    const handleGoogleAuthFailure = () => setMapError('Google Maps rejected this key; using the OpenStreetMap fallback.');
+    window.addEventListener('heatsense:maps-auth-failure', handleGoogleAuthFailure);
     loadGoogleMaps().then(() => {
       if (cancelled || !mapElementRef.current) return;
       googleMapRef.current = new window.google!.maps.Map(mapElementRef.current, {
@@ -148,7 +152,7 @@ export const WardMap: React.FC<WardMapProps> = ({
       });
       setMapError('');
     }).catch((error: Error) => { if (!cancelled) setMapError(error.message); });
-    return () => { cancelled = true; };
+    return () => { cancelled = true; window.removeEventListener('heatsense:maps-auth-failure', handleGoogleAuthFailure); };
   }, []);
 
   useEffect(() => {
@@ -271,6 +275,7 @@ export const WardMap: React.FC<WardMapProps> = ({
               variant="outline"
               size="sm"
               onClick={() => {
+                setLocateTrigger((prev) => prev + 1);
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(
                     (pos) => {
@@ -294,8 +299,26 @@ export const WardMap: React.FC<WardMapProps> = ({
 
       {/* Map Canvas */}
       <div className="relative">
-        <div ref={mapElementRef} className="w-full h-[520px] lg:h-[620px] bg-slate-100 dark:bg-slate-900" />
-        {mapError && <div role="alert" className="absolute inset-0 flex items-center justify-center bg-white/95 p-6 text-center text-sm text-red-700">{mapError}</div>}
+        {(!GOOGLE_MAPS_API_KEY || mapError) ? (
+          <>
+            <LeafletWardMap
+              wards={wards}
+              selectedWard={selectedWard}
+              onSelectWard={onSelectWard}
+              getFeatureColor={getFeatureColor}
+              showWater={showWater}
+              showShade={showShade}
+              showCooling={showCooling}
+              showHospitals={showHospitals}
+              resetTrigger={resetTrigger}
+              locateTrigger={locateTrigger}
+              heightClassName="w-full h-[520px] lg:h-[620px] bg-slate-100 dark:bg-slate-900"
+            />
+            <div className="absolute bottom-2 left-2 z-[500] rounded-md bg-white/95 px-2 py-1 text-[10px] text-slate-600 shadow">
+              {mapError ? 'Google Maps unavailable · OpenStreetMap fallback' : 'OpenStreetMap · add a Google key for Google Maps'}
+            </div>
+          </>
+        ) : <div ref={mapElementRef} className="w-full h-[520px] lg:h-[620px] bg-slate-100 dark:bg-slate-900" />}
       </div>
 
       {/* Floating Bottom Overlays: Time of Day Slider & Amenity Toggles */}
