@@ -23,6 +23,7 @@ class Settings:
     APP_VERSION: str = os.getenv("APP_VERSION", "1.0.0")
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./heatsense.db")
     SECRET_KEY: str = os.getenv("SECRET_KEY", "heatsense-demo-secret-key-change-in-production")
+    OFFICER_PASSWORD: str = os.getenv("OFFICER_PASSWORD", "demo1234")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
     FERNET_KEY: str = os.getenv("FERNET_KEY", "0w_3Nqk916qK2d8B1H0rX12_aG84kQZ7Wn-UqE6M2tM=")

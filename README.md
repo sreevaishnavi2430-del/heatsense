@@ -145,14 +145,17 @@ keyed HMAC (`app/privacy.py`) rather than a plain digest. A plain SHA-256 of an
 Indian mobile number is reversible in seconds because only ~40 million values are
 valid, so the keyed form is what makes the lookup key safe to store.
 
-The service refuses to start with `MODE=production` while `SECRET_KEY` or
-`FERNET_KEY` is still a placeholder, and logs a warning in `MODE=demo` where
-authentication is bypassed on the protected endpoints. Generate real values before
-deploying:
+The service refuses to start with `MODE=production` unless `SECRET_KEY`,
+`FERNET_KEY`, and `OFFICER_PASSWORD` are unique and `DEMO_ANY_LOGIN=false`. It
+also requires a persistent PostgreSQL `DATABASE_URL` in production; SQLite is
+intended for local development and demo mode. `MODE=demo` bypasses authentication
+on protected endpoints and must not be exposed publicly. Set these values in the
+hosting provider's secret environment variables before deploying:
 
 ```powershell
 python -c "import secrets; print(secrets.token_urlsafe(48))"          # SECRET_KEY
 python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"  # FERNET_KEY
+# Set OFFICER_PASSWORD to a unique strong password; never commit it.
 ```
 
 Provide consent, opt-out, retention, deletion, and audit procedures appropriate to your jurisdiction. Do not enable real SMS/WhatsApp delivery until the provider integration, consent handling, sender registration, templates, delivery callbacks, rate controls, and incident procedures have been reviewed.

@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { useToast } from '../components/ui/Toast';
 import { loginOfficer } from '../services/api';
+import { USE_MOCK } from '../config';
 import { Flame, Lock, User, ShieldCheck, ArrowRight, Building } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
@@ -16,7 +17,7 @@ export const LoginPage: React.FC = () => {
 
   const [name, setName] = useState('Dr. Ramesh Rao, IAS');
   const [department, setDepartment] = useState('GHMC Disaster Management & Urban Resilience');
-  const [password, setPassword] = useState('••••••••');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,7 +57,7 @@ export const LoginPage: React.FC = () => {
         <Card className="p-6 sm:p-8 bg-white dark:bg-[#121C20] border-slate-200 dark:border-slate-800 shadow-xl space-y-5">
           <div className="p-3 rounded-xl bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 text-xs text-teal-800 dark:text-teal-300 flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 shrink-0 text-[#0F766E]" />
-            <span>Demo Mode: Any credentials or the defaults below will grant access.</span>
+            <span>{USE_MOCK ? 'Demo Mode: Any credentials will grant access.' : 'Sign in with your authorized officer account.'}</span>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">

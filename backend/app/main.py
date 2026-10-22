@@ -108,6 +108,7 @@ async def get_db_optional() -> AsyncGenerator[Optional[AsyncSession], None]:
 # service is either unauthenticated or using publicly known keys, so refuse to start.
 DEFAULT_SECRET_KEY = "heatsense-demo-secret-key-change-in-production"
 DEFAULT_FERNET_KEY = "0w_3Nqk916qK2d8B1H0rX12_aG84kQZ7Wn-UqE6M2tM="
+DEFAULT_OFFICER_PASSWORD = "demo1234"
 PLACEHOLDER_SECRETS = {"", "replace-with-a-long-random-secret", "replace-with-a-fernet-generated-key"}
 
 
@@ -133,6 +134,12 @@ def _check_security_configuration() -> None:
 
     if settings.MODE != "demo":
         problems = []
+        if settings.DEMO_ANY_LOGIN:
+            problems.append("DEMO_ANY_LOGIN must be false outside demo mode")
+        if settings.OFFICER_PASSWORD == DEFAULT_OFFICER_PASSWORD:
+            problems.append("OFFICER_PASSWORD is still the published demo password")
+        if settings.DATABASE_URL.startswith("sqlite"):
+            problems.append("DATABASE_URL must use persistent PostgreSQL outside demo mode")
         if using_default_secret or placeholder_secret:
             problems.append("SECRET_KEY is still a placeholder (JWTs can be forged)")
         if using_default_fernet or placeholder_fernet:
@@ -388,7 +395,8 @@ async def meta():
 
 @app.post("/api/v1/auth/login")
 async def login(body: LoginBody):
-    if not (settings.MODE == "demo" and settings.DEMO_ANY_LOGIN) and (body.email != "officer@heatsense.demo" or body.password != "demo1234"):
+    password_matches = secrets.compare_digest(body.password, settings.OFFICER_PASSWORD)
+    if not (settings.MODE == "demo" and settings.DEMO_ANY_LOGIN) and (body.email != "officer@heatsense.demo" or not password_matches):
         raise HTTPException(401, "Incorrect email or password")
     return {"accessToken": _token(body.email), "tokenType": "bearer", "user": {"name": "HeatSense Officer", "email": body.email, "department": "GHMC Disaster Management", "role": "admin" if body.email.startswith("admin") else "officer"}}
 

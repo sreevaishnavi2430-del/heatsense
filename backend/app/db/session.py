@@ -15,6 +15,10 @@ logger = logging.getLogger(__name__)
 db_url = settings.DATABASE_URL
 if db_url.startswith("sqlite:///"):
     db_url = db_url.replace("sqlite:///", "sqlite+aiosqlite:///")
+elif db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif db_url.startswith("postgresql://"):
+    db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
 
 connect_args = {}
 if "sqlite" in db_url:
