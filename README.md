@@ -201,6 +201,7 @@ src/
   services/       # frontend API client with mock fallbacks
   lib/             # risk scoring, interventions and formatting helpers
 scripts/          # runtime verification suites (i18n, mock API coverage)
+model_artifacts/  # trained air-temperature model (tracked)
 docs/              # methodology and API contract notes
 ```
 

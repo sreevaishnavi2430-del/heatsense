@@ -88,13 +88,19 @@ def _linear_predict(lst_c: float, ndvi: float, ndbi: float, hour: float, solar_r
 
 # ─── Public API ───────────────────────────────────────────────────────────────
 
-def train_model(readings: Optional[list[dict[str, Any]]] = None) -> dict[str, Any]:
+def train_model(
+    readings: Optional[list[dict[str, Any]]] = None,
+    model_path: Optional[Path] = None,
+) -> dict[str, Any]:
     """Train GradientBoostingRegressor on synthetic + optional real readings.
 
     Args:
         readings: Optional list of real sensor reading dicts. Each dict may
                   contain keys: lst_c, ndvi, ndbi, hour_of_day, solar_rad_w_m2,
                   air_temp_c.
+        model_path: Optional destination for the fitted model. Defaults to the
+                    tracked model_artifacts file. Pass a temporary path to avoid
+                    overwriting the committed artifact.
 
     Returns:
         Metrics dict with keys: mae, rmse, r2, mbe, n_samples, trained_at, label.
@@ -193,9 +199,10 @@ def train_model(readings: Optional[list[dict[str, Any]]] = None) -> dict[str, An
     # Persist model
     if _JOBLIB_AVAILABLE:
         try:
-            _MODEL_DIR.mkdir(parents=True, exist_ok=True)
-            joblib.dump({"model": clf, "metrics": metrics}, _MODEL_PATH)
-            logger.info("Air-temp model saved to %s (MAE=%.3f, R2=%.3f)", _MODEL_PATH, mae, r2)
+            target = Path(model_path) if model_path is not None else _MODEL_PATH
+            target.parent.mkdir(parents=True, exist_ok=True)
+            joblib.dump({"model": clf, "metrics": metrics}, target)
+            logger.info("Air-temp model saved to %s (MAE=%.3f, R2=%.3f)", target, mae, r2)
         except Exception as exc:
             logger.warning("Could not persist model to disk: %s", exc)
 

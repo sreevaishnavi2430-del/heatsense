@@ -4,6 +4,8 @@ import math
 import types
 import sys
 
+import pytest
+
 
 # ─── Satellite pipeline tests ─────────────────────────────────────────────────
 
@@ -60,24 +62,39 @@ def test_grid_profile_keys():
     assert len(result["hourlyLabels"]) == 24
 
 
-def test_ml_predict_returns_float():
+def test_ml_predict_returns_float(tmp_path):
     """ML model predict_air_temp returns a valid float."""
     from app.ml.air_temp_model import predict_air_temp, train_model
-    # Ensure model is trained
-    train_model()
+    # Train into a temporary path so the committed model artifact is not overwritten.
+    train_model(model_path=tmp_path / "air_temp_model.joblib")
     result = predict_air_temp(lst_c=45.0, ndvi=0.1, ndbi=0.3, hour=14, solar_rad=800.0)
     assert isinstance(result, float)
     assert 20.0 <= result <= 65.0, f"Implausible prediction: {result}"
 
 
-def test_ml_train_returns_metrics():
+def test_ml_train_returns_metrics(tmp_path):
     """ML training returns expected metric keys."""
     from app.ml.air_temp_model import train_model
-    metrics = train_model()
+    metrics = train_model(model_path=tmp_path / "air_temp_model.joblib")
     for key in ("mae", "rmse", "r2", "n_samples", "trained_at", "label"):
         assert key in metrics, f"Missing metric key: {key}"
     assert metrics["n_samples"] >= 100
     assert metrics["mae"] < 5.0, "MAE too high for synthetic data"
+
+
+def test_ml_training_does_not_modify_the_tracked_model_artifact(tmp_path):
+    """Training into a temporary path must leave the committed artifact untouched."""
+    import hashlib
+    from app.ml import air_temp_model
+
+    tracked = air_temp_model._MODEL_PATH
+    if not tracked.exists():
+        pytest.skip("no tracked model artifact present")
+
+    before = hashlib.sha256(tracked.read_bytes()).hexdigest()
+    air_temp_model.train_model(model_path=tmp_path / "scratch.joblib")
+    after = hashlib.sha256(tracked.read_bytes()).hexdigest()
+    assert before == after, "training into a temp path modified the tracked artifact"
 
 
 def test_alert_mock_provider():
