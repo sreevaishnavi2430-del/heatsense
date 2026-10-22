@@ -1,9 +1,11 @@
 """
 Cooling Assumptions and Intervention Parameters
 
-IMPORTANT HONESTY NOTE:
+HONESTY NOTE:
 All cooling-benefit numbers and coefficients are illustrative assumptions
 and must be validated with hyperlocal field measurements and meteorological data.
+
+This module mirrors src/config/cooling.ts — coefficients must be kept in sync.
 """
 
 COOLING_ASSUMPTIONS = {

@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 
 export const SettingsPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { toast } = useToast();
   const {
     theme,
@@ -111,8 +111,6 @@ export const SettingsPage: React.FC = () => {
 
   const handleLanguageChange = (lang: 'en' | 'te' | 'hi') => {
     setLanguage(lang);
-    i18n.changeLanguage(lang);
-    localStorage.setItem('heatsense-language', lang);
     toast('Language Updated', `Switched interface language to ${lang.toUpperCase()}.`, 'success');
   };
 

@@ -40,3 +40,8 @@ model_artifacts/
 Thumbs.db
 desktop.ini
 zip.zip
+
+# Local project backup archives. These bundle the whole tree (including the
+# un-ignored .env files and the virtualenv) and exceed GitHub's 100 MB limit.
+frontend
+*.zip

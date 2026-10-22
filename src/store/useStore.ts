@@ -2,15 +2,22 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { RiskWeights, PlanItem, RecommendedAction, UserSession } from '../types';
 import { DEFAULT_WEIGHTS } from '../config';
+import i18n, { LANGUAGE_STORAGE_KEY, SupportedLanguage } from '../i18n';
+
+/** Applies the persisted theme to the document so it survives a page reload. */
+function applyTheme(theme: 'light' | 'dark') {
+  if (typeof document === 'undefined') return;
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+}
 
 interface AppState {
   // Theme & Language
   theme: 'light' | 'dark';
-  language: 'en' | 'te' | 'hi';
+  language: SupportedLanguage;
   tempUnit: 'C' | 'F';
   setTheme: (theme: 'light' | 'dark') => void;
   toggleTheme: () => void;
-  setLanguage: (lang: 'en' | 'te' | 'hi') => void;
+  setLanguage: (lang: SupportedLanguage) => void;
   toggleTempUnit: () => void;
 
   // Officer Session
@@ -55,11 +62,7 @@ export const useStore = create<AppState>()(
 
       setTheme: (theme) => {
         set({ theme });
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        applyTheme(theme);
       },
 
       toggleTheme: () => {
@@ -69,6 +72,14 @@ export const useStore = create<AppState>()(
 
       setLanguage: (language) => {
         set({ language });
+        // Keep i18next in lockstep with the store so translated copy and locale-aware
+        // content (ward names, risk labels) never disagree.
+        try {
+          localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+        } catch {
+          // Storage can be unavailable in private browsing modes; the in-memory state still applies.
+        }
+        void i18n.changeLanguage(language);
       },
 
       toggleTempUnit: () => {
@@ -198,6 +209,22 @@ export const useStore = create<AppState>()(
         planItems: state.planItems,
         session: state.session,
       }),
+      // Rehydrating from localStorage bypasses the action creators, so the theme class
+      // and the i18next language have to be re-applied explicitly. Without this, a
+      // reload silently resets the dark mode and the active locale.
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+        applyTheme(state.theme);
+        const language = state.language as SupportedLanguage;
+        if (language && i18n.language !== language) {
+          try {
+            localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+          } catch {
+            // Ignore storage failures; the in-memory state remains authoritative.
+          }
+          void i18n.changeLanguage(language);
+        }
+      },
     }
   )
 );

@@ -6,15 +6,13 @@ import { Flame, Sun, Moon, Globe, Menu, X, ArrowRight, ShieldAlert } from 'lucid
 import { Button } from '../ui/Button';
 
 export const Navbar: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { theme, toggleTheme, language, setLanguage } = useStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLangChange = (lang: 'en' | 'te' | 'hi') => {
     setLanguage(lang);
-    i18n.changeLanguage(lang);
-    localStorage.setItem('heatsense-language', lang);
   };
 
   return (

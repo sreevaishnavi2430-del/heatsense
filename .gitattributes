@@ -1,0 +1,26 @@
+# Normalize line endings so the same files do not churn between Windows and
+# POSIX checkouts.
+* text=auto eol=lf
+
+# Keep these as-is in the working tree.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.pyd binary
+*.dll binary
+*.so binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary

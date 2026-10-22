@@ -27,6 +27,7 @@ from app.config import settings
 from app.config_cooling import COOLING_ASSUMPTIONS
 from app.db.session import init_db, AsyncSessionLocal
 from app.db import repository
+from app.privacy import normalise_phone, is_valid_mobile, phone_lookup_hash
 
 logger = logging.getLogger(__name__)
 
@@ -52,20 +53,114 @@ rules: list[dict[str, Any]] = [
 ]
 city_settings: dict[str, Any] = {"weights": {"wTemp": .35, "wTree": .20, "wBuilt": .15, "wVuln": .30}, "temperatureUnit": "C", "refreshIntervalSeconds": 60, "benchmarks": {"peoplePerWaterPoint": 2000, "peoplePerShadeShelter": 3000}}
 
+# Fields the ward list may be sorted by. Kept explicit so a caller cannot sort on
+# a nested object (which raises a TypeError and surfaces as a 500).
+SORTABLE_WARD_FIELDS: frozenset[str] = frozenset({
+    "heatRiskScore",
+    "riskLevel",
+    "name",
+    "zone",
+    "population",
+    "populationDensityPerSqKm",
+    "landSurfaceTempC",
+    "nightTempC",
+    "airTempEstimateC",
+    "treeCoverPercent",
+    "builtUpPercent",
+    "peakPowerDemandMW",
+    "peakDemandStressIndex",
+})
+
+# SMS/WhatsApp bodies are short; a cap keeps a single alert from bloating storage
+# and matches the segment limits the delivery providers enforce.
+MAX_ALERT_MESSAGE_CHARS = 2000
+
 
 async def get_db_optional() -> AsyncGenerator[Optional[AsyncSession], None]:
-    """Dependency yielding an async DB session when available, committing automatically."""
+    """Dependency yielding an async DB session when available, committing automatically.
+
+    Exceptions raised by the route body are re-raised unchanged so FastAPI can still
+    turn an HTTPException into its 4xx response. Catching them here and yielding a
+    second time is invalid for a generator and would mask every validation error
+    (422/403/404) as an opaque 500.
+    """
     try:
-        async with AsyncSessionLocal() as session:
-            yield session
-            await session.commit()
-    except Exception:
+        session_scope = AsyncSessionLocal()
+    except Exception as exc:  # pragma: no cover - session factory creation failure
+        logger.warning("Database session unavailable: %s", exc)
         yield None
+        return
+
+    async with session_scope as session:
+        try:
+            yield session
+        except Exception:
+            try:
+                await session.rollback()
+            except Exception:  # pragma: no cover - rollback on a broken session
+                pass
+            raise
+        else:
+            await session.commit()
+
+
+# Published placeholder values. If these survive into a non-demo deployment the
+# service is either unauthenticated or using publicly known keys, so refuse to start.
+DEFAULT_SECRET_KEY = "heatsense-demo-secret-key-change-in-production"
+DEFAULT_FERNET_KEY = "0w_3Nqk916qK2d8B1H0rX12_aG84kQZ7Wn-UqE6M2tM="
+PLACEHOLDER_SECRETS = {"", "replace-with-a-long-random-secret", "replace-with-a-fernet-generated-key"}
+
+
+def _check_security_configuration() -> None:
+    """Refuse to start in an unsafe configuration; warn loudly in demo mode.
+
+    Demo mode disables authentication on the protected endpoints, so it must never
+    be combined with the assumption that the service is private.
+    """
+    using_default_secret = settings.SECRET_KEY == DEFAULT_SECRET_KEY
+    using_default_fernet = settings.FERNET_KEY == DEFAULT_FERNET_KEY
+    placeholder_secret = settings.SECRET_KEY.strip().lower() in PLACEHOLDER_SECRETS
+    placeholder_fernet = settings.FERNET_KEY.strip().lower() in PLACEHOLDER_SECRETS
+
+    # A malformed Fernet key would only surface as a runtime error the first time a
+    # subscriber is saved, so validate it up front.
+    fernet_key_valid = True
+    if not placeholder_fernet:
+        try:
+            Fernet(settings.FERNET_KEY.encode())
+        except Exception:
+            fernet_key_valid = False
+
+    if settings.MODE != "demo":
+        problems = []
+        if using_default_secret or placeholder_secret:
+            problems.append("SECRET_KEY is still a placeholder (JWTs can be forged)")
+        if using_default_fernet or placeholder_fernet:
+            problems.append("FERNET_KEY is still the published placeholder (stored phone numbers can be decrypted)")
+        if not fernet_key_valid:
+            problems.append("FERNET_KEY is not a valid Fernet key")
+        if problems:
+            raise RuntimeError(
+                "Refusing to start: " + "; ".join(problems) + ". "
+                "Set unique values in backend/.env before running with MODE=" + settings.MODE + "."
+            )
+
+    if settings.MODE == "demo":
+        logger.warning(
+            "SECURITY: running in MODE=demo. Authentication is bypassed on protected "
+            "endpoints and any credentials are accepted. Do not expose this deployment."
+        )
+        if using_default_secret or using_default_fernet or placeholder_secret or placeholder_fernet:
+            logger.warning(
+                "SECURITY: using a published or placeholder SECRET_KEY/FERNET_KEY. "
+                "Tokens can be forged and stored phone numbers can be decrypted by anyone "
+                "with the source code."
+            )
 
 
 @asynccontextmanager
 async def lifespan(application: FastAPI):
-    """Lifecycle event initializing database schema and synchronizing persisted records."""
+    _check_security_configuration()
     try:
         await init_db()
         async with AsyncSessionLocal() as session:
@@ -345,6 +440,14 @@ async def get_wards(
     user=Depends(officer)
 ):
     weights = weights_from_query(wTemp, wTree, wBuilt, wVuln)
+    if sort not in SORTABLE_WARD_FIELDS:
+        raise HTTPException(422, f"Cannot sort by '{sort}'. Allowed fields: {', '.join(sorted(SORTABLE_WARD_FIELDS))}")
+    if order.lower() not in {"asc", "desc"}:
+        raise HTTPException(422, "order must be 'asc' or 'desc'")
+    if page < 1:
+        raise HTTPException(422, "page must be 1 or greater")
+    if pageSize < 1 or pageSize > 500:
+        raise HTTPException(422, "pageSize must be between 1 and 500")
     results = [ward_view(w, weights) for w in wards]
     if zone:
         results = [w for w in results if w["zone"].casefold() == zone.casefold()]
@@ -425,6 +528,19 @@ async def get_ward_interventions(ward_id: str, user=Depends(officer)):
 @app.get("/api/v1/amenities")
 async def amenities(type: Optional[str] = None, zone: Optional[str] = None, user=Depends(officer)):
     return []
+
+
+# Registered before /api/v1/wards/{ward_id}: FastAPI matches routes in registration
+# order, so a dynamic path segment would otherwise swallow "export.csv".
+@app.get("/api/v1/wards/export.csv")
+async def export_wards(user=Depends(officer)):
+    stream = io.StringIO()
+    writer = csv.DictWriter(stream, fieldnames=["id", "name", "zone", "heatRiskScore", "riskLevel", "landSurfaceTempC", "treeCoverPercent", "builtUpPercent", "population", "dataQuality"])
+    writer.writeheader()
+    for w0 in wards:
+        w = ward_view(w0)
+        writer.writerow({"id": w["id"], "name": w["name"], "zone": w["zone"], "heatRiskScore": w["heatRiskScore"], "riskLevel": w["riskLevel"], "landSurfaceTempC": w["landSurfaceTempC"], "treeCoverPercent": w["treeCoverPercent"], "builtUpPercent": w["builtUpPercent"], "population": w["population"], "dataQuality": "sample"})
+    return StreamingResponse(iter([stream.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=heatsense-wards.csv"})
 
 
 @app.get("/api/v1/wards/{ward_id}")
@@ -549,7 +665,13 @@ async def create_alert(
     user=Depends(officer)
 ):
     wardids = payload.get("wardIds") or (payload.get("target", {}).get("wardIds") if isinstance(payload.get("target"), dict) else []) or []
+    unknown = [i for i in wardids if not any(w["id"] == i or w["name"].casefold() == str(i).casefold() for w in wards)]
+    if unknown:
+        raise HTTPException(422, f"Unknown ward id(s): {', '.join(str(u) for u in unknown[:10])}")
     selected = [_find_ward(i) for i in wardids] if wardids else wards
+    message = str(payload.get("message", "") or "")
+    if len(message) > MAX_ALERT_MESSAGE_CHARS:
+        raise HTTPException(422, f"Message exceeds the {MAX_ALERT_MESSAGE_CHARS} character limit")
     lang = payload.get("language", "en")
     channels = payload.get("channels") or ([payload.get("channel", "SMS")] if payload.get("channel") else ["SMS"])
     now = datetime.now(timezone.utc).isoformat()
@@ -581,6 +703,17 @@ async def create_alert(
     if entry["status"] == "sent":
         background_tasks.add_task(_send_demo, aid)
     return entry
+
+
+# Registered before /api/v1/alerts/{alert_id}: FastAPI matches routes in registration
+# order, so a dynamic path segment would otherwise swallow "export.csv".
+@app.get("/api/v1/alerts/export.csv")
+async def export_alerts(user=Depends(officer)):
+    stream = io.StringIO()
+    writer = csv.DictWriter(stream, fieldnames=["id", "level", "title", "status", "timestamp", "recipientsCount"])
+    writer.writeheader()
+    writer.writerows([{k: a.get(k) for k in writer.fieldnames} for a in alerts])
+    return StreamingResponse(iter([stream.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=heatsense-alerts.csv"})
 
 
 @app.get("/api/v1/alerts/{alert_id}")
@@ -703,14 +836,14 @@ async def subscribe(
     db: Optional[AsyncSession] = Depends(get_db_optional)
 ):
     phone = str(payload.get("phone") or payload.get("mobile") or "")
-    digits = "".join(c for c in phone if c.isdigit())[-10:]
-    if len(digits) != 10 or digits[0] not in "6789":
+    digits = normalise_phone(phone)
+    if not is_valid_mobile(digits):
         raise HTTPException(422, "Enter a valid Indian mobile number")
     if payload.get("consent") is not True:
         raise HTTPException(422, "Consent is required")
     if not any(w["id"] == payload.get("wardId") for w in wards):
         raise HTTPException(422, "Unknown ward")
-    phone_hash = hashlib.sha256(digits.encode()).hexdigest()
+    phone_hash = phone_lookup_hash(digits)
     subid = next((s["id"] for s in subscribers.values() if s["phoneHash"] == phone_hash), None) or f"sub-{secrets.token_hex(4)}"
     cipher = Fernet(settings.FERNET_KEY.encode())
     phone_encrypted = cipher.encrypt(digits.encode()).decode()
@@ -757,7 +890,7 @@ async def unsubscribe(
     db: Optional[AsyncSession] = Depends(get_db_optional)
 ):
     phone = str(payload.get("phone", ""))
-    digest = hashlib.sha256("".join(c for c in phone if c.isdigit())[-10:].encode()).hexdigest()
+    digest = phone_lookup_hash(normalise_phone(phone))
     found = False
     for s in subscribers.values():
         if s["phoneHash"] == digest:
@@ -860,26 +993,6 @@ async def report_plan(
 @app.get("/api/v1/reports/alerts-summary")
 async def report_alerts(user=Depends(officer)):
     return {"total": len(alerts), "alerts": alerts}
-
-
-@app.get("/api/v1/wards/export.csv")
-async def export_wards(user=Depends(officer)):
-    stream = io.StringIO()
-    writer = csv.DictWriter(stream, fieldnames=["id", "name", "zone", "heatRiskScore", "riskLevel", "landSurfaceTempC", "treeCoverPercent", "builtUpPercent", "population", "dataQuality"])
-    writer.writeheader()
-    for w0 in wards:
-        w = ward_view(w0)
-        writer.writerow({"id": w["id"], "name": w["name"], "zone": w["zone"], "heatRiskScore": w["heatRiskScore"], "riskLevel": w["riskLevel"], "landSurfaceTempC": w["landSurfaceTempC"], "treeCoverPercent": w["treeCoverPercent"], "builtUpPercent": w["builtUpPercent"], "population": w["population"], "dataQuality": "sample"})
-    return StreamingResponse(iter([stream.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=heatsense-wards.csv"})
-
-
-@app.get("/api/v1/alerts/export.csv")
-async def export_alerts(user=Depends(officer)):
-    stream = io.StringIO()
-    writer = csv.DictWriter(stream, fieldnames=["id", "level", "title", "status", "timestamp", "recipientsCount"])
-    writer.writeheader()
-    writer.writerows([{k: a.get(k) for k in writer.fieldnames} for a in alerts])
-    return StreamingResponse(iter([stream.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=heatsense-alerts.csv"})
 
 
 @app.get("/api/v1/settings")
@@ -1198,12 +1311,12 @@ async def delete_subscriber_data(
 ):
     """Allow a resident to request deletion of their subscription data."""
     phone = str(payload.get("phone", ""))
-    digits = "".join(c for c in phone if c.isdigit())[-10:]
+    digits = normalise_phone(phone)
     if len(digits) != 10:
         raise HTTPException(422, "Valid 10-digit phone required for identity verification")
     if digits[-4:] != phone_last4:
         raise HTTPException(403, "Last 4 digits do not match")
-    digest = hashlib.sha256(digits.encode()).hexdigest()
+    digest = phone_lookup_hash(digits)
     deleted_count = 0
     keys_to_del = [k for k, s in subscribers.items() if s.get("phoneHash") == digest]
     for k in keys_to_del:

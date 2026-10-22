@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify:i18n": "node scripts/verify-i18n.mjs",
+    "verify:mock-api": "node scripts/verify-mock-api.mjs",
+    "verify": "npm run verify:i18n && npm run verify:mock-api"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

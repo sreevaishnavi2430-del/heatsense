@@ -58,6 +58,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense uninsulated tin/concrete roofing (91%)",
       "High outdoor vendor & gig worker concentration (38.6%)"
     ],
+    "currentWeather": {
+      "temperatureC": 42.9,
+      "apparentTemperatureC": 44.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 48.2,
     "peakDemandStressIndex": 72,
     "transformerOverloadRisk": "High",
@@ -221,6 +232,17 @@ export const MOCK_WARDS: Ward[] = [
       "Extreme building thermal trapping",
       "Over 82% households without air cooling"
     ],
+    "currentWeather": {
+      "temperatureC": 43.3,
+      "apparentTemperatureC": 44.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 42.1,
     "peakDemandStressIndex": 68,
     "transformerOverloadRisk": "High",
@@ -384,6 +406,17 @@ export const MOCK_WARDS: Ward[] = [
       "High low-income tin roof settlement share",
       "Lack of public shade infrastructure"
     ],
+    "currentWeather": {
+      "temperatureC": 42.4,
+      "apparentTemperatureC": 43.6,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 44.5,
     "peakDemandStressIndex": 65,
     "transformerOverloadRisk": "Medium",
@@ -547,6 +580,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense informal housing fabric",
       "31% gig and daily-wage outdoor workforce"
     ],
+    "currentWeather": {
+      "temperatureC": 42.0,
+      "apparentTemperatureC": 43.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 39.8,
     "peakDemandStressIndex": 61,
     "transformerOverloadRisk": "Medium",
@@ -710,6 +754,17 @@ export const MOCK_WARDS: Ward[] = [
       "High asphalt road coverage (89%)",
       "Continuous street-vendor solar exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 42.6,
+      "apparentTemperatureC": 43.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 62.4,
     "peakDemandStressIndex": 84,
     "transformerOverloadRisk": "High",
@@ -873,6 +928,17 @@ export const MOCK_WARDS: Ward[] = [
       "Rapid commercial urbanization",
       "Suburban transit exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 41.3,
+      "apparentTemperatureC": 42.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 58,
     "peakDemandStressIndex": 76,
     "transformerOverloadRisk": "Medium",
@@ -1036,6 +1102,17 @@ export const MOCK_WARDS: Ward[] = [
       "High built surface retention",
       "Low tree shade along arterial roads"
     ],
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 55.2,
     "peakDemandStressIndex": 73,
     "transformerOverloadRisk": "Medium",
@@ -1199,6 +1276,17 @@ export const MOCK_WARDS: Ward[] = [
       "Emerging residential concrete density",
       "Moderate tree cover"
     ],
+    "currentWeather": {
+      "temperatureC": 40.3,
+      "apparentTemperatureC": 41.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 46.8,
     "peakDemandStressIndex": 59,
     "transformerOverloadRisk": "Medium",
@@ -1362,6 +1450,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense older residential lanes",
       "Transformer heat stress during dusk"
     ],
+    "currentWeather": {
+      "temperatureC": 40.9,
+      "apparentTemperatureC": 42.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 64.2,
     "peakDemandStressIndex": 75,
     "transformerOverloadRisk": "High",
@@ -1525,6 +1624,17 @@ export const MOCK_WARDS: Ward[] = [
       "Aging concrete urban core",
       "High elderly resident ratio (14.2%)"
     ],
+    "currentWeather": {
+      "temperatureC": 41.8,
+      "apparentTemperatureC": 43.0,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 68.5,
     "peakDemandStressIndex": 82,
     "transformerOverloadRisk": "High",
@@ -1688,6 +1798,17 @@ export const MOCK_WARDS: Ward[] = [
       "Flyover concrete radiant mass",
       "Commercial traffic emissions"
     ],
+    "currentWeather": {
+      "temperatureC": 40.0,
+      "apparentTemperatureC": 41.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 56.4,
     "peakDemandStressIndex": 70,
     "transformerOverloadRisk": "Medium",
@@ -1851,6 +1972,17 @@ export const MOCK_WARDS: Ward[] = [
       "Canopy scarcity (4.1%)",
       "Air conditioner waste heat exhaust"
     ],
+    "currentWeather": {
+      "temperatureC": 42.3,
+      "apparentTemperatureC": 43.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 74,
     "peakDemandStressIndex": 91,
     "transformerOverloadRisk": "High",
@@ -2014,6 +2146,17 @@ export const MOCK_WARDS: Ward[] = [
       "Mixed informal-commercial settlement",
       "Substantial outdoor worker exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 41.0,
+      "apparentTemperatureC": 42.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 59.8,
     "peakDemandStressIndex": 77,
     "transformerOverloadRisk": "High",
@@ -2177,6 +2320,17 @@ export const MOCK_WARDS: Ward[] = [
       "Heavy peak electrical grid stress",
       "Pockets of domestic worker settlement"
     ],
+    "currentWeather": {
+      "temperatureC": 37.7,
+      "apparentTemperatureC": 38.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 88.5,
     "peakDemandStressIndex": 94,
     "transformerOverloadRisk": "High",
@@ -2340,6 +2494,17 @@ export const MOCK_WARDS: Ward[] = [
       "Good tree canopy buffering surface temp",
       "Rocky elevation microclimate"
     ],
+    "currentWeather": {
+      "temperatureC": 37.0,
+      "apparentTemperatureC": 38.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 92.4,
     "peakDemandStressIndex": 96,
     "transformerOverloadRisk": "High",
@@ -2503,6 +2668,17 @@ export const MOCK_WARDS: Ward[] = [
       "Intense gig-economy delivery fleet exposure",
       "Massive commercial chiller cooling demand"
     ],
+    "currentWeather": {
+      "temperatureC": 39.4,
+      "apparentTemperatureC": 40.6,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 104.2,
     "peakDemandStressIndex": 98,
     "transformerOverloadRisk": "High",
@@ -2666,6 +2842,17 @@ export const MOCK_WARDS: Ward[] = [
       "Surging daytime corporate power demand",
       "Construction worker temporary camps"
     ],
+    "currentWeather": {
+      "temperatureC": 38.3,
+      "apparentTemperatureC": 39.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 96,
     "peakDemandStressIndex": 92,
     "transformerOverloadRisk": "High",
@@ -2829,6 +3016,17 @@ export const MOCK_WARDS: Ward[] = [
       "High delivery worker daytime presence",
       "Pockets of unpaved dusty micro-corridors"
     ],
+    "currentWeather": {
+      "temperatureC": 38.9,
+      "apparentTemperatureC": 40.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 72.5,
     "peakDemandStressIndex": 80,
     "transformerOverloadRisk": "Medium",
@@ -2992,6 +3190,17 @@ export const MOCK_WARDS: Ward[] = [
       "Expanding apartment blocks with low shade",
       "Active construction laborer exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 39.9,
+      "apparentTemperatureC": 41.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 60.5,
     "peakDemandStressIndex": 72,
     "transformerOverloadRisk": "Medium",
@@ -3155,6 +3364,17 @@ export const MOCK_WARDS: Ward[] = [
       "Canopy deficiency (5.2%)",
       "Intense market and road vendor exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 42.2,
+      "apparentTemperatureC": 43.4,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 85,
     "peakDemandStressIndex": 90,
     "transformerOverloadRisk": "High",
@@ -3318,6 +3538,17 @@ export const MOCK_WARDS: Ward[] = [
       "High concentration of manual workshop laborers",
       "Bare metal roofing without insulation"
     ],
+    "currentWeather": {
+      "temperatureC": 42.8,
+      "apparentTemperatureC": 44.0,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 52,
     "peakDemandStressIndex": 69,
     "transformerOverloadRisk": "Medium",
@@ -3481,6 +3712,17 @@ export const MOCK_WARDS: Ward[] = [
       "Chemical & metal fabrication heat emissions",
       "Over 40% outdoor and shopfloor workers"
     ],
+    "currentWeather": {
+      "temperatureC": 43.6,
+      "apparentTemperatureC": 44.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 54,
     "peakDemandStressIndex": 71,
     "transformerOverloadRisk": "Medium",
@@ -3644,6 +3886,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense multistory apartment alleys",
       "High auto-driver and vendor population"
     ],
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 66,
     "peakDemandStressIndex": 81,
     "transformerOverloadRisk": "High",
@@ -3807,6 +4060,17 @@ export const MOCK_WARDS: Ward[] = [
       "Flyover radiative heat reflection",
       "Low public shade amenity count"
     ],
+    "currentWeather": {
+      "temperatureC": 40.9,
+      "apparentTemperatureC": 42.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 59,
     "peakDemandStressIndex": 76,
     "transformerOverloadRisk": "Medium",
@@ -3970,6 +4234,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense older handloom & artisan settlement",
       "High proportion of non-AC homes (77%)"
     ],
+    "currentWeather": {
+      "temperatureC": 42.3,
+      "apparentTemperatureC": 43.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 43,
     "peakDemandStressIndex": 67,
     "transformerOverloadRisk": "High",
@@ -4133,6 +4408,17 @@ export const MOCK_WARDS: Ward[] = [
       "Low income commercial labor concentration",
       "Nocturnal heat retention (33.6°C night)"
     ],
+    "currentWeather": {
+      "temperatureC": 42.0,
+      "apparentTemperatureC": 43.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 57.5,
     "peakDemandStressIndex": 78,
     "transformerOverloadRisk": "High",
@@ -4296,6 +4582,17 @@ export const MOCK_WARDS: Ward[] = [
       "Vulnerable demographic profile (elderly + children)",
       "High daytime outdoor street exposure"
     ],
+    "currentWeather": {
+      "temperatureC": 42.5,
+      "apparentTemperatureC": 43.7,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 51,
     "peakDemandStressIndex": 73,
     "transformerOverloadRisk": "High",
@@ -4459,6 +4756,17 @@ export const MOCK_WARDS: Ward[] = [
       "High night surface heat",
       "Lack of shaded municipal corridors"
     ],
+    "currentWeather": {
+      "temperatureC": 41.6,
+      "apparentTemperatureC": 42.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 49.5,
     "peakDemandStressIndex": 70,
     "transformerOverloadRisk": "Medium",
@@ -4622,6 +4930,17 @@ export const MOCK_WARDS: Ward[] = [
       "38% workforce in physical industrial labor",
       "Low vegetative cooling buffer"
     ],
+    "currentWeather": {
+      "temperatureC": 42.7,
+      "apparentTemperatureC": 43.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 56,
     "peakDemandStressIndex": 74,
     "transformerOverloadRisk": "Medium",
@@ -4785,6 +5104,17 @@ export const MOCK_WARDS: Ward[] = [
       "Dense retail market with low roof insulation",
       "High road surface albedo absorption"
     ],
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 53.5,
     "peakDemandStressIndex": 72,
     "transformerOverloadRisk": "Medium",
@@ -4948,6 +5278,17 @@ export const MOCK_WARDS: Ward[] = [
       "Surging domestic AC power demand",
       "Moderate tree cover"
     ],
+    "currentWeather": {
+      "temperatureC": 38.6,
+      "apparentTemperatureC": 39.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 78,
     "peakDemandStressIndex": 82,
     "transformerOverloadRisk": "Medium",
@@ -5111,6 +5452,17 @@ export const MOCK_WARDS: Ward[] = [
       "Fast expanding low-medium income residential",
       "Moderate public cooling access"
     ],
+    "currentWeather": {
+      "temperatureC": 40.7,
+      "apparentTemperatureC": 41.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 51.5,
     "peakDemandStressIndex": 69,
     "transformerOverloadRisk": "Medium",
@@ -5274,6 +5626,17 @@ export const MOCK_WARDS: Ward[] = [
       "Peri-urban outdoor labor exposure",
       "Lower built density"
     ],
+    "currentWeather": {
+      "temperatureC": 39.3,
+      "apparentTemperatureC": 40.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 41,
     "peakDemandStressIndex": 56,
     "transformerOverloadRisk": "Low",
@@ -5437,6 +5800,17 @@ export const MOCK_WARDS: Ward[] = [
       "Vulnerable elderly population percentage",
       "Limited shaded transit halts"
     ],
+    "currentWeather": {
+      "temperatureC": 41.9,
+      "apparentTemperatureC": 43.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 47,
     "peakDemandStressIndex": 68,
     "transformerOverloadRisk": "Medium",
@@ -5600,6 +5974,17 @@ export const MOCK_WARDS: Ward[] = [
       "Elevated night-time minimum temperatures",
       "73% households without air conditioning"
     ],
+    "currentWeather": {
+      "temperatureC": 42.2,
+      "apparentTemperatureC": 43.4,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 44,
     "peakDemandStressIndex": 66,
     "transformerOverloadRisk": "Medium",
@@ -5763,6 +6148,17 @@ export const MOCK_WARDS: Ward[] = [
       "Moderate tree cover",
       "Highway junction traffic thermal plume"
     ],
+    "currentWeather": {
+      "temperatureC": 40.0,
+      "apparentTemperatureC": 41.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 48,
     "peakDemandStressIndex": 64,
     "transformerOverloadRisk": "Low",
@@ -5926,6 +6322,17 @@ export const MOCK_WARDS: Ward[] = [
       "High daytime sun exposure along transit lines",
       "Moderate baseline tree cover"
     ],
+    "currentWeather": {
+      "temperatureC": 39.5,
+      "apparentTemperatureC": 40.7,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 38,
     "peakDemandStressIndex": 54,
     "transformerOverloadRisk": "Low",
@@ -6089,6 +6496,17 @@ export const MOCK_WARDS: Ward[] = [
       "Cantonment greenery buffer nearby",
       "Steady residential power usage"
     ],
+    "currentWeather": {
+      "temperatureC": 39.7,
+      "apparentTemperatureC": 40.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 53,
     "peakDemandStressIndex": 68,
     "transformerOverloadRisk": "Medium",
@@ -6252,6 +6670,17 @@ export const MOCK_WARDS: Ward[] = [
       "Commercial truck transit exhaust",
       "Moderate urban tree canopy"
     ],
+    "currentWeather": {
+      "temperatureC": 41.1,
+      "apparentTemperatureC": 42.3,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 58,
     "peakDemandStressIndex": 75,
     "transformerOverloadRisk": "Medium",
@@ -6415,6 +6844,17 @@ export const MOCK_WARDS: Ward[] = [
       "High elderly demographic",
       "Flyover intersection thermal pocket"
     ],
+    "currentWeather": {
+      "temperatureC": 39.1,
+      "apparentTemperatureC": 40.3,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
+    },
     "peakPowerDemandMW": 52,
     "peakDemandStressIndex": 67,
     "transformerOverloadRisk": "Medium",
@@ -6905,17 +7345,17 @@ export const MOCK_CITY_OVERVIEW: CityOverview = {
 };
 
 export const MOCK_GRID_DATA: GridDemandData = {
-  hourlyLabels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
-  totalDemandMW: [1840, 1620, 1510, 1720, 2450, 3180, 3740, 4120, 3980, 4350, 4480, 3890],
-  temperatureCurveC: [31.5, 30.2, 29.4, 30.8, 34.2, 38.6, 42.1, 44.2, 43.5, 39.8, 36.4, 33.7],
+  hourlyLabels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+  totalDemandMW: [1840, 1695.4, 1620, 1533.7, 1510, 1647.3, 1720, 2272.7, 2450, 2955.8, 3180, 3494.6, 3740, 3969.3, 4120, 4090.5, 3980, 4373.2, 4350, 4547.4, 4480, 4143.1, 3890, 2779.0],
+  temperatureCurveC: [31.5, 30.9, 30.2, 29.8, 29.4, 30.1, 30.8, 32.5, 34.2, 36.4, 38.6, 40.4, 42.1, 43.1, 44.2, 43.9, 43.5, 41.6, 39.8, 38.1, 36.4, 35.1, 33.7, 32.6],
   zoneDemand: {
-    Central: [420, 380, 350, 390, 560, 710, 830, 920, 890, 980, 1010, 880],
-    East: [340, 300, 280, 320, 460, 600, 700, 780, 750, 820, 840, 730],
-    West: [540, 480, 450, 510, 780, 1020, 1210, 1340, 1290, 1420, 1470, 1280],
-    North: [310, 270, 250, 290, 410, 540, 630, 700, 680, 740, 760, 660],
-    South: [230, 190, 180, 210, 240, 310, 370, 380, 370, 390, 400, 340],
+    Central: [420, 392.0, 380, 357.7, 350, 377.4, 390, 517.8, 560, 666.8, 710, 777.7, 830, 883.8, 920, 914.0, 890, 981.8, 980, 1024.9, 1010, 935.5, 880, 630.5],
+    East: [340, 313.6, 300, 284.2, 280, 306.0, 320, 425.1, 460, 556.5, 600, 656.5, 700, 747.4, 780, 772.6, 750, 824.2, 820, 854.9, 840, 777.1, 730, 518.9],
+    West: [540, 499.8, 480, 455.7, 450, 489.6, 510, 703.1, 780, 945.0, 1020, 1126.2, 1210, 1287.8, 1340, 1328.2, 1290, 1422.8, 1420, 1488.4, 1470, 1361.2, 1280, 882.7],
+    North: [310, 284.2, 270, 254.8, 250, 275.4, 290, 381.5, 410, 498.8, 540, 590.9, 630, 671.6, 700, 696.9, 680, 745.5, 740, 772.5, 760, 702.9, 660, 470.4],
+    South: [230, 205.8, 190, 181.3, 180, 198.9, 210, 245.3, 240, 288.8, 310, 343.4, 370, 378.8, 380, 378.8, 370, 399.0, 390, 406.9, 400, 366.3, 340, 276.4],
   },
-  peakHour: '20:00 - 21:00 (Evening Domestic AC Peak)',
-  peakDemandMW: 4480,
+  peakHour: '19:00 - 20:00 (Evening Domestic AC Peak)',
+  peakDemandMW: 4547.4,
   stressedSubstationsCount: 14,
 };

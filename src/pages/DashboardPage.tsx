@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import { getWards, getCityOverview, getForecast } from '../services/api';
+import { getWards, getCityOverview, getForecast, getGridDemand } from '../services/api';
 import { Ward, RiskLevel, Zone } from '../types';
 import { useStore } from '../store/useStore';
 import { getWardRiskWithWeights, getRiskColor, getRiskLevel } from '../lib/risk';
@@ -34,6 +34,16 @@ import {
 } from 'lucide-react';
 import { formatNumber, formatCurrencyLakh, formatTemp } from '../lib/utils';
 import { generateWardInterventions } from '../lib/interventions';
+import {
+  BarChart,
+  Bar,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
 
 export const DashboardPage: React.FC = () => {
   const { t } = useTranslation();
@@ -72,6 +82,12 @@ export const DashboardPage: React.FC = () => {
     queryFn: getForecast,
     staleTime: 1000 * 60 * 10,
     refetchInterval: 1000 * 60 * 15,
+  });
+
+  const { data: gridData, isLoading: gridLoading } = useQuery({
+    queryKey: ['grid-demand'],
+    queryFn: getGridDemand,
+    staleTime: 1000 * 60 * 10,
   });
 
   // Dynamically recompute each ward's risk score and components using active weights
@@ -270,11 +286,56 @@ export const DashboardPage: React.FC = () => {
             <Zap className="w-4 h-4 text-purple-600" />
           </div>
           <div className="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white mt-1">
-            <span>Unavailable</span>
+            {gridData ? `${gridData.stressedSubstationsCount} substations` : gridLoading ? 'Loading...' : 'Unavailable'}
           </div>
-          <div className="text-[10px] text-purple-600 dark:text-purple-400 mt-1.5 font-semibold">No live utility feed connected</div>
+          <div className="text-[10px] text-purple-600 dark:text-purple-400 mt-1.5 font-semibold">
+            {gridData ? `Peak demand: ${Math.round(gridData.peakDemandMW)} MW @ ${gridData.peakHour}` : 'No live utility feed connected'}
+          </div>
         </Card>
       </div>
+
+      {/* Grid Demand Visualization */}
+      {gridData && (
+        <Card className="p-5">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h3 className="font-heading font-bold text-lg text-slate-900 dark:text-white flex items-center gap-2">
+                <Zap className="w-5 h-5 text-purple-600" />
+                <span>24-Hour Grid Demand & Temperature Profile</span>
+              </h3>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Citywide aggregate demand curves with modelled temperature overlay. Peak stress at {gridData.peakHour}.
+              </p>
+            </div>
+            <span className="text-xs text-slate-400">
+              {gridData.stressedSubstationsCount} stressed substations
+            </span>
+          </div>
+
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={gridData.hourlyLabels.map((label, i) => ({
+                hour: label,
+                demand: gridData.totalDemandMW[i] || 0,
+                temp: gridData.temperatureCurveC[i] || 0,
+              }))}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                <XAxis dataKey="hour" tick={{ fontSize: 10 }} />
+                <YAxis yAxisId="left" tick={{ fontSize: 10 }} />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10 }} />
+                <Tooltip
+                  formatter={(val: number, name: string) => [
+                    name === 'demand' ? `${val} MW` : `${val}°C`,
+                    name === 'demand' ? 'Demand' : 'Temperature',
+                  ]}
+                />
+                <Bar yAxisId="left" dataKey="demand" fill="#8b5cf6" radius={[3, 3, 0, 0]} />
+                <Line yAxisId="right" type="monotone" dataKey="temp" stroke="#f97316" strokeWidth={2} dot={{ r: 3 }} name="temp" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </Card>
+      )}
 
       {/* Search & Filters Toolbar */}
       <div className="p-3 bg-white dark:bg-[#121C20] rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs flex flex-wrap items-center justify-between gap-3 text-xs">

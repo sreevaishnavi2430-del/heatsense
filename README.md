@@ -38,7 +38,7 @@ Copy the committed example file to create your local Vite configuration:
 Copy-Item .env.development.example .env.development
 ```
 
-The example points the frontend at the local API and leaves the Google key blank, so the map works with the OpenStreetMap fallback after `npm run dev`. To use Google Maps instead, add your key to `.env.development`:
+The example leaves mock mode enabled so the dashboard, ward rankings, cooling simulator and power-grid monitor all work immediately, and leaves the Google key blank so the map works with the OpenStreetMap fallback after `npm run dev`. To use Google Maps instead, add your key to `.env.development`:
 
 ```dotenv
 VITE_GOOGLE_MAPS_API_KEY=your_restricted_google_maps_key
@@ -71,6 +71,17 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173). The API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs), and readiness at [http://localhost:8000/health/ready](http://localhost:8000/health/ready).
+
+### 4. Running without a backend
+
+The frontend ships with the full 40-ward dataset bundled, so it runs standalone. Mock mode is **on by default**; set `VITE_USE_MOCK=false` in `.env.development` to point the app at a live backend instead:
+
+```dotenv
+VITE_USE_MOCK=false
+VITE_API_BASE_URL=http://localhost:8000/api/v1
+```
+
+With mock mode enabled, ward rankings, the cooling simulator, the power-grid monitor and the dashboard all work without the FastAPI server running. Live weather for the city forecast still requires the backend, because it is fetched server-side from Open-Meteo.
 
 ## Database and seed data
 
@@ -129,7 +140,22 @@ To move toward an operational system, connect and document authoritative Hyderab
 
 ## Privacy and safety
 
-Subscriber phone numbers are handled through hashing/encryption in the backend; configure strong unique production secrets and access controls before deployment. Provide consent, opt-out, retention, deletion, and audit procedures appropriate to your jurisdiction. Do not enable real SMS/WhatsApp delivery until the provider integration, consent handling, sender registration, templates, delivery callbacks, rate controls, and incident procedures have been reviewed.
+Subscriber phone numbers are encrypted at rest with Fernet and are indexed by a
+keyed HMAC (`app/privacy.py`) rather than a plain digest. A plain SHA-256 of an
+Indian mobile number is reversible in seconds because only ~40 million values are
+valid, so the keyed form is what makes the lookup key safe to store.
+
+The service refuses to start with `MODE=production` while `SECRET_KEY` or
+`FERNET_KEY` is still a placeholder, and logs a warning in `MODE=demo` where
+authentication is bypassed on the protected endpoints. Generate real values before
+deploying:
+
+```powershell
+python -c "import secrets; print(secrets.token_urlsafe(48))"          # SECRET_KEY
+python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"  # FERNET_KEY
+```
+
+Provide consent, opt-out, retention, deletion, and audit procedures appropriate to your jurisdiction. Do not enable real SMS/WhatsApp delivery until the provider integration, consent handling, sender registration, templates, delivery callbacks, rate controls, and incident procedures have been reviewed.
 
 This application is not a substitute for official heat-health advisories or emergency services. Keep public safety advice consistent with current local government guidance.
 
@@ -140,10 +166,21 @@ This application is not a substitute for official heat-health advisories or emer
 npx tsc --noEmit
 npm run build
 
+# Runtime checks (no browser or backend required)
+npm run verify            # runs both suites below
+npm run verify:i18n       # language switching, persistence and rehydration
+npm run verify:mock-api   # every API function resolves in mock mode
+
 # Backend tests
 cd backend
 python -m pytest -q
 ```
+
+The two runtime suites load the real `src/` modules through Vite's SSR pipeline and
+assert the behaviour that previously only worked on the maintainer's machine: the
+interface language survives a reload and stays in sync with the store, and no page
+depends on a live endpoint without a mock fallback. The mock-API suite fails on any
+network call, so an endpoint that loses its mock implementation is caught immediately.
 
 ## Project structure
 
@@ -159,12 +196,14 @@ backend/
   tests/          # API, persistence and pipeline tests
 src/
   components/     # shared UI, map and layout components
-  data/           # frontend demo fixtures
-  pages/           # dashboard, rankings, reports, planner and public flows
-  services/        # frontend API client
+  data/           # frontend demo fixtures (ward data + operational fixtures)
+  pages/          # dashboard, rankings, reports, planner and public flows
+  services/       # frontend API client with mock fallbacks
   lib/             # risk scoring, interventions and formatting helpers
+scripts/          # runtime verification suites (i18n, mock API coverage)
 docs/              # methodology and API contract notes
 ```
+
 
 ## License
 

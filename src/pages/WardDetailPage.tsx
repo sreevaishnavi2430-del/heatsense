@@ -47,6 +47,11 @@ import {
   Check,
   ArrowLeft,
   ShieldCheck,
+  CloudSun,
+  Sun,
+  Wind,
+  CloudRain,
+  Thermometer,
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 
@@ -337,6 +342,89 @@ export const WardDetailPage: React.FC = () => {
           </Card>
         </div>
       </div>
+
+      {/* Live Current Conditions (ward centroid, modelled) */}
+      <Card className="p-5">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CloudSun className="w-5 h-5 text-sky-500" />
+              <span>Current Conditions at Ward Centroid</span>
+            </h3>
+            <p className="text-xs text-slate-500 mt-0.5">
+              {ward.currentWeather
+                ? `${ward.currentWeather.source}${ward.currentWeather.observedAt ? ` · observed ${ward.currentWeather.observedAt}` : ''}`
+                : 'Modelled conditions are unavailable for this ward.'}
+            </p>
+          </div>
+          {ward.currentWeather && (
+            <span className="text-[10px] px-2 py-1 rounded-md bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 font-bold uppercase tracking-wider">
+              Modelled · not a station reading
+            </span>
+          )}
+        </div>
+
+        {ward.currentWeather ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-xs">
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 text-slate-500 mb-1">
+                <Thermometer className="w-4 h-4 text-rose-500" />
+                <span className="font-semibold">Air Temp</span>
+              </div>
+              <div className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                {formatTemp(ward.currentWeather.temperatureC, tempUnit)}
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 text-slate-500 mb-1">
+                <Sun className="w-4 h-4 text-amber-500" />
+                <span className="font-semibold">Feels Like</span>
+              </div>
+              <div className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                {ward.currentWeather.apparentTemperatureC != null
+                  ? formatTemp(ward.currentWeather.apparentTemperatureC, tempUnit)
+                  : '—'}
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 text-slate-500 mb-1">
+                <Droplets className="w-4 h-4 text-sky-500" />
+                <span className="font-semibold">Humidity</span>
+              </div>
+              <div className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                {ward.currentWeather.relativeHumidityPct != null ? `${ward.currentWeather.relativeHumidityPct}%` : '—'}
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 text-slate-500 mb-1">
+                <Wind className="w-4 h-4 text-teal-500" />
+                <span className="font-semibold">Wind</span>
+              </div>
+              <div className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                {ward.currentWeather.windSpeedKmh != null ? `${ward.currentWeather.windSpeedKmh} km/h` : '—'}
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 text-slate-500 mb-1">
+                <CloudRain className="w-4 h-4 text-indigo-500" />
+                <span className="font-semibold">Precipitation</span>
+              </div>
+              <div className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                {ward.currentWeather.precipitationMm != null ? `${ward.currentWeather.precipitationMm} mm` : '—'}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:amber-900/60 text-xs text-amber-800 dark:text-amber-300">
+            Live modelled conditions are unavailable for this ward. The surface-temperature, diurnal
+            and 7-day trend panels on this page remain valid.
+          </div>
+        )}
+      </Card>
 
       {/* Charts Row: 24h Temperature Curve with Heat-Danger Band & 7-Day Trend */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

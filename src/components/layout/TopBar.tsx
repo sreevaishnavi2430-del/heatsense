@@ -28,7 +28,7 @@ interface TopBarProps {
 }
 
 export const TopBar: React.FC<TopBarProps> = ({ onOpenSearch, onOpenCart }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const {
     theme,
     toggleTheme,
@@ -57,8 +57,6 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenSearch, onOpenCart }) => {
 
   const handleLangChange = (lang: 'en' | 'te' | 'hi') => {
     setLanguage(lang);
-    i18n.changeLanguage(lang);
-    localStorage.setItem('heatsense-language', lang);
   };
 
   return (

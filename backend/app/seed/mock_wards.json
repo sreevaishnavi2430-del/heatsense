@@ -160,6 +160,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.9,
+      "apparentTemperatureC": 44.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -323,6 +334,17 @@
       "shadeShelters": 1,
       "coolingCentres": 0,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 43.3,
+      "apparentTemperatureC": 44.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -486,6 +508,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 42.4,
+      "apparentTemperatureC": 43.6,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -649,6 +682,17 @@
       "shadeShelters": 2,
       "coolingCentres": 1,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 42.0,
+      "apparentTemperatureC": 43.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -812,6 +856,17 @@
       "shadeShelters": 3,
       "coolingCentres": 0,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 42.6,
+      "apparentTemperatureC": 43.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -975,6 +1030,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 41.3,
+      "apparentTemperatureC": 42.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1138,6 +1204,17 @@
       "shadeShelters": 3,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1301,6 +1378,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 40.3,
+      "apparentTemperatureC": 41.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1464,6 +1552,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 40.9,
+      "apparentTemperatureC": 42.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1627,6 +1726,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 5
+    },
+    "currentWeather": {
+      "temperatureC": 41.8,
+      "apparentTemperatureC": 43.0,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1790,6 +1900,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 40.0,
+      "apparentTemperatureC": 41.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -1953,6 +2074,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 42.3,
+      "apparentTemperatureC": 43.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2116,6 +2248,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 41.0,
+      "apparentTemperatureC": 42.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2279,6 +2422,17 @@
       "shadeShelters": 7,
       "coolingCentres": 3,
       "hospitalsNearby": 6
+    },
+    "currentWeather": {
+      "temperatureC": 37.7,
+      "apparentTemperatureC": 38.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2442,6 +2596,17 @@
       "shadeShelters": 8,
       "coolingCentres": 3,
       "hospitalsNearby": 5
+    },
+    "currentWeather": {
+      "temperatureC": 37.0,
+      "apparentTemperatureC": 38.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2605,6 +2770,17 @@
       "shadeShelters": 6,
       "coolingCentres": 2,
       "hospitalsNearby": 5
+    },
+    "currentWeather": {
+      "temperatureC": 39.4,
+      "apparentTemperatureC": 40.6,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2768,6 +2944,17 @@
       "shadeShelters": 7,
       "coolingCentres": 3,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 38.3,
+      "apparentTemperatureC": 39.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -2931,6 +3118,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 38.9,
+      "apparentTemperatureC": 40.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3094,6 +3292,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 39.9,
+      "apparentTemperatureC": 41.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3257,6 +3466,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 5
+    },
+    "currentWeather": {
+      "temperatureC": 42.2,
+      "apparentTemperatureC": 43.4,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3420,6 +3640,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.8,
+      "apparentTemperatureC": 44.0,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3583,6 +3814,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 43.6,
+      "apparentTemperatureC": 44.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3746,6 +3988,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -3909,6 +4162,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 40.9,
+      "apparentTemperatureC": 42.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4072,6 +4336,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 42.3,
+      "apparentTemperatureC": 43.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4235,6 +4510,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.0,
+      "apparentTemperatureC": 43.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4398,6 +4684,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.5,
+      "apparentTemperatureC": 43.7,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4561,6 +4858,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 41.6,
+      "apparentTemperatureC": 42.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4724,6 +5032,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.7,
+      "apparentTemperatureC": 43.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -4887,6 +5206,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 41.7,
+      "apparentTemperatureC": 42.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5050,6 +5380,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 38.6,
+      "apparentTemperatureC": 39.8,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5213,6 +5554,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 40.7,
+      "apparentTemperatureC": 41.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5376,6 +5728,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 39.3,
+      "apparentTemperatureC": 40.5,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5539,6 +5902,17 @@
       "shadeShelters": 3,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 41.9,
+      "apparentTemperatureC": 43.1,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5702,6 +6076,17 @@
       "shadeShelters": 2,
       "coolingCentres": 0,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 42.2,
+      "apparentTemperatureC": 43.4,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -5865,6 +6250,17 @@
       "shadeShelters": 4,
       "coolingCentres": 2,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 40.0,
+      "apparentTemperatureC": 41.2,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -6028,6 +6424,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 2
+    },
+    "currentWeather": {
+      "temperatureC": 39.5,
+      "apparentTemperatureC": 40.7,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -6191,6 +6598,17 @@
       "shadeShelters": 5,
       "coolingCentres": 2,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 39.7,
+      "apparentTemperatureC": 40.9,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -6354,6 +6772,17 @@
       "shadeShelters": 4,
       "coolingCentres": 1,
       "hospitalsNearby": 3
+    },
+    "currentWeather": {
+      "temperatureC": 41.1,
+      "apparentTemperatureC": 42.3,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   },
   {
@@ -6517,6 +6946,17 @@
       "shadeShelters": 6,
       "coolingCentres": 2,
       "hospitalsNearby": 4
+    },
+    "currentWeather": {
+      "temperatureC": 39.1,
+      "apparentTemperatureC": 40.3,
+      "relativeHumidityPct": 55,
+      "windSpeedKmh": 8.2,
+      "precipitationMm": 0,
+      "weatherCode": 3,
+      "observedAt": "2026-10-22T07:13:58.841163+00:00",
+      "source": "Open-Meteo gridded weather model",
+      "dataQuality": "modelled_current_weather"
     }
   }
 ]
