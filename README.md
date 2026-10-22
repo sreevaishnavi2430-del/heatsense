@@ -59,7 +59,7 @@ Copy-Item .env.example .env
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-The default database URL is `sqlite+aiosqlite:///./heatsense.db`. The API initializes its schema during startup. For local development, demo login accepts the configured demo credentials/mode; do not use demo authentication settings in a public deployment.
+The default database URL is `sqlite+aiosqlite:///./heatsense.db`. The API initializes its schema during startup. For local ML training and array-based satellite processing, install the optional dependencies with `python -m pip install -r requirements-ml.txt`. The deployed API uses the lightweight linear model fallback when these optional libraries are not installed. For local development, demo login accepts the configured demo credentials/mode; do not use demo authentication settings in a public deployment.
 
 ### 3. Install and run the frontend
 
