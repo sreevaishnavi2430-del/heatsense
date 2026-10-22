@@ -1,8 +1,14 @@
 # Local environment and secrets
+#
+# VITE_* values are bundled into the client build and are therefore public, but
+# the Google Maps browser key is still kept local and restricted by HTTP referrer.
+# .env.production holds only VITE_ variables and is tracked so the deployment
+# build configuration lives in the repository.
 .env
 .env.*
 !.env.example
 !.env.development.example
+!.env.production
 backend/.env
 backend/.env.*
 !backend/.env.example
@@ -30,8 +36,12 @@ __pycache__/
 *-wal
 
 # Local logs
-model_artifacts/
 *.log
+
+# The trained air-temperature model is a project artifact and is tracked, so the
+# app has a usable model without retraining. Scratch files beside it are not.
+model_artifacts/*
+!model_artifacts/air_temp_model.joblib
 
 # Editor and OS metadata
 .idea/
